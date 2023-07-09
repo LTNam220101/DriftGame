@@ -330,7 +330,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2921070306175211231}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 0.9242506, z: 6.341337}
@@ -711,6 +711,7 @@ MonoBehaviour:
     RLWheel: {fileID: 1089901660132786812}
   Player: {fileID: 0}
   ExplodeEffect: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
+  timer: {fileID: 0}
   MoveSpeed: 40
   MaxSpeed: 20
   SteerAngle: 8

@@ -41,6 +41,7 @@ public class CarController : MonoBehaviour
         ApplySteering();
         CheckParticles();
         ApplyWheelPositions();
+        MaxSpeed += MaxSpeed*0.2f*Time.deltaTime/20;
     }
 
     void CheckInput()
@@ -112,13 +113,13 @@ public class CarController : MonoBehaviour
             Explode();
         }
     }
-    void OnCollisionStay(Collision collisionInfo)
+    void OnTriggerStay(Collider collisionInfo)
     {
         if(collisionInfo.gameObject.tag == "Ice"){	
             Traction = 0.01f;
 		}
     }
-    void OnCollisionExit(Collision collisionInfo)
+    void OnTriggerExit(Collider collisionInfo)
     {
         if(collisionInfo.gameObject.tag == "Ice"){
             Traction = 1f;

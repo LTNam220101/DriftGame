@@ -10,11 +10,12 @@ public class TimerController : MonoBehaviour
     public static TimerController instance;
 
     public Text timeCounter;
+    public Text unlock;
 
     private TimeSpan timePlaying;
     private bool timerGoing;
 
-    private float elapsedTime;
+    public float elapsedTime;
 
     private void Awake()
     {
@@ -53,6 +54,10 @@ public class TimerController : MonoBehaviour
         while (timerGoing)
         {
             elapsedTime += Time.deltaTime;
+            Debug.Log(elapsedTime-PlayerPrefs.GetFloat("record", 0));
+            if(elapsedTime > PlayerPrefs.GetFloat("record", 0) && (elapsedTime > 20f || elapsedTime > 30f || elapsedTime > 40f || elapsedTime > 50f)){
+                unlock.text = "New Car Unlocked!!!";
+            }
             timePlaying = TimeSpan.FromSeconds(elapsedTime);
             string timePlayingStr = "Time: " + timePlaying.ToString("mm':'ss'.'ff");
             timeCounter.text = timePlayingStr;

@@ -53,7 +53,7 @@ public class MainMenuController : MonoBehaviour
 
     public void ReturnMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void ToggleMute(){

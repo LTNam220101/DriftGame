@@ -14,6 +14,7 @@ public class CopController : MonoBehaviour
     public GameObject Player;
     public GameObject ExplodeEffect;
 
+    public TimerController timer;
     // Settings
     public float MoveSpeed = 40;
     public float MaxSpeed = 20;
@@ -28,6 +29,7 @@ public class CopController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MaxSpeed += MaxSpeed*0.2f*Time.deltaTime/20;
         if(Player != null)
         {
             MoveForce += transform.forward * MoveSpeed * Time.deltaTime;

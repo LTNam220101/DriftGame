@@ -18,8 +18,8 @@ public class TerrainController : MonoBehaviour {
     private int radiusToRender = 5;
     [SerializeField]
     private Transform[] gameTransforms;
-    [SerializeField]
-    private Transform playerTransform;
+
+    public Transform playerTransform;
     [SerializeField]
     private Transform water;
     public Transform Water { get { return water; } }

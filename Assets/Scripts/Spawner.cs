@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
 {
     public GameObject Player;
     public GameObject Cop;
+    public TimerController Timer;
     // Start is called before the first frame update
     IEnumerator Start()
     {
@@ -31,6 +32,7 @@ public class Spawner : MonoBehaviour
                 Vector3 rotationVec = transform.forward;
                 GameObject cop = Instantiate(Cop, randomSpawnPosition, Quaternion.Euler(rotationVec.x, Random.Range(0.0f, 360.0f), rotationVec.z));
                 cop.GetComponent<CopController>().Player = Player;
+                cop.GetComponent<CopController>().timer = Timer;
             }
            yield return new WaitForSeconds(Random.value * 2);
         }

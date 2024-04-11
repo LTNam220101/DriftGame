@@ -15,7 +15,7 @@ public class CarController : MonoBehaviour
     private float speed = 40;
     public float steeringAngle = 8;
 
-    public float MaxSpeed = 20;
+    public float MaxSpeed = 25;
     public float Traction = 1;
 
     private Vector3 MoveForce;
@@ -41,7 +41,7 @@ public class CarController : MonoBehaviour
         ApplySteering();
         CheckParticles();
         ApplyWheelPositions();
-        MaxSpeed += MaxSpeed*0.2f*Time.deltaTime/20;
+        //MaxSpeed += MaxSpeed*0.2f*Time.deltaTime/20;
     }
 
     void CheckInput()
@@ -55,6 +55,18 @@ public class CarController : MonoBehaviour
         {
             steeringInput -= leftButton.dampenPress;
         }
+        else if (steeringInput > 0)
+        {
+            MaxSpeed = 20;
+        }
+        else if (steeringInput < 0)
+        {
+            MaxSpeed = 20;
+        }else
+        {
+            MaxSpeed = 25;
+        }
+        // steeringInput = Mathf.Clamp(steeringInput, -1f, 1f);
 
     }
     void ApplyMotor() {
@@ -68,9 +80,17 @@ public class CarController : MonoBehaviour
     }
     void ApplySteering()
     {
-        colliders.FRWheel.steerAngle = steeringInput * steeringAngle;
-        colliders.FLWheel.steerAngle = steeringInput * steeringAngle;
+        colliders.FRWheel.steerAngle = steeringInput * 25;
+        colliders.FLWheel.steerAngle = steeringInput * 25;
+        if (MaxSpeed > 0)
+        {
         transform.Rotate(Vector3.up * steeringInput * MoveForce.magnitude * steeringAngle * Time.deltaTime);
+        }
+        transform.eulerAngles = new Vector3(
+                                    transform.eulerAngles.x,
+                                    transform.eulerAngles.y,
+                                    10.0f * steeringInput
+                                );
     }
 
     void ApplyWheelPositions()
@@ -81,7 +101,8 @@ public class CarController : MonoBehaviour
         UpdateWheel(colliders.RLWheel, wheelMeshes.RLWheel);
     }
     void CheckParticles() {
-        if(steeringInput != 0f){
+        if(steeringInput != 0f && MaxSpeed > 0)
+        {
             wheelParticles.RRWheel.Play();
             wheelTrails.RRWheel.emitting = true;
             wheelParticles.RLWheel.Play();
@@ -117,13 +138,23 @@ public class CarController : MonoBehaviour
     {
         if(collisionInfo.gameObject.tag == "Ice"){	
             Traction = 0.01f;
-		}
+            MaxSpeed = 25;
+        }
+        if (collisionInfo.gameObject.tag == "Terrain")
+        {
+            MaxSpeed = 25;
+        }
     }
     void OnTriggerExit(Collider collisionInfo)
     {
         if(collisionInfo.gameObject.tag == "Ice"){
             Traction = 1f;
-		}
+            MaxSpeed = 25;
+        }
+        if(collisionInfo.gameObject.tag == "Terrain")
+        {
+            MaxSpeed = 0;
+        }
     }
     void Explode()
     {

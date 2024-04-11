@@ -70,7 +70,6 @@ public class TerrainController : MonoBehaviour {
     }
 
     private void Start() {
-        seed = Random.Range(35, 40);
         InitialLoad();
     }
 

@@ -666,7 +666,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 64
   m_CollisionDetection: 0
 --- !u!65 &5070877330580271461
 BoxCollider:
@@ -712,9 +712,12 @@ MonoBehaviour:
   Player: {fileID: 0}
   ExplodeEffect: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
   timer: {fileID: 0}
-  MoveSpeed: 40
-  MaxSpeed: 20
-  SteerAngle: 8
+  MoveSpeed: 30
+  MaxSpeed: 25
+  SteerAngle: 6
+  detectAngle: 5
+  detectDistance: 60
+  avoidObstacles: 1
 --- !u!114 &3421700262305133691
 MonoBehaviour:
   m_ObjectHideFlags: 0

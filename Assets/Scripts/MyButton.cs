@@ -8,7 +8,7 @@ public class MyButton : MonoBehaviour
     public bool isPressed;          //our bool that returns true if the button is being pressed
 
     public float dampenPress = 0;   //this returns 1 if the button is pressed after a short delay.
-    public float sensitivity = 2f;  //How fast the above float turns to 1
+    public float sensitivity = 1f;  //How fast the above float turns to 1
     // Start is called before the first frame update
     void Start()
     {

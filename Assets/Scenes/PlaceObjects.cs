@@ -22,9 +22,9 @@ public class PlaceObjects : MonoBehaviour {
                     Instantiate(TerrainController.PlaceableObjects[prefabType], new Vector3(startPoint.x, hit.point.y, startPoint.z), orientation, transform);
                 }
                 //Debug code. To use, uncomment the giant thingy below
-                //Debug.DrawRay(startPoint, Vector3.down * 10000, Color.blue);
-                //DrawBoxCastBox(startPoint, TerrainController.PlaceableObjectSizes[prefabType], orientation, Vector3.down, 10000, Color.red);
-                //UnityEditor.EditorApplication.isPaused = true;
+                // Debug.DrawRay(startPoint, Vector3.down * 1, Color.blue);
+                // DrawBoxCastOnHit(startPoint, TerrainController.PlaceableObjectSizes[prefabType], orientation, Vector3.down, 1, Color.red);
+                // UnityEditor.EditorApplication.isPaused = true;
             }
 
         }

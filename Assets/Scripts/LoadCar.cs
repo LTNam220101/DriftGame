@@ -6,7 +6,8 @@ using Cinemachine;
 public class LoadCar : MonoBehaviour
 {
     public GameObject[] carPrefabs;
-    public CinemachineVirtualCamera[] cams;
+	public CinemachineVirtualCamera cam1;
+	public CinemachineVirtualCamera cam2;
     public Transform spanwPoint;
 
     // Start is called before the first frame update
@@ -29,7 +30,8 @@ public class LoadCar : MonoBehaviour
                 carPrefabs[selectedCar].SetActive(true);
                 gameObject.GetComponent<TerrainController>().playerTransform = carPrefabs[selectedCar].transform;
                 gameObject.GetComponent<Spawner>().Player = carPrefabs[selectedCar];
-                cams[selectedCar].gameObject.SetActive(true); 
+                cam1.Follow = carPrefabs[selectedCar].transform;
+                // cams[selectedCar].gameObject.SetActive(true); 
                 yield break;
             }
             yield return new WaitForSecondsRealtime(0.001f);

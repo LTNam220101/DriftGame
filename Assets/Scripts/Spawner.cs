@@ -33,7 +33,7 @@ public class Spawner : MonoBehaviour
                 Vector3 startPoint = new Vector3(x, Player.transform.position.y + TerrainController.TerrainSize.y * 2, z);
                 if (Physics.Raycast(startPoint, Vector3.down, out hit) && hit.point.y > TerrainController.Water.transform.position.y && hit.collider.CompareTag("Terrain")) {
                     Quaternion orientation = Quaternion.Euler(Vector3.up * Random.Range(0f, 360f));
-                    Vector3 rotationVec = transform.forward;
+                    Vector3 rotationVec =  Vector3.up * Random.Range(-180, 180);
                     GameObject cop = Instantiate(Cop, new Vector3(startPoint.x, hit.point.y + 2, startPoint.z), Quaternion.Euler(rotationVec.x, rotationVec.y, rotationVec.z));
                     cop.GetComponent<CopController>().Player = Player;
                     cop.GetComponent<CopController>().timer = Timer;

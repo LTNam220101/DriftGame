@@ -713,8 +713,9 @@ MonoBehaviour:
   ExplodeEffect: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
   timer: {fileID: 0}
   MoveSpeed: 30
-  MaxSpeed: 25
+  MaxSpeed: 30
   SteerAngle: 6
+  steeringInput: 0
   detectAngle: 5
   detectDistance: 60
   avoidObstacles: 1

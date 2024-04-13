@@ -17,9 +17,12 @@ public class CopController : MonoBehaviour
     public TimerController timer;
     // Settings
     public float MoveSpeed = 40;
-    public float MaxSpeed = 25;
+    public float MaxSpeed = 30;
     public float SteerAngle = 8;
     private float Traction = 1;
+    
+    public float steeringInput;
+    private float currentAxisValue;
 
     [Tooltip("The width of the obstacle detection area for this AI car")]
     public float detectAngle = 5;
@@ -42,159 +45,57 @@ public class CopController : MonoBehaviour
         {
             MoveForce += transform.forward * MoveSpeed * Time.deltaTime;
             transform.position += MoveForce * Time.deltaTime;
-            // float angle = Vector3.SignedAngle(transform.forward * 3, Player.transform.position - transform.position, Vector3.up);
-            // if(angle > 15.0f)
-            // {
-            //     if (MaxSpeed > 0)
-            //     {
-            //     transform.Rotate(Vector3.up * MoveForce.magnitude * SteerAngle * Time.deltaTime);
-            //     transform.eulerAngles = new Vector3(
-            //                         transform.eulerAngles.x,
-            //                         transform.eulerAngles.y,
-            //                         10.0f
-            //                     );
-            //     }
-            //     colliders.FRWheel.steerAngle = SteerAngle;
-            //     colliders.FLWheel.steerAngle = SteerAngle;
-            // }else if (angle < -15.0f)
-            // {
-            //     if (MaxSpeed > 0)
-            //     {
-            //     transform.Rotate(-Vector3.up * MoveForce.magnitude * SteerAngle * Time.deltaTime);
-            //     transform.eulerAngles = new Vector3(
-            //                         transform.eulerAngles.x,
-            //                         transform.eulerAngles.y,
-            //                         -10.0f
-            //                     );
-            //     }
-            //     colliders.FRWheel.steerAngle = -SteerAngle;
-            //     colliders.FLWheel.steerAngle = -SteerAngle;
-            // }else {
-            //     transform.eulerAngles = new Vector3(
-            //                         transform.eulerAngles.x,
-            //                         transform.eulerAngles.y,
-            //                         0f
-            //                     );
-            // }
-
-            // Shoot a ray at the position to see if we hit something
-            // Ray ray = new Ray(transform.position + Vector3.up * 0.2f + transform.right * Mathf.Sin(Time.time * 20) * detectAngle, transform.TransformDirection(Vector3.forward) * detectDistance);
 
             // Cast two raycasts to either side of the AI car so that we can detect obstacles
             Ray rayRight = new Ray(transform.position + Vector3.up * 0.2f + transform.right * detectAngle * 0.5f + transform.right * detectAngle * 0.0f * Mathf.Sin(Time.time * 50), transform.forward * detectDistance);
             Ray rayLeft = new Ray(transform.position + Vector3.up * 0.2f + transform.right * -detectAngle * 0.5f - transform.right * detectAngle * 0.0f * Mathf.Sin(Time.time * 50), transform.forward * detectDistance);
             Debug.DrawRay(transform.position + Vector3.up * 0.2f + transform.right * detectAngle * 0.5f + transform.right * detectAngle * 0.0f * Mathf.Sin(Time.time * 50), transform.forward * detectDistance, Color.red);
             Debug.DrawRay(transform.position + Vector3.up * 0.2f + transform.right * -detectAngle * 0.5f - transform.right * detectAngle * 0.0f * Mathf.Sin(Time.time * 50), transform.forward * detectDistance, Color.blue);
-            RaycastHit hit;
+            RaycastHit rightHit;
+            RaycastHit leftHit;
+            bool isHitRight = Physics.Raycast(rayRight, out rightHit, detectDistance);
+            bool isHitLeft = Physics.Raycast(rayLeft, out leftHit, detectDistance);
+            
+            if ( avoidObstacles == true && isHitRight && isHitLeft && (rightHit.transform.tag == "Tree" || rightHit.transform.tag == "Cop")) {
+                CheckInput(-1);
+            }
+            else if ( avoidObstacles == true && isHitLeft && (leftHit.transform.tag == "Tree" || leftHit.transform.tag == "Cop")) {
+                CheckInput(1);
+            }
+            else {
+                float angle = Vector3.SignedAngle(transform.forward * 3, Player.transform.position - transform.position, Vector3.up);
+                if(angle > 15.0f) {
+                    CheckInput(1);
+                }
+                else if (angle < -15.0f) {
+                    CheckInput(-1);
+                }else {
+                    CheckInput(0);
+                }
+            }
 
-            // If we detect an obstacle on our right side, swerve to the left
-            if ( avoidObstacles == true && Physics.Raycast(rayRight, out hit, detectDistance) && (hit.transform.GetComponent<TreeController>() || (hit.transform.GetComponent<CopController>())) )
-            {
-                // Change the emission color of the obstacle to indicate that the car detected it
-                // if (hit.transform.GetComponent<MeshRenderer>() ) hit.transform.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.red);
-                // Rotate left to avoid obstacle
-                if (MaxSpeed > 0)
-                {
-                transform.Rotate(-Vector3.up * MoveForce.magnitude * SteerAngle * Time.deltaTime);
+            if (MaxSpeed > 0) {
+                transform.Rotate(Vector3.up * steeringInput * MoveForce.magnitude * SteerAngle * Time.deltaTime);
                 transform.eulerAngles = new Vector3(
                                     transform.eulerAngles.x,
                                     transform.eulerAngles.y,
-                                    -10.0f
+                                    10.0f * steeringInput
                                 );
-                }
-                colliders.FRWheel.steerAngle = SteerAngle;
-                colliders.FLWheel.steerAngle = SteerAngle;
-                //obstacleDetected = 0.1f;
-            }
-            else if ( avoidObstacles == true && Physics.Raycast(rayLeft, out hit, detectDistance) && (hit.transform.GetComponent<TreeController>() || (hit.transform.GetComponent<CopController>()))) // Otherwise, if we detect an obstacle on our left side, swerve to the right
-            {
-                // Change the emission color of the obstacle to indicate that the car detected it
-                //if (hit.transform.GetComponent<MeshRenderer>()) hit.transform.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.red);
-                // Rotate right to avoid obstacle
-                if (MaxSpeed > 0)
-                {
-                transform.Rotate(Vector3.up * MoveForce.magnitude * SteerAngle * Time.deltaTime);
-                transform.eulerAngles = new Vector3(
-                                    transform.eulerAngles.x,
-                                    transform.eulerAngles.y,
-                                    10.0f
-                                );
-                }
-                colliders.FRWheel.steerAngle = -SteerAngle;
-                colliders.FLWheel.steerAngle = -SteerAngle;
-                //obstacleDetected = 0.1f;
-            }
-            else// if (obstacleDetected <= 0) // Otherwise, if no obstacle is detected, keep chasing the player normally
-            {
-            float angle = Vector3.SignedAngle(transform.forward * 3, Player.transform.position - transform.position, Vector3.up);
-            if(angle > 15.0f)
-            {
-                if (MaxSpeed > 0)
-                {
-                transform.Rotate(Vector3.up * MoveForce.magnitude * SteerAngle * Time.deltaTime);
-                transform.eulerAngles = new Vector3(
-                                    transform.eulerAngles.x,
-                                    transform.eulerAngles.y,
-                                    10.0f
-                                );
-                }
-                colliders.FRWheel.steerAngle = SteerAngle;
-                colliders.FLWheel.steerAngle = SteerAngle;
-            }else if (angle < -15.0f)
-            {
-                if (MaxSpeed > 0)
-                {
-                transform.Rotate(-Vector3.up * MoveForce.magnitude * SteerAngle * Time.deltaTime);
-                transform.eulerAngles = new Vector3(
-                                    transform.eulerAngles.x,
-                                    transform.eulerAngles.y,
-                                    -10.0f
-                                );
-                }
-                colliders.FRWheel.steerAngle = -SteerAngle;
-                colliders.FLWheel.steerAngle = -SteerAngle;
-            }else {
+            } else {
                 transform.eulerAngles = new Vector3(
                                     transform.eulerAngles.x,
                                     transform.eulerAngles.y,
                                     0f
                                 );
             }
-            }
-//                 // Rotate the car until it reaches the desired chase angle from either side of the player
-//                 if (Vector3.Angle(transform.forward, Player.transform.position - transform.position) > 30)
-//                 {
-// Debug.Log(ChaseAngle(transform.forward, Player.transform.position - transform.position, Vector3.up));
-//                     // transform.Rotate(-Vector3.up * MoveForce.magnitude * SteerAngle * Time.deltaTime);
-//                     transform.Rotate(transform.eulerAngles.x,
-//                                     transform.eulerAngles.y,ChaseAngle(transform.forward, Player.transform.position - transform.position, Vector3.up));
-//                 }
-//                 else // Otherwise, stop rotating
-//                 {
-//                     // Rotate(0);
-//                 }
-            // }
 
+            colliders.FRWheel.steerAngle = steeringInput * SteerAngle;
+            colliders.FLWheel.steerAngle = steeringInput * SteerAngle;
             MoveForce = Vector3.ClampMagnitude(MoveForce, MaxSpeed);
 
             MoveForce = Vector3.Lerp(MoveForce.normalized, transform.forward, Traction * Time.deltaTime) * MoveForce.magnitude;
         
-            // if (angle != 0f && MaxSpeed > 0)
-            // {
-            //     trails.RLWheel.emitting = true;
-            //     trails.RRWheel.emitting = true;
-
-            //     particles.RLWheel.Play();
-            //     particles.RRWheel.Play();
-            // }
-            // else
-            // {
-            //     trails.RLWheel.emitting = false;
-            //     trails.RRWheel.emitting = false;
-
-            //     particles.RLWheel.Stop();
-            //     particles.RRWheel.Stop();
-            // }
+            CheckParticles();
             ApplyWheelPositions();
         }
         else
@@ -209,6 +110,31 @@ public class CopController : MonoBehaviour
         }
     }
 
+    void CheckParticles() {
+        if (steeringInput != 0f && MaxSpeed > 0)
+        {
+            trails.RLWheel.emitting = true;
+            trails.RRWheel.emitting = true;
+
+            particles.RLWheel.Play();
+            particles.RRWheel.Play();
+        }
+        else
+        {
+            trails.RLWheel.emitting = false;
+            trails.RRWheel.emitting = false;
+
+            particles.RLWheel.Stop();
+            particles.RRWheel.Stop();
+        }
+    }
+    void CheckInput(float currentAxisValue)
+    {
+        steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.25f);
+        if(steeringInput >= -0.1f && steeringInput <= 0.1f) steeringInput = 0.0f;
+        MaxSpeed = 28 - 8 * Mathf.Abs(steeringInput);
+    }
+
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Cop" || other.gameObject.tag == "Tree" || other.gameObject.tag == "Player")
@@ -216,26 +142,26 @@ public class CopController : MonoBehaviour
             Explode(); 
         }
     }
-    void OnTriggerStay(Collider collisionInfo)
+    void OnTriggerEnter(Collider collisionInfo)
     {
         if(collisionInfo.gameObject.tag == "Ice"){	
             Traction = 0.01f;
         }
-        // if (collisionInfo.gameObject.tag == "Terrain")
-        // {
-        //     MaxSpeed = 25;
-        // }
+        if (collisionInfo.gameObject.tag == "Terrain")
+        {
+            Traction = 1f;
+        }
     }
     void OnTriggerExit(Collider collisionInfo)
     {
-        if(collisionInfo.gameObject.tag == "Ice"){
-            Traction = 1f;
-            // MaxSpeed = 25;
-        }
-        // if(collisionInfo.gameObject.tag == "Terrain")
-        // {
-        //     MaxSpeed = 0;
+        // if(collisionInfo.gameObject.tag == "Ice"){
+            // Traction = 1f;
+            // MaxSpeed = 30;
         // }
+        if(collisionInfo.gameObject.tag == "Terrain")
+        {
+            MaxSpeed = 0;
+        }
     }
 
     void Explode()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CarController : MonoBehaviour
 {
@@ -10,13 +11,15 @@ public class CarController : MonoBehaviour
     public WheelMeshes wheelMeshes;
     public WheelParticles wheelParticles;
     public WheelTrails wheelTrails;
-    public float steeringInput;
     public float motorPower = 200;
     private float speed = 40;
     public float steeringAngle = 8;
 
-    public float MaxSpeed = 25;
+    public float MaxSpeed = 30;
     public float Traction = 1;
+
+    public float steeringInput;
+    private float currentAxisValue;
 
     private Vector3 MoveForce;
 
@@ -24,6 +27,15 @@ public class CarController : MonoBehaviour
     public MyButton rightButton;
 
     public TimerController timer;
+
+    public InputAction playerControls;
+
+    private void OnEnable(){
+        playerControls.Enable();
+    }
+    private void OnDisable(){
+        playerControls.Disable();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +58,10 @@ public class CarController : MonoBehaviour
 
     void CheckInput()
     {
-        steeringInput = Input.GetAxis("Horizontal");
+        currentAxisValue = playerControls.ReadValue<float>();
+        // steeringInput = Input.GetAxis("Horizontal");
+        steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.25f);
+        if(steeringInput >= -0.1f && steeringInput <= 0.1f) steeringInput = 0.0f;
         if (rightButton.isPressed)
         {
             steeringInput += rightButton.dampenPress;
@@ -55,19 +70,7 @@ public class CarController : MonoBehaviour
         {
             steeringInput -= leftButton.dampenPress;
         }
-        else if (steeringInput > 0)
-        {
-            MaxSpeed = 20;
-        }
-        else if (steeringInput < 0)
-        {
-            MaxSpeed = 20;
-        }else
-        {
-            MaxSpeed = 25;
-        }
-        // steeringInput = Mathf.Clamp(steeringInput, -1f, 1f);
-
+        MaxSpeed = 28 -8 * Mathf.Abs(steeringInput);
     }
     void ApplyMotor() {
 
@@ -134,22 +137,22 @@ public class CarController : MonoBehaviour
             Explode();
         }
     }
-    void OnTriggerStay(Collider collisionInfo)
+    void OnTriggerEnter(Collider collisionInfo)
     {
         if(collisionInfo.gameObject.tag == "Ice"){	
             Traction = 0.01f;
-            MaxSpeed = 25;
+            MaxSpeed = 30;
         }
         if (collisionInfo.gameObject.tag == "Terrain")
         {
-            MaxSpeed = 25;
+            MaxSpeed = 30;
         }
     }
     void OnTriggerExit(Collider collisionInfo)
     {
         if(collisionInfo.gameObject.tag == "Ice"){
             Traction = 1f;
-            MaxSpeed = 25;
+            MaxSpeed = 30;
         }
         if(collisionInfo.gameObject.tag == "Terrain")
         {

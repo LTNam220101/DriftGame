@@ -20,7 +20,7 @@ public class SpawnBuff : MonoBehaviour
 
         [Tooltip("The rate at which objects are spawned, in seconds.")]
         public float spawnRate = 5;
-        internal float spawnRateCount = 0;
+        internal float spawnRateCount = 7;
         internal int spawnIndex = 0;
 
         [Tooltip("The distance at which this object is spawned relative to the spawnAroundObject")]

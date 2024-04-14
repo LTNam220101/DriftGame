@@ -39,7 +39,7 @@ public class Spawner : MonoBehaviour
                     cop.GetComponent<CopController>().timer = Timer;
                 }
             }
-           yield return new WaitForSeconds(Random.value * 2);
+           yield return new WaitForSeconds(Random.value * 3);
         }
     }
 }

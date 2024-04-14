@@ -564,11 +564,12 @@ GameObject:
   - component: {fileID: 2925419278744945639}
   - component: {fileID: 434488924219230664}
   - component: {fileID: 7382408615726444072}
-  - component: {fileID: 2031864176686151928}
-  - component: {fileID: 5374907460259588589}
+  - component: {fileID: 4378325830752927036}
+  - component: {fileID: -1293066343127667176}
+  - component: {fileID: -9174703374722164291}
   m_Layer: 0
   m_Name: Police_car
-  m_TagString: Player
+  m_TagString: Cop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -621,7 +622,45 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 64
   m_CollisionDetection: 0
---- !u!114 &2031864176686151928
+--- !u!114 &4378325830752927036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922196080687437655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 293505add892b4345b3fe674a4fd2fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliders:
+    FRWheel: {fileID: 8620287152530980600, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
+    FLWheel: {fileID: 6352801246645708817, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
+    RRWheel: {fileID: 3173153950418192552, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
+    RLWheel: {fileID: 8133941616491239478, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
+  wheelMeshes:
+    FRWheel: {fileID: 5609713499433497910, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
+    FLWheel: {fileID: 5609713499433478490, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
+    RRWheel: {fileID: 5609713499433719028, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
+    RLWheel: {fileID: 5609713499433480882, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
+  trails:
+    RRWheel: {fileID: 8074150219856364416, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
+    RLWheel: {fileID: 2280145578227121229, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
+  particles:
+    RRWheel: {fileID: 252661227144712303, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
+    RLWheel: {fileID: 1089901660132786812, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
+  Player: {fileID: 0}
+  ExplodeEffect: {fileID: 5037663053501516404, guid: b2236e26df3b60948826213a25701ee5, type: 3}
+  timer: {fileID: 0}
+  MoveSpeed: 30
+  MaxSpeed: 30
+  SteerAngle: 6
+  steeringInput: 0
+  detectAngle: 5
+  detectDistance: 60
+  avoidObstacles: 1
+--- !u!114 &-1293066343127667176
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -634,43 +673,102 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyedVersion: {fileID: 2922196080687437655, guid: 6fd699453ed83dd42b92741b637a3ea5, type: 3}
---- !u!114 &5374907460259588589
-MonoBehaviour:
+--- !u!82 &-9174703374722164291
+AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2922196080687437655}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e87c81f0e5b1a5843a131325097b53ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ExplodeEffect: {fileID: 5037663053501516404, guid: b2236e26df3b60948826213a25701ee5, type: 3}
-  colliders:
-    FRWheel: {fileID: 7476292965377109535}
-    FLWheel: {fileID: 6455760191578015605}
-    RRWheel: {fileID: 2613560688787928651}
-    RLWheel: {fileID: 614853225012269016}
-  wheelMeshes:
-    FRWheel: {fileID: 2944003799760561623}
-    FLWheel: {fileID: 2944420985366144079}
-    RRWheel: {fileID: 2943855698748285331}
-    RLWheel: {fileID: 2943627686892258179}
-  wheelParticles:
-    RRWheel: {fileID: 6119701337209961705}
-    RLWheel: {fileID: 6859717421277522990}
-  wheelTrails:
-    RRWheel: {fileID: 5334760890270992388}
-    RLWheel: {fileID: 8031900008547340978}
-  steeringInput: 0
-  motorPower: 200
-  steeringAngle: 8
-  MaxSpeed: 25
-  Traction: 1
-  leftButton: {fileID: 0}
-  rightButton: {fileID: 0}
-  timer: {fileID: 0}
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f8d7ae67110158a48bf6bfbffbce1479, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.009
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2922319791782909889
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,11 +1060,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8196415179839329318, guid: 830f30ac89cb7b44e887c1ccbf8dcdd8, type: 3}
   m_PrefabInstance: {fileID: 2689229368134797387}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &6119701337209961705 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8196415179820954786, guid: 830f30ac89cb7b44e887c1ccbf8dcdd8, type: 3}
-  m_PrefabInstance: {fileID: 2689229368134797387}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3354364284922943628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1024,11 +1117,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 830f30ac89cb7b44e887c1ccbf8dcdd8, type: 3}
---- !u!198 &6859717421277522990 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8196415179820954786, guid: 830f30ac89cb7b44e887c1ccbf8dcdd8, type: 3}
-  m_PrefabInstance: {fileID: 3354364284922943628}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6859717421295963306 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8196415179839329318, guid: 830f30ac89cb7b44e887c1ccbf8dcdd8, type: 3}
@@ -1091,11 +1179,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3e718b34741ea244b24429fce29b479, type: 3}
---- !u!96 &8031900008547340978 stripped
-TrailRenderer:
-  m_CorrespondingSourceObject: {fileID: 2350783334875828077, guid: d3e718b34741ea244b24429fce29b479, type: 3}
-  m_PrefabInstance: {fileID: 5758030777921396191}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8200651788349304807 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4478323119664017976, guid: d3e718b34741ea244b24429fce29b479, type: 3}
@@ -1158,11 +1241,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3e718b34741ea244b24429fce29b479, type: 3}
---- !u!96 &5334760890270992388 stripped
-TrailRenderer:
-  m_CorrespondingSourceObject: {fileID: 2350783334875828077, guid: d3e718b34741ea244b24429fce29b479, type: 3}
-  m_PrefabInstance: {fileID: 7680687125478590313}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6102794318742779217 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4478323119664017976, guid: d3e718b34741ea244b24429fce29b479, type: 3}

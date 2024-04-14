@@ -75,7 +75,8 @@ public class CopController : MonoBehaviour
             }
 
             if (MaxSpeed > 0) {
-                transform.Rotate(Vector3.up * steeringInput * MoveForce.magnitude * SteerAngle * Time.deltaTime);
+                float a = steeringInput > 0 ? 1 : -1;
+                transform.Rotate(Vector3.up * steeringInput * steeringInput * a * MoveForce.magnitude * SteerAngle * Time.deltaTime);
                 transform.eulerAngles = new Vector3(
                                     transform.eulerAngles.x,
                                     transform.eulerAngles.y,
@@ -89,8 +90,8 @@ public class CopController : MonoBehaviour
                                 );
             }
 
-            colliders.FRWheel.steerAngle = steeringInput * SteerAngle;
-            colliders.FLWheel.steerAngle = steeringInput * SteerAngle;
+            colliders.FRWheel.steerAngle = steeringInput * 25;
+            colliders.FLWheel.steerAngle = steeringInput * 25;
             MoveForce = Vector3.ClampMagnitude(MoveForce, MaxSpeed);
 
             MoveForce = Vector3.Lerp(MoveForce.normalized, transform.forward, Traction * Time.deltaTime) * MoveForce.magnitude;

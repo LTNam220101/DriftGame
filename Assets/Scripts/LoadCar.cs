@@ -31,10 +31,29 @@ public class LoadCar : MonoBehaviour
                 gameObject.GetComponent<TerrainController>().playerTransform = carPrefabs[selectedCar].transform;
                 gameObject.GetComponent<Spawner>().Player = carPrefabs[selectedCar];
                 cam1.Follow = carPrefabs[selectedCar].transform;
+                cam2.Follow = carPrefabs[selectedCar].transform;
                 // cams[selectedCar].gameObject.SetActive(true); 
                 yield break;
             }
             yield return new WaitForSecondsRealtime(0.001f);
         }
+    }
+
+    /// <summary>
+    /// Change the score and update it
+    /// </summary>
+    /// <param name="MakeFirstPersonView">MakeFirstPersonView</param>
+    public void  MakeFirstPersonView() {
+        cam1.gameObject.SetActive(false);
+        cam2.gameObject.SetActive(true);
+        Time.timeScale = 0.3f;
+
+        // //Update the score text
+        // if (scoreText) {
+        //     scoreText.GetComponent<Text>().text = score.ToString();
+
+        //     // Play the score object animation
+        //     if (scoreText.GetComponent<Animation>()) scoreText.GetComponent<Animation>().Play();
+        // }
     }
 }

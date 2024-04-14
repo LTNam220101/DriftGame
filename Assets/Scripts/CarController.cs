@@ -60,16 +60,16 @@ public class CarController : MonoBehaviour
     {
         currentAxisValue = playerControls.ReadValue<float>();
         // steeringInput = Input.GetAxis("Horizontal");
-        steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.25f);
         if(steeringInput >= -0.1f && steeringInput <= 0.1f) steeringInput = 0.0f;
         if (rightButton.isPressed)
         {
-            steeringInput += rightButton.dampenPress;
+            currentAxisValue = 1;
         }
         if (leftButton.isPressed)
         {
-            steeringInput -= leftButton.dampenPress;
+            currentAxisValue =-1;
         }
+        steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.25f);
         MaxSpeed = 28 -8 * Mathf.Abs(steeringInput);
     }
     void ApplyMotor() {
@@ -87,7 +87,8 @@ public class CarController : MonoBehaviour
         colliders.FLWheel.steerAngle = steeringInput * 25;
         if (MaxSpeed > 0)
         {
-        transform.Rotate(Vector3.up * steeringInput * MoveForce.magnitude * steeringAngle * Time.deltaTime);
+        float a = steeringInput > 0 ? 1 : -1;
+        transform.Rotate(Vector3.up * steeringInput * steeringInput * a * MoveForce.magnitude * steeringAngle * Time.deltaTime);
         }
         transform.eulerAngles = new Vector3(
                                     transform.eulerAngles.x,

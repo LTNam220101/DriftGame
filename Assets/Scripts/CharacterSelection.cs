@@ -10,10 +10,10 @@ public class CharacterSelection : MonoBehaviour
 	public void Start()
 	{
 		carUnlocked = (int)PlayerPrefs.GetFloat("record", 0);
-		carUnlocked /= 10;
+		carUnlocked /= 60;
 		if(carUnlocked == 0) carUnlocked = 1;
-		if(carUnlocked > 5) carUnlocked = 5;
-carUnlocked = 5;
+		if(carUnlocked > 4) carUnlocked = 4;
+carUnlocked = 4;
 	}
 
 	public void NextCharacter()

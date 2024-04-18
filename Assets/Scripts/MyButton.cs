@@ -48,7 +48,6 @@ public class MyButton : MonoBehaviour
         trigger.triggers.Add(pointerDown);
         trigger.triggers.Add(pointerUp);
 
-
     }
 
     public void onClickDown()

@@ -47,16 +47,23 @@ public class CopController : MonoBehaviour
             transform.position += MoveForce * Time.deltaTime;
 
             // Cast two raycasts to either side of the AI car so that we can detect obstacles
-            Ray rayRight = new Ray(transform.position + Vector3.up * 0.2f + transform.right * detectAngle * 0.5f + transform.right * detectAngle * 0.0f * Mathf.Sin(Time.time * 50), transform.forward * detectDistance);
-            Ray rayLeft = new Ray(transform.position + Vector3.up * 0.2f + transform.right * -detectAngle * 0.5f - transform.right * detectAngle * 0.0f * Mathf.Sin(Time.time * 50), transform.forward * detectDistance);
-            Debug.DrawRay(transform.position + Vector3.up * 0.2f + transform.right * detectAngle * 0.5f + transform.right * detectAngle * 0.0f * Mathf.Sin(Time.time * 50), transform.forward * detectDistance, Color.red);
-            Debug.DrawRay(transform.position + Vector3.up * 0.2f + transform.right * -detectAngle * 0.5f - transform.right * detectAngle * 0.0f * Mathf.Sin(Time.time * 50), transform.forward * detectDistance, Color.blue);
+            Ray rayRight = new Ray(transform.position + Vector3.up * 0.2f + transform.right * detectAngle * 0.5f, transform.forward * detectDistance);
+            Ray rayLeft = new Ray(transform.position + Vector3.up * 0.2f + transform.right * -detectAngle * 0.5f, transform.forward * detectDistance);
+            Ray rayCenter = new Ray(transform.position + Vector3.up * 0.2f, transform.forward * detectDistance);
+            Debug.DrawRay(transform.position + Vector3.up * 0.2f + transform.right * detectAngle * 0.5f, transform.forward * detectDistance, Color.red);
+            Debug.DrawRay(transform.position + Vector3.up * 0.2f + transform.right * -detectAngle * 0.5f, transform.forward * detectDistance, Color.blue);
+            Debug.DrawRay(transform.position + Vector3.up * 0.2f, transform.forward * detectDistance, Color.yellow);
             RaycastHit rightHit;
             RaycastHit leftHit;
+            RaycastHit centerHit;
             bool isHitRight = Physics.Raycast(rayRight, out rightHit, detectDistance);
             bool isHitLeft = Physics.Raycast(rayLeft, out leftHit, detectDistance);
+            bool isHitCenter = Physics.Raycast(rayCenter, out centerHit, detectDistance);
             
-            if ( avoidObstacles == true && isHitRight && isHitLeft && (rightHit.transform.tag == "Tree" || rightHit.transform.tag == "Cop")) {
+            if ( avoidObstacles == true && isHitCenter && (centerHit.transform.tag == "Tree" || centerHit.transform.tag == "Cop")) {
+                CheckInput(-1);
+            }
+            else if ( avoidObstacles == true && isHitRight && (rightHit.transform.tag == "Tree" || rightHit.transform.tag == "Cop")) {
                 CheckInput(-1);
             }
             else if ( avoidObstacles == true && isHitLeft && (leftHit.transform.tag == "Tree" || leftHit.transform.tag == "Cop")) {
@@ -131,17 +138,24 @@ public class CopController : MonoBehaviour
     }
     void CheckInput(float currentAxisValue)
     {
-        steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.25f);
+        if(steeringInput < currentAxisValue){
+            steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.125f);
+        }
+        else {
+            steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.25f);
+        }
         if(steeringInput >= -0.1f && steeringInput <= 0.1f) steeringInput = 0.0f;
-        MaxSpeed = 28 - 8 * Mathf.Abs(steeringInput);
+        MaxSpeed = 32 - 12 * Mathf.Abs(steeringInput);
     }
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Cop" || other.gameObject.tag == "Tree" || other.gameObject.tag == "Player")
+        if (gameObject.tag == "Cop" && (other.gameObject.tag == "Cop" || other.gameObject.tag == "Tree" || other.gameObject.tag == "Player"))
         {
             Explode(); 
-        }
+        }if (gameObject.tag == "SmallCop" && (other.gameObject.tag == "Player" || other.gameObject.tag == "Cop" || other.gameObject.tag == "Tree" || other.gameObject.tag == "SmallCop")) {
+            Explode(true); 
+        } 
     }
     void OnTriggerEnter(Collider collisionInfo)
     {
@@ -165,7 +179,7 @@ public class CopController : MonoBehaviour
         }
     }
 
-    void Explode()
+    void Explode(bool makeTrigger = false)
     {
         MaxSpeed = 0;
         MoveSpeed = 0;
@@ -174,7 +188,7 @@ public class CopController : MonoBehaviour
         Destructable dest = gameObject.GetComponent<Destructable>();
         if (dest != null)
         {
-            dest.DestroyObject();
+            dest.DestroyObject(makeTrigger);
             Destroy(explodeEffect, 2);
         }
     }

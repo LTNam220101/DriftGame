@@ -52,7 +52,12 @@ public class Buff : MonoBehaviour
             {
                 if (loadCarComponent != null){
                     // Gọi phương thức touchFunction trên thành phần LoadCar
-                    loadCarComponent.MakeFirstPersonView();
+                    int randomInt = Random.Range(0, 2);
+                    if(randomInt == 1){
+                        loadCarComponent.MakeFirstPersonView();
+                    }else {
+                        loadCarComponent.GoSmall();
+                    }
                 }
             }
 

@@ -696,6 +696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyedVersion: {fileID: 5664340631319491819, guid: 06925a2634957e344b118d304774c8d9, type: 3}
+  ExplodeEffect: {fileID: 5037663053501516404, guid: b2236e26df3b60948826213a25701ee5, type: 3}
 --- !u!114 &564942557717108172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -725,14 +726,23 @@ MonoBehaviour:
   wheelTrails:
     RRWheel: {fileID: 640582226006748959}
     RLWheel: {fileID: 8207463212426362338}
-  steeringInput: 0
   motorPower: 200
   steeringAngle: 8
   MaxSpeed: 25
   Traction: 1
+  steeringInput: 0
   leftButton: {fileID: 0}
   rightButton: {fileID: 0}
   timer: {fileID: 0}
+  playerControls:
+    m_Name: Player Controls
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 3de47cb4-cf59-4eb4-80fc-bc0a6e6e584d
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1 &5664902157047561827
 GameObject:
   m_ObjectHideFlags: 0

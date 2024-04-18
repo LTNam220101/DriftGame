@@ -176,7 +176,8 @@ public class TerrainController : MonoBehaviour {
         Random.InitState((int)(seed + (long)xIndex * 100 + yIndex));//so it doesn't form a (noticable) pattern of similar tiles
         PlaceObjects po = gm.GetComponent<PlaceObjects>();
         po.TerrainController = this;
-        po.Place();
+        bool removeTree = xIndex == 0 && (yIndex == -1 || yIndex == 0 || yIndex == 1 || yIndex == 2);
+        po.Place(removeTree);
         RandomizeInitState();
 
         return terrain;

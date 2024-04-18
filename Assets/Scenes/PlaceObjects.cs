@@ -8,7 +8,7 @@ public class PlaceObjects : MonoBehaviour {
 
     public TerrainController TerrainController { get; set; }
 
-    public void Place() {
+    public void Place(bool removeTree) {
         int numObjects = Random.Range(TerrainController.MinObjectsPerTile, TerrainController.MaxObjectsPerTile);
         for (int i = 0; i < numObjects; i++) {
             int prefabType = Random.Range(0, TerrainController.PlaceableObjects.Length);
@@ -18,7 +18,7 @@ public class PlaceObjects : MonoBehaviour {
             if (Physics.Raycast(startPoint, Vector3.down, out hit) && hit.point.y > TerrainController.Water.transform.position.y && hit.collider.CompareTag("Terrain")) {
                 Quaternion orientation = Quaternion.Euler(Vector3.up * Random.Range(0f, 360f));
                 RaycastHit boxHit;
-                if (Physics.BoxCast(startPoint, TerrainController.PlaceableObjectSizes[prefabType], Vector3.down, out boxHit, orientation) && boxHit.collider.CompareTag("Terrain")) {
+                if (!removeTree && Physics.BoxCast(startPoint, TerrainController.PlaceableObjectSizes[prefabType], Vector3.down, out boxHit, orientation) && boxHit.collider.CompareTag("Terrain")) {
                     Instantiate(TerrainController.PlaceableObjects[prefabType], new Vector3(startPoint.x, hit.point.y, startPoint.z), orientation, transform);
                 }
                 //Debug code. To use, uncomment the giant thingy below

@@ -645,11 +645,11 @@ MonoBehaviour:
     RRWheel: {fileID: 5609713499433719028, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
     RLWheel: {fileID: 5609713499433480882, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
   trails:
-    RRWheel: {fileID: 8074150219856364416, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
-    RLWheel: {fileID: 2280145578227121229, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
+    RRWheel: {fileID: 5334760890270992388}
+    RLWheel: {fileID: 8031900008547340978}
   particles:
-    RRWheel: {fileID: 252661227144712303, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
-    RLWheel: {fileID: 1089901660132786812, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
+    RRWheel: {fileID: 6119701337209961705}
+    RLWheel: {fileID: 6859717421277522990}
   Player: {fileID: 0}
   ExplodeEffect: {fileID: 5037663053501516404, guid: b2236e26df3b60948826213a25701ee5, type: 3}
   timer: {fileID: 0}
@@ -673,6 +673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyedVersion: {fileID: 2922196080687437655, guid: 6fd699453ed83dd42b92741b637a3ea5, type: 3}
+  ExplodeEffect: {fileID: 5037663053501516404, guid: b2236e26df3b60948826213a25701ee5, type: 3}
 --- !u!82 &-9174703374722164291
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1060,6 +1061,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8196415179839329318, guid: 830f30ac89cb7b44e887c1ccbf8dcdd8, type: 3}
   m_PrefabInstance: {fileID: 2689229368134797387}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &6119701337209961705 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8196415179820954786, guid: 830f30ac89cb7b44e887c1ccbf8dcdd8, type: 3}
+  m_PrefabInstance: {fileID: 2689229368134797387}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3354364284922943628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1117,6 +1123,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 830f30ac89cb7b44e887c1ccbf8dcdd8, type: 3}
+--- !u!198 &6859717421277522990 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8196415179820954786, guid: 830f30ac89cb7b44e887c1ccbf8dcdd8, type: 3}
+  m_PrefabInstance: {fileID: 3354364284922943628}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6859717421295963306 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8196415179839329318, guid: 830f30ac89cb7b44e887c1ccbf8dcdd8, type: 3}
@@ -1139,11 +1150,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4478323119664017976, guid: d3e718b34741ea244b24429fce29b479, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.7783896
+      value: -0.397
       objectReference: {fileID: 0}
     - target: {fileID: 4478323119664017976, guid: d3e718b34741ea244b24429fce29b479, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1530805
+      value: 0.022
       objectReference: {fileID: 0}
     - target: {fileID: 4478323119664017976, guid: d3e718b34741ea244b24429fce29b479, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1179,6 +1190,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3e718b34741ea244b24429fce29b479, type: 3}
+--- !u!96 &8031900008547340978 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 2350783334875828077, guid: d3e718b34741ea244b24429fce29b479, type: 3}
+  m_PrefabInstance: {fileID: 5758030777921396191}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8200651788349304807 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4478323119664017976, guid: d3e718b34741ea244b24429fce29b479, type: 3}
@@ -1201,11 +1217,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4478323119664017976, guid: d3e718b34741ea244b24429fce29b479, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.007456291
+      value: 0.405
       objectReference: {fileID: 0}
     - target: {fileID: 4478323119664017976, guid: d3e718b34741ea244b24429fce29b479, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1530805
+      value: 0.026
       objectReference: {fileID: 0}
     - target: {fileID: 4478323119664017976, guid: d3e718b34741ea244b24429fce29b479, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1241,6 +1257,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3e718b34741ea244b24429fce29b479, type: 3}
+--- !u!96 &5334760890270992388 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 2350783334875828077, guid: d3e718b34741ea244b24429fce29b479, type: 3}
+  m_PrefabInstance: {fileID: 7680687125478590313}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6102794318742779217 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4478323119664017976, guid: d3e718b34741ea244b24429fce29b479, type: 3}

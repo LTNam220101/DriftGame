@@ -9,11 +9,15 @@ public class LoadCar : MonoBehaviour
 	public CinemachineVirtualCamera cam1;
 	public CinemachineVirtualCamera cam2;
     public Transform spanwPoint;
+    public SpawnBuff spawnBuffController;
+    private GameObject currentCar;
+    private GameObject[] copColliders;
 
     // Start is called before the first frame update
     IEnumerator Start()
     {
         TerrainController TerrainController = GetComponent<TerrainController>();
+        spawnBuffController = GetComponent<SpawnBuff>();
         int selectedCar = PlayerPrefs.GetInt("selectedCharacter");
         Vector3 startPoint = new Vector3(
             spanwPoint.transform.position.x,
@@ -24,14 +28,16 @@ public class LoadCar : MonoBehaviour
         {
             RaycastHit hit;
             if (Physics.Raycast(startPoint, Vector3.down, out hit) && hit.point.y > TerrainController.Water.transform.position.y && hit.collider.CompareTag("Terrain")) {
-                Vector3 newPosition = carPrefabs[selectedCar].transform.position;
+                currentCar = carPrefabs[selectedCar];
+                Vector3 newPosition = currentCar.transform.position;
                 newPosition.y = hit.point.y + 2;
-                carPrefabs[selectedCar].transform.position = newPosition;
-                carPrefabs[selectedCar].SetActive(true);
-                gameObject.GetComponent<TerrainController>().playerTransform = carPrefabs[selectedCar].transform;
-                gameObject.GetComponent<Spawner>().Player = carPrefabs[selectedCar];
-                cam1.Follow = carPrefabs[selectedCar].transform;
-                cam2.Follow = carPrefabs[selectedCar].transform;
+                currentCar.transform.position = newPosition;
+                currentCar.SetActive(true);
+                gameObject.GetComponent<TerrainController>().playerTransform = currentCar.transform;
+                gameObject.GetComponent<Spawner>().Player = currentCar;
+                cam1.Follow = currentCar.transform;
+                cam2.Follow = currentCar.transform;
+                cam2.LookAt = currentCar.transform;
                 // cams[selectedCar].gameObject.SetActive(true); 
                 yield break;
             }
@@ -40,20 +46,44 @@ public class LoadCar : MonoBehaviour
     }
 
     /// <summary>
-    /// Change the score and update it
+    // Swap View
     /// </summary>
     /// <param name="MakeFirstPersonView">MakeFirstPersonView</param>
-    public void  MakeFirstPersonView() {
-        cam1.gameObject.SetActive(false);
-        cam2.gameObject.SetActive(true);
-        Time.timeScale = 0.3f;
+    public void MakeFirstPersonView() {
+        cam2.enabled = true;
+        cam1.enabled = false;
+        Time.timeScale = 0.5f;
+        spawnBuffController.isSpawning = false;
+        // Bắt đầu coroutine để chuyển lại sau 5 giây
+        StartCoroutine(SwitchBackToThirdPersonView());
+    }
+    public void MakeThirdPersonView()
+    {
+        cam1.enabled = true;
+        cam2.enabled = false;
+        Time.timeScale = 1f;
+        spawnBuffController.isSpawning = true;
+    }
+    IEnumerator SwitchBackToThirdPersonView()
+    {
+        // Chờ 5 giây
+        yield return new WaitForSeconds(5f);
 
-        // //Update the score text
-        // if (scoreText) {
-        //     scoreText.GetComponent<Text>().text = score.ToString();
+        // Chuyển từ cam2 về cam1
+        MakeThirdPersonView();
+    }
 
-        //     // Play the score object animation
-        //     if (scoreText.GetComponent<Animation>()) scoreText.GetComponent<Animation>().Play();
-        // }
+    /// <summary>
+    //Go small
+    /// </summary>
+    /// <param name="GoSmall">GoSmall</param>
+    public void GoSmall() {
+        copColliders = GameObject.FindGameObjectsWithTag("Cop");
+        // Duyệt qua tất cả các Collider
+        foreach (GameObject cop in copColliders)
+        {
+            cop.transform.localScale /= 3;
+            cop.tag = "SmallCop";
+        }
     }
 }

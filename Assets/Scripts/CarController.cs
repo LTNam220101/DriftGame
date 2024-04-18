@@ -59,7 +59,6 @@ public class CarController : MonoBehaviour
     void CheckInput()
     {
         currentAxisValue = playerControls.ReadValue<float>();
-        // steeringInput = Input.GetAxis("Horizontal");
         if(steeringInput >= -0.1f && steeringInput <= 0.1f) steeringInput = 0.0f;
         if (rightButton.isPressed)
         {
@@ -69,8 +68,13 @@ public class CarController : MonoBehaviour
         {
             currentAxisValue =-1;
         }
-        steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.25f);
-        MaxSpeed = 28 -8 * Mathf.Abs(steeringInput);
+        if(steeringInput < currentAxisValue){
+            steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.125f);
+        }
+        else {
+            steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.25f);
+        }
+        MaxSpeed = 30 - 10 * Mathf.Abs(steeringInput);
     }
     void ApplyMotor() {
 
@@ -132,10 +136,12 @@ public class CarController : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "Tree" || other.gameObject.tag == "Cop")
-        {
-	        timer.EndTimer();
-            Explode();
+        if(gameObject.tag == "Player"){
+            if(other.gameObject.tag == "Tree" || other.gameObject.tag == "Cop")
+            {
+                timer.EndTimer();
+                Explode();
+            }
         }
     }
     void OnTriggerEnter(Collider collisionInfo)
@@ -173,7 +179,6 @@ public class CarController : MonoBehaviour
         }
 
         var rbs = GetComponentsInChildren<Rigidbody>();
-        // Debug.Log(rbs);
         foreach (var rb in rbs)
         {
             rb.AddExplosionForce(100000, transform.position + transform.forward * 10, 10);

@@ -733,6 +733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyedVersion: {fileID: 830584982289181200, guid: 3c9f419f42323b241ba4f158f7a3ba0f, type: 3}
+  ExplodeEffect: {fileID: 5037663053501516404, guid: b2236e26df3b60948826213a25701ee5, type: 3}
 --- !u!82 &5260004660272897978
 AudioSource:
   m_ObjectHideFlags: 0

@@ -119,9 +119,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1.1863406
-  m_Height: 6.948001
+  m_Height: 6.0061965
   m_Direction: 1
-  m_Center: {x: -0.0033035278, y: 3.4254513, z: 0.01008141}
+  m_Center: {x: -0.0033035278, y: 3.896354, z: 0.010081387}
 --- !u!114 &628137386613003633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyedVersion: {fileID: 1858883141607562, guid: 45b5304e551f96442bf32c31cf3e35a3, type: 3}
+  ExplodeEffect: {fileID: 5037663053501516404, guid: b2236e26df3b60948826213a25701ee5, type: 3}
 --- !u!114 &8751894020123283913
 MonoBehaviour:
   m_ObjectHideFlags: 0

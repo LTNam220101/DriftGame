@@ -1,50 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1384963558
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1384963559}
-  - component: {fileID: 1384963560}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1384963559
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1384963558}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.68, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 830584982288978072}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1384963560
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1384963558}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.9242506, z: 6.341337}
-  m_Center: {x: 0, y: 0.0378747, z: 0.10400295}
 --- !u!1 &372215402709780886
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,7 +431,6 @@ Transform:
   - {fileID: 830584982288926290}
   - {fileID: 6443983331064713440}
   - {fileID: 5612702029020688274}
-  - {fileID: 1384963559}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -521,7 +475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87c81f0e5b1a5843a131325097b53ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExplodeEffect: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
+  ExplodeEffect: {fileID: 5037663053501516404, guid: b2236e26df3b60948826213a25701ee5, type: 3}
   colliders:
     FRWheel: {fileID: 3602327124090948064}
     FLWheel: {fileID: 2195169482374323977}
@@ -540,20 +494,49 @@ MonoBehaviour:
     RLWheel: {fileID: 6484009469975808853}
   motorPower: 200
   steeringAngle: 8
-  MaxSpeed: 25
-  Traction: 1
+  MaxSpeed: 32
+  MinSpeed: 21
+  speed: 40
+  Traction: 0.5
   steeringInput: 0
   leftButton: {fileID: 0}
   rightButton: {fileID: 0}
   timer: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   playerControls:
-    m_Name: 
+    m_Name: Player Controls
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 02864560-4998-41ec-a2d6-abefbcab8e73
+    m_Id: 4fde77ed-b61d-4068-a911-898e8c9f66ee
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 1D Axis
+      m_Id: dad6306a-3af0-4d63-a845-9d846a7f654f
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 175dfdc4-d08d-45e0-b5c5-897fff0c95f0
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: c3fd89bc-9a5c-48d2-96c0-12cd43d34931
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
     m_Flags: 0
 --- !u!114 &8961773722646932122
 MonoBehaviour:

@@ -14,9 +14,13 @@ public class MainMenuController : MonoBehaviour
     public Text Record;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        Music = GameObject.FindWithTag("MainCamera").GetComponent<AudioSource>();
         float record = PlayerPrefs.GetFloat("record", 0);
+        bool music = PlayerPrefs.GetInt("isMute") == 1 ? true : false;
+        Music.mute = music;
+        MusicButton.text = Music.mute ? "SOUND: OFF" : "SOUND: ON";
         TimeSpan timePlaying = TimeSpan.FromSeconds(record);
         string timePlayingStr = "Record: " + timePlaying.ToString("mm':'ss'.'ff");
         Record.text = timePlayingStr;
@@ -28,7 +32,6 @@ public class MainMenuController : MonoBehaviour
         }else Play();*/
     }
 
-    // Update is called once per frame
     public void Play()
     {
         /*mainMenu.SetActive(false);
@@ -53,11 +56,17 @@ public class MainMenuController : MonoBehaviour
 
     public void ReturnMenu()
     {
+        Music.mute = true;
         SceneManager.LoadScene(1);
     }
 
     public void ToggleMute(){
         Music.mute = !Music.mute;
+        SaveMusicOption();
         MusicButton.text = Music.mute ? "SOUND: OFF" : "SOUND: ON";
+    }
+
+    public void SaveMusicOption() {
+        PlayerPrefs.SetInt("isMute", Music.mute ? 1 : 0);
     }
 }

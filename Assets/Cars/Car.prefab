@@ -650,7 +650,6 @@ Transform:
   - {fileID: 5660902640953167417}
   - {fileID: 2365379028477331016}
   - {fileID: 570642207599965449}
-  - {fileID: 4513388202214930679}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -727,21 +726,50 @@ MonoBehaviour:
     RRWheel: {fileID: 640582226006748959}
     RLWheel: {fileID: 8207463212426362338}
   motorPower: 200
-  steeringAngle: 8
-  MaxSpeed: 25
+  steeringAngle: 6
+  MaxSpeed: 30
+  MinSpeed: 20
+  speed: 40
   Traction: 1
   steeringInput: 0
   leftButton: {fileID: 0}
   rightButton: {fileID: 0}
   timer: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   playerControls:
     m_Name: Player Controls
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 3de47cb4-cf59-4eb4-80fc-bc0a6e6e584d
+    m_Id: 2de286df-5f1b-41b2-825e-437fb5d49426
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 1D Axis
+      m_Id: dad6306a-3af0-4d63-a845-9d846a7f654f
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 175dfdc4-d08d-45e0-b5c5-897fff0c95f0
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: c3fd89bc-9a5c-48d2-96c0-12cd43d34931
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
     m_Flags: 0
 --- !u!1 &5664902157047561827
 GameObject:
@@ -826,51 +854,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &6674532347347067511
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4513388202214930679}
-  - component: {fileID: 6285009346028504535}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4513388202214930679
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6674532347347067511}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5660834812065865819}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6285009346028504535
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6674532347347067511}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.1862335, z: 2.310292}
-  m_Center: {x: 0, y: 0.04143786, z: -0.055029996}
 --- !u!1 &9140233044125562805
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,11 +910,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4478323119664017976, guid: d3e718b34741ea244b24429fce29b479, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.011433223
+      value: 0.376
       objectReference: {fileID: 0}
     - target: {fileID: 4478323119664017976, guid: d3e718b34741ea244b24429fce29b479, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.15308021
+      value: 0.148
       objectReference: {fileID: 0}
     - target: {fileID: 4478323119664017976, guid: d3e718b34741ea244b24429fce29b479, type: 3}
       propertyPath: m_LocalPosition.z
@@ -994,11 +977,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4478323119664017976, guid: d3e718b34741ea244b24429fce29b479, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.7811337
+      value: -0.426
       objectReference: {fileID: 0}
     - target: {fileID: 4478323119664017976, guid: d3e718b34741ea244b24429fce29b479, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.15308021
+      value: 0.14800057
       objectReference: {fileID: 0}
     - target: {fileID: 4478323119664017976, guid: d3e718b34741ea244b24429fce29b479, type: 3}
       propertyPath: m_LocalPosition.z

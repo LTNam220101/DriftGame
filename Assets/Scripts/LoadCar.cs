@@ -12,6 +12,7 @@ public class LoadCar : MonoBehaviour
     public SpawnBuff spawnBuffController;
     private GameObject currentCar;
     private GameObject[] copColliders;
+    private Collider[] treeColliders;
 
     // Start is called before the first frame update
     IEnumerator Start()
@@ -27,7 +28,7 @@ public class LoadCar : MonoBehaviour
         while (true)
         {
             RaycastHit hit;
-            if (Physics.Raycast(startPoint, Vector3.down, out hit) && hit.point.y > TerrainController.Water.transform.position.y && hit.collider.CompareTag("Terrain")) {
+            if (Physics.Raycast(startPoint, Vector3.down, out hit) && hit.collider.CompareTag("Terrain")) {
                 currentCar = carPrefabs[selectedCar];
                 Vector3 newPosition = currentCar.transform.position;
                 newPosition.y = hit.point.y + 2;
@@ -61,16 +62,69 @@ public class LoadCar : MonoBehaviour
     {
         cam1.enabled = true;
         cam2.enabled = false;
-        Time.timeScale = 1f;
         spawnBuffController.isSpawning = true;
+    }
+    public void RestoreTimeScale()
+    {
+        Time.timeScale = 1f;
     }
     IEnumerator SwitchBackToThirdPersonView()
     {
         // Chờ 5 giây
         yield return new WaitForSeconds(5f);
-
         // Chuyển từ cam2 về cam1
         MakeThirdPersonView();
+        
+        // Chờ 1 giây
+        yield return new WaitForSeconds(1f);
+        RestoreTimeScale();
+    }
+
+    /// <summary>
+    // Go big
+    /// </summary>
+    /// <param name="GoBig">GoBig</param>
+    public void GoBig() {
+        currentCar.transform.localScale *= 2;
+        currentCar.GetComponent<Rigidbody>().mass = 10000f;
+        currentCar.tag = "BigPlayer";
+        spawnBuffController.isSpawning = false;
+        treeColliders = Physics.OverlapSphere(currentCar.transform.position, 500f);
+        // Duyệt qua tất cả các Collider
+        foreach (Collider collider in treeColliders)
+        {
+            // Kiểm tra xem Collider có tag là "Tree" không
+            if (collider.CompareTag("Tree"))
+            {
+                collider.isTrigger = true;
+            }
+        }
+        // Bắt đầu coroutine để chuyển lại sau 5 giây
+        StartCoroutine(SwitchBackToNormalSize());
+    }
+    public void MakeNormalSize()
+    {
+        currentCar.transform.localScale /= 2;
+        currentCar.GetComponent<Rigidbody>().mass = 1000f;
+        currentCar.tag = "Player";
+        spawnBuffController.isSpawning = true;
+        // Duyệt qua tất cả các Collider
+        foreach (Collider collider in treeColliders)
+        {
+            // Kiểm tra xem Collider có tag là "Tree" không
+            if (collider!=null && collider.CompareTag("Tree"))
+            {
+                collider.isTrigger = false;
+            }
+        }
+    }
+    IEnumerator SwitchBackToNormalSize()
+    {
+        // Chờ 7 giây
+        yield return new WaitForSeconds(7f);
+
+        // Chuyển từ cam2 về cam1
+        MakeNormalSize();
     }
 
     /// <summary>
@@ -85,5 +139,49 @@ public class LoadCar : MonoBehaviour
             cop.transform.localScale /= 3;
             cop.tag = "SmallCop";
         }
+    }
+
+    /// <summary>
+    //Nuclear
+    /// </summary>
+    /// <param name="Nuclear">Nuclear</param>
+    public void Nuclear(){
+        StartCoroutine(NuclearExplode());
+    }
+
+    IEnumerator NuclearExplode() {
+        // Chờ 2 giây
+        yield return new WaitForSeconds(2f);
+        treeColliders = Physics.OverlapSphere(currentCar.transform.position, 200f);
+        // Duyệt qua tất cả các Collider
+        foreach (Collider collider in treeColliders)
+        {
+            // Kiểm tra xem Collider có tag là "Tree" không
+            if (collider.CompareTag("Cop") || collider.CompareTag("SmallCop"))
+            {   
+                CopController controller= collider.GetComponent<CopController>();
+                if (controller != null)
+                {
+                    // Gọi phương thức Explode()
+                    controller.Explode();
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    //Slomo
+    /// </summary>
+    /// <param name="Slomo">Slomo</param>
+    public void Slomo(){
+        Time.timeScale = 0.25f;
+        StartCoroutine(SwitchBackToNormalTimeScale());
+    }
+
+    IEnumerator SwitchBackToNormalTimeScale()
+    {
+        // Chờ 3 giây
+        yield return new WaitForSeconds(3f);
+        RestoreTimeScale();
     }
 }

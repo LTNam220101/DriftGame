@@ -20,22 +20,30 @@ public class TreeController : MonoBehaviour
         if(other.gameObject.tag == "Player" || other.gameObject.tag == "Cop")
         {
             Explode();
+            //yield return new WaitForSeconds(2);
+            //SceneManager.LoadScene("Night");
+        } else if (other.gameObject.tag == "BigPlayer") {
+            Explode(true, 1);
         }
     }
     void OnTriggerEnter(Collider  other)
     {
         if(other.gameObject.tag == "Player" || other.gameObject.tag == "Cop")
         {
-            Explode(gameObject.GetComponent<Collider>().isTrigger ? true : false);
+            Explode();
+            //yield return new WaitForSeconds(2);
+            //SceneManager.LoadScene("Night");
+        } else if (other.gameObject.tag == "BigPlayer") {
+            Explode(true, 1);
         }
     }
 
-    void Explode(bool makeTrigger = false)
+    public void Explode(bool makeTrigger = false, int type = -1)
     {
         Destructable dest = gameObject.GetComponent<Destructable>();
         if(dest != null)
         {
-            dest.DestroyObject(makeTrigger);
+            dest.DestroyObject(makeTrigger, type);
         }
 
         // var rbs = GetComponentsInChildren<Rigidbody>();

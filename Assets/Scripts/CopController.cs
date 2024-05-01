@@ -16,8 +16,9 @@ public class CopController : MonoBehaviour
 
     public TimerController timer;
     // Settings
-    public float MoveSpeed = 40;
     public float MaxSpeed = 30;
+    public float MinSpeed = 30;
+    private float speed = 30;
     public float SteerAngle = 8;
     private float Traction = 1;
     
@@ -28,7 +29,7 @@ public class CopController : MonoBehaviour
     public float detectAngle = 5;
 
     [Tooltip("The forward distance of the obstacle detection area for this AI car")]
-    public float detectDistance = 20;
+    public float detectDistance = 10;
 
     [Tooltip("Make AI cars try to avoid obstacles. Obstacle are objects that have the ECCObstacle component attached to them")]
     public bool avoidObstacles = true;
@@ -43,7 +44,7 @@ public class CopController : MonoBehaviour
     {
         if(Player != null)
         {
-            MoveForce += transform.forward * MoveSpeed * Time.deltaTime;
+            MoveForce += transform.forward * speed * Time.deltaTime;
             transform.position += MoveForce * Time.deltaTime;
 
             // Cast two raycasts to either side of the AI car so that we can detect obstacles
@@ -81,7 +82,7 @@ public class CopController : MonoBehaviour
                 }
             }
 
-            if (MaxSpeed > 0) {
+            if (speed > 0) {
                 float a = steeringInput > 0 ? 1 : -1;
                 transform.Rotate(Vector3.up * steeringInput * steeringInput * a * MoveForce.magnitude * SteerAngle * Time.deltaTime);
                 transform.eulerAngles = new Vector3(
@@ -99,7 +100,7 @@ public class CopController : MonoBehaviour
 
             colliders.FRWheel.steerAngle = steeringInput * 25;
             colliders.FLWheel.steerAngle = steeringInput * 25;
-            MoveForce = Vector3.ClampMagnitude(MoveForce, MaxSpeed);
+            MoveForce = Vector3.ClampMagnitude(MoveForce, speed);
 
             MoveForce = Vector3.Lerp(MoveForce.normalized, transform.forward, Traction * Time.deltaTime) * MoveForce.magnitude;
         
@@ -119,7 +120,7 @@ public class CopController : MonoBehaviour
     }
 
     void CheckParticles() {
-        if (steeringInput != 0f && MaxSpeed > 0)
+        if (steeringInput != 0f && speed > 0)
         {
             trails.RLWheel.emitting = true;
             trails.RRWheel.emitting = true;
@@ -145,50 +146,33 @@ public class CopController : MonoBehaviour
             steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.25f);
         }
         if(steeringInput >= -0.1f && steeringInput <= 0.1f) steeringInput = 0.0f;
-        MaxSpeed = 32 - 12 * Mathf.Abs(steeringInput);
+        speed = MaxSpeed - (MaxSpeed - MinSpeed) * Mathf.Abs(steeringInput);
     }
 
     void OnCollisionEnter(Collision other)
     {
-        if (gameObject.tag == "Cop" && (other.gameObject.tag == "Cop" || other.gameObject.tag == "Tree" || other.gameObject.tag == "Player"))
-        {
-            Explode(); 
-        }if (gameObject.tag == "SmallCop" && (other.gameObject.tag == "Player" || other.gameObject.tag == "Cop" || other.gameObject.tag == "Tree" || other.gameObject.tag == "SmallCop")) {
-            Explode(true); 
-        } 
-    }
-    void OnTriggerEnter(Collider collisionInfo)
-    {
-        if(collisionInfo.gameObject.tag == "Ice"){	
-            Traction = 0.01f;
+        if (gameObject.tag == "Cop") {
+            if (other.gameObject.tag == "Cop" || other.gameObject.tag == "Tree" || other.gameObject.tag == "Player")
+            {
+                Explode(); 
+            }if(other.gameObject.tag == "BigPlayer"){
+                Explode(false, 2);
+            }
         }
-        if (collisionInfo.gameObject.tag == "Terrain")
-        {
-            Traction = 1f;
-        }
-    }
-    void OnTriggerExit(Collider collisionInfo)
-    {
-        // if(collisionInfo.gameObject.tag == "Ice"){
-            // Traction = 1f;
-            // MaxSpeed = 30;
-        // }
-        if(collisionInfo.gameObject.tag == "Terrain")
-        {
-            MaxSpeed = 0;
+        if (gameObject.tag == "SmallCop" && (other.gameObject.tag == "BigPlayer" || other.gameObject.tag == "Player" || other.gameObject.tag == "Cop" || other.gameObject.tag == "Tree" || other.gameObject.tag == "SmallCop")) {
+            Explode(false, 0);
         }
     }
 
-    void Explode(bool makeTrigger = false)
+    public void Explode(bool makeTrigger = false, int type = -1)
     {
-        MaxSpeed = 0;
-        MoveSpeed = 0;
+        speed = 0;
         SteerAngle = 0;
         GameObject explodeEffect = Instantiate(ExplodeEffect, transform.position, transform.rotation);
         Destructable dest = gameObject.GetComponent<Destructable>();
         if (dest != null)
         {
-            dest.DestroyObject(makeTrigger);
+            dest.DestroyObject(makeTrigger, type);
             Destroy(explodeEffect, 2);
         }
     }

@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/selection.unity
     guid: c86d41670f8381f45abe71ac469821ac
   - enabled: 1
-    path: Assets/Scenes/Night.unity
+    path: Assets/Scenes/Wood.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/City.unity
+    guid: 3380c89e331258b4287c82c1fc92cb55
+  - enabled: 1
+    path: Assets/Scenes/City Ice.unity
+    guid: fcf59436514826c44990fa88bb38e806
   m_configObjects: {}

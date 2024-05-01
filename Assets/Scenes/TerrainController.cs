@@ -70,6 +70,7 @@ public class TerrainController : MonoBehaviour {
     }
 
     private void Start() {
+        seed = Random.Range(0, 40);
         InitialLoad();
     }
 
@@ -136,7 +137,7 @@ public class TerrainController : MonoBehaviour {
         }
 
         previousCenterTiles = centerTiles.ToArray();
-}
+    }
     }
 
     //Helper methods below

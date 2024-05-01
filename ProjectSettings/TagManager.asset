@@ -9,11 +9,13 @@ TagManager:
   - Tree
   - Cop
   - Buff
+  - BigPlayer
+  - SmallCop
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Terrain
   - Water
   - UI
   - 

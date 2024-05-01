@@ -356,11 +356,11 @@ GameObject:
   - component: {fileID: 2920119505279956305}
   - component: {fileID: 2953922087992071419}
   - component: {fileID: 2944106775331752793}
-  - component: {fileID: 1246814972873040227}
-  - component: {fileID: 5295765450772953321}
+  - component: {fileID: 2584426135035289247}
+  - component: {fileID: 6981935153058356023}
   m_Layer: 0
   m_Name: police_car
-  m_TagString: Player
+  m_TagString: Cop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -373,7 +373,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2921874265474380075}
   m_LocalRotation: {x: 0.000000021855694, y: -0.00000008742278, z: 1.9106855e-15, w: 1}
-  m_LocalPosition: {x: -0.00000018310541, y: 0.00000007629395, z: -0.000000366211}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -430,7 +430,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &1246814972873040227
+--- !u!65 &2584426135035289247
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2921874265474380075}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0067072, y: 0.5871669, z: 2.3394804}
+  m_Center: {x: 0.00000023841858, y: 0.42301202, z: -0.000000059604645}
+--- !u!54 &6981935153058356023
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -446,19 +459,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &5295765450772953321
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2921874265474380075}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0067072, y: 0.5871669, z: 2.3394804}
-  m_Center: {x: 0.00000023841858, y: 0.42301202, z: -0.000000059604645}
 --- !u!1 &2922196080687437655
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 2925419278744945639}
   m_Layer: 0
   m_Name: Police_car Explode
-  m_TagString: Cop
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

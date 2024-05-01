@@ -12,10 +12,11 @@ public class CarController : MonoBehaviour
     public WheelParticles wheelParticles;
     public WheelTrails wheelTrails;
     public float motorPower = 200;
-    private float speed = 40;
     public float steeringAngle = 8;
 
     public float MaxSpeed = 30;
+    public float MinSpeed = 30;
+    public float speed = 40;
     public float Traction = 1;
 
     public float steeringInput;
@@ -27,6 +28,8 @@ public class CarController : MonoBehaviour
     public MyButton rightButton;
 
     public TimerController timer;
+
+    public LayerMask groundLayer;
 
     public InputAction playerControls;
 
@@ -69,12 +72,12 @@ public class CarController : MonoBehaviour
             currentAxisValue =-1;
         }
         if(steeringInput < currentAxisValue){
-            steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.125f);
+            steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.25f);
         }
         else {
             steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.25f);
         }
-        MaxSpeed = 30 - 10 * Mathf.Abs(steeringInput);
+        speed = MaxSpeed - (MaxSpeed - MinSpeed) * Mathf.Abs(steeringInput);
     }
     void ApplyMotor() {
 
@@ -82,14 +85,14 @@ public class CarController : MonoBehaviour
         colliders.RLWheel.motorTorque = motorPower;
         MoveForce += transform.forward * speed * Time.deltaTime;
         transform.position += MoveForce * Time.deltaTime;
-        MoveForce = Vector3.ClampMagnitude(MoveForce, MaxSpeed);
+        MoveForce = Vector3.ClampMagnitude(MoveForce, speed);
         MoveForce = Vector3.Lerp(MoveForce.normalized, transform.forward, Traction * Time.deltaTime) * MoveForce.magnitude;
     }
     void ApplySteering()
     {
         colliders.FRWheel.steerAngle = steeringInput * 25;
         colliders.FLWheel.steerAngle = steeringInput * 25;
-        if (MaxSpeed > 0)
+        if (speed > 0)
         {
         float a = steeringInput > 0 ? 1 : -1;
         transform.Rotate(Vector3.up * steeringInput * steeringInput * a * MoveForce.magnitude * steeringAngle * Time.deltaTime);
@@ -109,7 +112,7 @@ public class CarController : MonoBehaviour
         UpdateWheel(colliders.RLWheel, wheelMeshes.RLWheel);
     }
     void CheckParticles() {
-        if(steeringInput != 0f && MaxSpeed > 0)
+        if(steeringInput != 0f && speed > 0)
         {
             wheelParticles.RRWheel.Play();
             wheelTrails.RRWheel.emitting = true;
@@ -144,31 +147,9 @@ public class CarController : MonoBehaviour
             }
         }
     }
-    void OnTriggerEnter(Collider collisionInfo)
-    {
-        if(collisionInfo.gameObject.tag == "Ice"){	
-            Traction = 0.01f;
-            MaxSpeed = 30;
-        }
-        if (collisionInfo.gameObject.tag == "Terrain")
-        {
-            MaxSpeed = 30;
-        }
-    }
-    void OnTriggerExit(Collider collisionInfo)
-    {
-        if(collisionInfo.gameObject.tag == "Ice"){
-            Traction = 1f;
-            MaxSpeed = 30;
-        }
-        if(collisionInfo.gameObject.tag == "Terrain")
-        {
-            MaxSpeed = 0;
-        }
-    }
+
     void Explode()
     {
-        MaxSpeed = 0;
         speed = 0;
         GameObject explodeEffect = Instantiate(ExplodeEffect, transform.position, transform.rotation);
         Destructable dest = gameObject.GetComponent<Destructable>();

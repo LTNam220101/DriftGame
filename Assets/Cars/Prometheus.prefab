@@ -368,7 +368,6 @@ Transform:
   - {fileID: 1786890581161975381}
   - {fileID: 9078761222988697412}
   - {fileID: 2680166120370445212}
-  - {fileID: 5005398736471325148}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -380,7 +379,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3303392061976488254}
   serializedVersion: 2
-  m_Mass: 950
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -445,21 +444,50 @@ MonoBehaviour:
     RRWheel: {fileID: 4969533497970722370}
     RLWheel: {fileID: 4969533495991530628}
   motorPower: 200
-  steeringAngle: 8
-  MaxSpeed: 25
+  steeringAngle: 6
+  MaxSpeed: 32
+  MinSpeed: 22
+  speed: 40
   Traction: 1
   steeringInput: 0
   leftButton: {fileID: 0}
   rightButton: {fileID: 0}
   timer: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   playerControls:
-    m_Name: 
+    m_Name: Player Controls
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: c87ae205-7434-4c01-943e-b22ac723c288
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 1D Axis
+      m_Id: dad6306a-3af0-4d63-a845-9d846a7f654f
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 175dfdc4-d08d-45e0-b5c5-897fff0c95f0
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: c3fd89bc-9a5c-48d2-96c0-12cd43d34931
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
     m_Flags: 0
 --- !u!1 &3950125264435230907
 GameObject:
@@ -770,51 +798,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6450073219194271760}
   m_Mesh: {fileID: -3298800115395149385, guid: 8ef3dc744ab293d4ea87fd4c59a15afd, type: 3}
---- !u!1 &6457060982233841419
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5005398736471325148}
-  - component: {fileID: 1658550601985423131}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5005398736471325148
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6457060982233841419}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2779795436104610692}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1658550601985423131
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6457060982233841419}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.9999998, y: 0.5918031, z: 5.357099}
-  m_Center: {x: 0, y: 0.20409815, z: -0.15655887}
 --- !u!1 &6710615938134931009
 GameObject:
   m_ObjectHideFlags: 0

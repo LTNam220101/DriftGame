@@ -566,6 +566,7 @@ GameObject:
   - component: {fileID: 7382408615726444072}
   - component: {fileID: 4378325830752927036}
   - component: {fileID: -1293066343127667176}
+  - component: {fileID: 3348515359664509105}
   m_Layer: 0
   m_Name: Police_car
   m_TagString: Cop
@@ -588,6 +589,7 @@ Transform:
   - {fileID: 2920119505279956305}
   - {fileID: 8247767833854018792}
   - {fileID: 4106134666856816207}
+  - {fileID: 118749364786707479}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -602,8 +604,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.525645, z: 2.2931397}
-  m_Center: {x: 0, y: 0.40737376, z: -0.0164788}
+  m_Size: {x: 1, y: 0.62, z: 2.2931397}
+  m_Center: {x: 0, y: 0.35, z: -0.0164788}
 --- !u!54 &7382408615726444072
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -633,15 +635,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders:
-    FRWheel: {fileID: 8620287152530980600, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
-    FLWheel: {fileID: 6352801246645708817, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
-    RRWheel: {fileID: 3173153950418192552, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
-    RLWheel: {fileID: 8133941616491239478, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
+    FRWheel: {fileID: 7476292965377109535}
+    FLWheel: {fileID: 6455760191578015605}
+    RRWheel: {fileID: 2613560688787928651}
+    RLWheel: {fileID: 614853225012269016}
   wheelMeshes:
-    FRWheel: {fileID: 5609713499433497910, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
-    FLWheel: {fileID: 5609713499433478490, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
-    RRWheel: {fileID: 5609713499433719028, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
-    RLWheel: {fileID: 5609713499433480882, guid: b347f9b9cf516f740b4c0cc5ebdd4142, type: 3}
+    FRWheel: {fileID: 2944003799760561623}
+    FLWheel: {fileID: 2944420985366144079}
+    RRWheel: {fileID: 2943855698748285331}
+    RLWheel: {fileID: 2943627686892258179}
   trails:
     RRWheel: {fileID: 5334760890270992388}
     RLWheel: {fileID: 8031900008547340978}
@@ -672,6 +674,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyedVersion: {fileID: 2922196080687437655, guid: 6fd699453ed83dd42b92741b637a3ea5, type: 3}
   ExplodeEffect: {fileID: 5037663053501516404, guid: b2236e26df3b60948826213a25701ee5, type: 3}
+--- !u!136 &3348515359664509105
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922196080687437655}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.12
+  m_Height: 2.49
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.13, z: 0.03}
 --- !u!1 &2922319791782909889
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,6 +833,51 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
+--- !u!1 &7453802148084925872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 118749364786707479}
+  - component: {fileID: 7474218312526037110}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &118749364786707479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7453802148084925872}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2925419278744945639}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7474218312526037110
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7453802148084925872}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.3326, z: 2.2689}
+  m_Center: {x: 0, y: 0.10182146, z: -0.001}
 --- !u!1 &8139299181178121251
 GameObject:
   m_ObjectHideFlags: 0

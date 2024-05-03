@@ -29,8 +29,6 @@ public class CarController : MonoBehaviour
 
     public TimerController timer;
 
-    public LayerMask groundLayer;
-
     public InputAction playerControls;
 
     private void OnEnable(){

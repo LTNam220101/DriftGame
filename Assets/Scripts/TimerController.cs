@@ -46,7 +46,7 @@ public class TimerController : MonoBehaviour
         Invoke(nameof(RestartGame), 4);
     }
     void RestartGame(){
-        SceneManager.LoadScene("City");  
+        SceneManager.LoadScene(3);  
     }
 
     private IEnumerator UpdateTimer()

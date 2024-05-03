@@ -346,6 +346,7 @@ GameObject:
   - component: {fileID: 2123961128139573401}
   - component: {fileID: 1009438275444767459}
   - component: {fileID: 2208327720108174554}
+  - component: {fileID: 4809973312473778894}
   m_Layer: 0
   m_Name: Prometheus
   m_TagString: Player
@@ -368,6 +369,7 @@ Transform:
   - {fileID: 1786890581161975381}
   - {fileID: 9078761222988697412}
   - {fileID: 2680166120370445212}
+  - {fileID: 2467365353914596164}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -398,8 +400,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9999998, y: 1.0871422, z: 5.299266}
-  m_Center: {x: 0, y: 0.83603686, z: 0.008142149}
+  m_Size: {x: 1.83, y: 1.42, z: 5.299266}
+  m_Center: {x: 0, y: 0.86, z: 0.008142149}
 --- !u!114 &1009438275444767459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,9 +455,6 @@ MonoBehaviour:
   leftButton: {fileID: 0}
   rightButton: {fileID: 0}
   timer: {fileID: 0}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
   playerControls:
     m_Name: Player Controls
     m_Type: 0
@@ -489,6 +488,20 @@ MonoBehaviour:
       m_Action: Player Controls
       m_Flags: 8
     m_Flags: 0
+--- !u!136 &4809973312473778894
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3303392061976488254}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.24
+  m_Height: 5.49
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.27, z: 0}
 --- !u!1 &3950125264435230907
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,6 +709,51 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
+--- !u!1 &5312386284473427132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2467365353914596164}
+  - component: {fileID: 8758902071924130638}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2467365353914596164
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5312386284473427132}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2779795436104610692}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8758902071924130638
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5312386284473427132}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5918, z: 5.357}
+  m_Center: {x: 0, y: 0.204, z: -0.1565}
 --- !u!1 &6049344349289990535
 GameObject:
   m_ObjectHideFlags: 0

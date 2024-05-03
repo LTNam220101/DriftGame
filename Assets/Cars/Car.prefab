@@ -283,6 +283,51 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
+--- !u!1 &3765186923477471211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1469914445749784987}
+  - component: {fileID: 3772921790678954071}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1469914445749784987
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3765186923477471211}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 5660834812065865819}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3772921790678954071
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3765186923477471211}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.1862, z: 2.3102}
+  m_Center: {x: 0, y: 0.0414, z: -0.055}
 --- !u!1 &5663925707745805033
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,6 +673,7 @@ GameObject:
   - component: {fileID: 8676530888961772102}
   - component: {fileID: 7359577094822832689}
   - component: {fileID: 564942557717108172}
+  - component: {fileID: 926519198114607753}
   m_Layer: 0
   m_Name: Car
   m_TagString: Player
@@ -650,6 +696,7 @@ Transform:
   - {fileID: 5660902640953167417}
   - {fileID: 2365379028477331016}
   - {fileID: 570642207599965449}
+  - {fileID: 1469914445749784987}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -680,8 +727,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.45512712, z: 2.3829348}
-  m_Center: {x: 0, y: 0.37194586, z: 0.0083580995}
+  m_Size: {x: 1, y: 0.62, z: 2.3829348}
+  m_Center: {x: 0, y: 0.31, z: 0.0083580995}
 --- !u!114 &7359577094822832689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,9 +782,6 @@ MonoBehaviour:
   leftButton: {fileID: 0}
   rightButton: {fileID: 0}
   timer: {fileID: 0}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
   playerControls:
     m_Name: Player Controls
     m_Type: 0
@@ -771,6 +815,20 @@ MonoBehaviour:
       m_Action: Player Controls
       m_Flags: 8
     m_Flags: 0
+--- !u!136 &926519198114607753
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5664340631319491819}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.13
+  m_Height: 2.68
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!1 &5664902157047561827
 GameObject:
   m_ObjectHideFlags: 0

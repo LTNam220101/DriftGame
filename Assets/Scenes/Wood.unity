@@ -152,7 +152,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &105513878
 PrefabInstance:
@@ -264,7 +264,7 @@ Transform:
   - {fileID: 922718307}
   - {fileID: 974945003}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &122289880
 GameObject:
@@ -547,7 +547,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.040336452, y: 0.91472}
   m_AnchorMax: {x: 0.27888477, y: 0.97276026}
-  m_AnchoredPosition: {x: -0.50001526, y: -6}
+  m_AnchoredPosition: {x: -0.5, y: -6}
   m_SizeDelta: {x: 3, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &413063026
@@ -717,7 +717,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.7775454, g: 0.9242233, b: 0.9528302, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -781,7 +781,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: 60, z: 0}
 --- !u!1 &761227168
 GameObject:
@@ -2715,18 +2715,18 @@ MonoBehaviour:
   terrainSize: {x: 30, y: 40, z: 30}
   gradient:
     serializedVersion: 2
-    key0: {r: 0.5529412, g: 0.41176474, b: 0.2627451, a: 1}
-    key1: {r: 0.3207547, g: 0.21697149, b: 0.107422575, a: 1}
-    key2: {r: 0.1454916, g: 0.254717, b: 0.08530617, a: 1}
-    key3: {r: 0.12981175, g: 0.31341624, b: 0.09361266, a: 0}
-    key4: {r: 0.11021136, g: 0.38679248, b: 0.10399608, a: 0}
-    key5: {r: 0.2784314, g: 0.47058824, b: 0.17254902, a: 0}
+    key0: {r: 0.28627452, g: 0.18039216, b: 0.15686275, a: 1}
+    key1: {r: 0.5529412, g: 0.41176474, b: 0.2627451, a: 1}
+    key2: {r: 0.14487235, g: 0.24528301, b: 0.08908863, a: 1}
+    key3: {r: 0.007843138, g: 0.3764706, b: 0.24705882, a: 0}
+    key4: {r: 0.26666668, g: 0.70980394, b: 0.5529412, a: 0}
+    key5: {r: 0.26666668, g: 0.70980394, b: 0.5529412, a: 0}
     key6: {r: 0.2784314, g: 0.47058824, b: 0.17254902, a: 0}
     key7: {r: 0.54509807, g: 0.90588236, b: 0.49019608, a: 0}
-    ctime0: 3084
-    ctime1: 13107
-    ctime2: 27371
-    ctime3: 54548
+    ctime0: 4626
+    ctime1: 8674
+    ctime2: 18890
+    ctime3: 54934
     ctime4: 65535
     ctime5: 65535
     ctime6: 65535
@@ -2740,7 +2740,7 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
-    m_NumColorKeys: 5
+    m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   noiseScale: 0.2
   cellSize: 5
@@ -2996,7 +2996,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.040336452, y: 0.9122002}
   m_AnchorMax: {x: 0.27888477, y: 0.95500004}
-  m_AnchoredPosition: {x: -1.0000153, y: -51}
+  m_AnchoredPosition: {x: -1, y: -51}
   m_SizeDelta: {x: 2, y: 44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2114887288

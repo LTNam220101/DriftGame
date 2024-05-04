@@ -13,7 +13,6 @@ public class CharacterSelection : MonoBehaviour
 		carUnlocked /= 60;
 		if(carUnlocked == 0) carUnlocked = 1;
 		if(carUnlocked > 4) carUnlocked = 4;
-carUnlocked = 4;
 	}
 
 	public void NextCharacter()
@@ -39,7 +38,7 @@ carUnlocked = 4;
 		PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
 		SceneManager.LoadScene(2, LoadSceneMode.Single);
 	}
-public void Back()
+	public void Back()
 	{
 		SceneManager.LoadScene(0, LoadSceneMode.Single);
 	}

@@ -22,7 +22,7 @@ public class MapDisplay : MonoBehaviour
         mapName.color = _newMap.nameColor;
         mapImage.sprite = _newMap.mapImage;
 
-        bool mapUnlocked = PlayerPrefs.GetInt("mapUnlocked", 1) >= _newMap.levelIndex;
+        bool mapUnlocked = PlayerPrefs.GetInt("mapUnlocked", 3) >= _newMap.levelIndex;
 
         if (mapUnlocked)
             mapImage.color = Color.white;
@@ -36,6 +36,7 @@ public class MapDisplay : MonoBehaviour
 
     public void LoadLevel()
     {
+		PlayerPrefs.SetInt("currentMapIndex", currentLevelIndex);
         SceneManager.LoadScene(currentLevelIndex);
     }
 }

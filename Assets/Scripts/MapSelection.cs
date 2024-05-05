@@ -46,7 +46,7 @@ public class MapSelection : MonoBehaviour
 	public void StartGame()
 	{
 		PlayerPrefs.SetInt("currentMapIndex", currentMapIndex);
-		SceneManager.LoadScene(3, LoadSceneMode.Single);
+		SceneManager.LoadScene(currentMapIndex, LoadSceneMode.Single);
 	}
     public void Back()
 	{

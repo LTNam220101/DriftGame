@@ -586,6 +586,7 @@ GameObject:
   - component: {fileID: 5773632704581572132}
   - component: {fileID: 7462407199946873217}
   - component: {fileID: 4641870389175545163}
+  - component: {fileID: 5662451090865306409}
   m_Layer: 0
   m_Name: towerRound_crystals_destroyed
   m_TagString: Tree
@@ -666,6 +667,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5662451090865306409
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6587571044072672414}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.999999, y: 2.0999997, z: 9.999999}
+  m_Center: {x: 0, y: 1.0499998, z: 0}
 --- !u!1 &7519622531656545004
 GameObject:
   m_ObjectHideFlags: 0

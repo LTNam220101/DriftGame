@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028498, g: 0.22571546, b: 0.3069237, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028517, g: 0.22571571, b: 0.3069232, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -469,7 +469,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -1555,7 +1555,7 @@ GameObject:
   - component: {fileID: 1879704820}
   - component: {fileID: 1879704819}
   m_Layer: 5
-  m_Name: ' Start'
+  m_Name: Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1689,7 +1689,7 @@ GameObject:
   - component: {fileID: 1920384684}
   - component: {fileID: 1920384683}
   m_Layer: 5
-  m_Name: ' Start (1)'
+  m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028498, g: 0.22571546, b: 0.3069237, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028517, g: 0.22571571, b: 0.3069232, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -405,6 +405,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scriptableObjects:
   - {fileID: 11400000, guid: d02169127fa8b95489ca17aba7bfbcfb, type: 2}
+  - {fileID: 11400000, guid: 28a1201dd4af2604dbc1d33e649f0e5a, type: 2}
+  - {fileID: 11400000, guid: 190df998270cccd4eafe5fc4bcf3485d, type: 2}
   mapDisplay: {fileID: 870812029}
 --- !u!114 &870812029
 MonoBehaviour:
@@ -450,7 +452,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -1474,9 +1476,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 870812028}
-        m_TargetAssemblyTypeName: MapSelection, Assembly-CSharp
-        m_MethodName: StartGame
+      - m_Target: {fileID: 870812029}
+        m_TargetAssemblyTypeName: MapDisplay, Assembly-CSharp
+        m_MethodName: LoadLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

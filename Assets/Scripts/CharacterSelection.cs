@@ -10,7 +10,7 @@ public class CharacterSelection : MonoBehaviour
 	public void Start()
 	{
 		carUnlocked = (int)PlayerPrefs.GetFloat("record", 0);
-		carUnlocked /= 60;
+		carUnlocked = carUnlocked/60 + 1;
 		if(carUnlocked == 0) carUnlocked = 1;
 		if(carUnlocked > 4) carUnlocked = 4;
 	}

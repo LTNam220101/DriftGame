@@ -118,6 +118,9 @@ MonoBehaviour:
   pickupEffect: {fileID: 0}
   randomRotation: 360
   rotationSpeed: 30
+  controllerObj: {fileID: 0}
+  loadCarComponent: {fileID: 0}
+  pickupSound: {fileID: 0}
 --- !u!95 &-2330745353094560509
 Animator:
   serializedVersion: 5

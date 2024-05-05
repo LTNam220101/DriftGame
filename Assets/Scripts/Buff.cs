@@ -33,9 +33,13 @@ public class Buff : MonoBehaviour
         loadCarComponent = controllerObj.GetComponent<LoadCar>();
     }
 
-    void Update()
+    // Function to play the pickup sound
+    void PlayPickupSound()
     {
-        // transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+        if (loadCarComponent.BuffMusic != null && loadCarComponent.BuffMusic.clip != null)
+        {
+            loadCarComponent.BuffMusic.Play();
+        }
     }
 
     /// <summary>
@@ -67,6 +71,7 @@ public class Buff : MonoBehaviour
                 }
             }
 
+            PlayPickupSound();
             // If there is a pick up effect, create it
             if (pickupEffect) Instantiate(pickupEffect, transform.position, transform.rotation);
             

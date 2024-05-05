@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.UI;
 
 public class LoadCar : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class LoadCar : MonoBehaviour
     private GameObject currentCar;
     private GameObject[] copColliders;
     private Collider[] treeColliders;
+
+    public Slider waitSlider; // Slider để hiển thị thời gian đợi
+    public Image fillSlider; 
+    
+    public AudioSource BuffMusic;
 
     // Start is called before the first frame update
     IEnumerator Start()
@@ -71,7 +77,8 @@ public class LoadCar : MonoBehaviour
     IEnumerator SwitchBackToThirdPersonView()
     {
         // Chờ 5 giây
-        yield return new WaitForSeconds(5f);
+        
+        yield return calculateTime(5f);
         // Chuyển từ cam2 về cam1
         MakeThirdPersonView();
         
@@ -121,7 +128,8 @@ public class LoadCar : MonoBehaviour
     IEnumerator SwitchBackToNormalSize()
     {
         // Chờ 7 giây
-        yield return new WaitForSeconds(7f);
+        
+        yield return calculateTime(7f);
 
         // Chuyển từ cam2 về cam1
         MakeNormalSize();
@@ -151,7 +159,7 @@ public class LoadCar : MonoBehaviour
 
     IEnumerator NuclearExplode() {
         // Chờ 2 giây
-        yield return new WaitForSeconds(2f);
+        yield return calculateTime(2f);
         treeColliders = Physics.OverlapSphere(currentCar.transform.position, 200f);
         // Duyệt qua tất cả các Collider
         foreach (Collider collider in treeColliders)
@@ -181,7 +189,26 @@ public class LoadCar : MonoBehaviour
     IEnumerator SwitchBackToNormalTimeScale()
     {
         // Chờ 3 giây
-        yield return new WaitForSeconds(3f);
+        yield return calculateTime(3f);
         RestoreTimeScale();
+    }
+
+    IEnumerator calculateTime(float waitTime) {
+        waitSlider.gameObject.SetActive(true);
+        float elapsedTime = 0f; // Thời gian đã trôi qua
+
+        while (elapsedTime < waitTime)
+        {
+            elapsedTime += Time.deltaTime;
+            // Cập nhật giá trị của Slider từ 0 đến 1 dựa trên thời gian đã trôi qua và thời gian chờ mong muốn
+            waitSlider.value = elapsedTime / waitTime;
+            if(elapsedTime / waitTime >= 0.8f) {
+                fillSlider.color = Color.red;
+            }else {
+                fillSlider.color = Color.white;
+            }
+            yield return null; // Chờ một frame
+        }
+        waitSlider.gameObject.SetActive(false);
     }
 }

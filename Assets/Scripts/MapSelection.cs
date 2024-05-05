@@ -11,6 +11,8 @@ public class MapSelection : MonoBehaviour
 	// public Image[] maps;
 	// int mapUnlocked;
     private int currentMapIndex = 0;
+    
+    public AudioClip PlaygroundMusic;
 
     // // Start is called before the first frame update
     // void Start()
@@ -44,9 +46,14 @@ public class MapSelection : MonoBehaviour
 	}
 
 	public void StartGame()
-	{
-		PlayerPrefs.SetInt("currentMapIndex", currentMapIndex);
-		SceneManager.LoadScene(currentMapIndex, LoadSceneMode.Single);
+	{   
+        bool isMute = PlayerPrefs.GetInt("isMute") == 1 ? true : false;
+        AudioSource Music = GameObject.FindWithTag("MainCamera").GetComponent<AudioSource>();
+        Music.clip = PlaygroundMusic;
+        Music.mute = isMute;
+        Music.Play();
+		PlayerPrefs.SetInt("currentMapIndex", currentMapIndex + 3);
+		SceneManager.LoadScene(currentMapIndex + 3, LoadSceneMode.Single);
 	}
     public void Back()
 	{

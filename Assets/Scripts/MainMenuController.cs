@@ -10,26 +10,31 @@ public class MainMenuController : MonoBehaviour
     public GameObject mainMenu;
     public GameObject PauseButton;
     public AudioSource Music;
+    public AudioClip MenuMusic;
     public Text MusicButton;
     public Text Record;
 
-    // Start is called before the first frame update
-    void Awake()
-    {
+    private void Awake(){
+        Music = GameObject.FindWithTag("MainCamera").GetComponent<AudioSource>();
+        if(MusicButton) MusicButton.text = Music.mute ? "SOUND: OFF" : "SOUND: ON";
+    }
+
+    public void InitScene(AudioClip clip) {
         Music = GameObject.FindWithTag("MainCamera").GetComponent<AudioSource>();
         float record = PlayerPrefs.GetFloat("record", 0);
-        bool music = PlayerPrefs.GetInt("isMute") == 1 ? true : false;
-        Music.mute = music;
-        MusicButton.text = Music.mute ? "SOUND: OFF" : "SOUND: ON";
+        bool isMute = PlayerPrefs.GetInt("isMute") == 1 ? true : false;
+        Music.clip = clip;
+        Music.mute = isMute;
+        Music.Play();
+        SaveMusicOption();
+        if(MusicButton) MusicButton.text = Music.mute ? "SOUND: OFF" : "SOUND: ON";
         TimeSpan timePlaying = TimeSpan.FromSeconds(record);
         string timePlayingStr = "Record: " + timePlaying.ToString("mm':'ss'.'ff");
-        Record.text = timePlayingStr;
-        /*string s = PlayerPrefs.GetString("autostart");
-        // Nếu chuỗi string null hoặc rỗng thì sẽ tạo một data mới với các giá trị mặc định
-        if (string.IsNullOrEmpty(s))
-        {
-            Time.timeScale = 0f;
-        }else Play();*/
+        if(Record) Record.text = timePlayingStr;
+    }
+
+    public void InitMenuScene(){
+        InitScene(MenuMusic);
     }
 
     public void Play()
@@ -56,11 +61,12 @@ public class MainMenuController : MonoBehaviour
 
     public void ReturnMenu()
     {
-        Music.mute = true;
-        SceneManager.LoadScene(1);
+        InitMenuScene();
+        SceneManager.LoadScene(2);
     }
 
     public void ToggleMute(){
+        Music = GameObject.FindWithTag("MainCamera").GetComponent<AudioSource>();
         Music.mute = !Music.mute;
         SaveMusicOption();
         MusicButton.text = Music.mute ? "SOUND: OFF" : "SOUND: ON";

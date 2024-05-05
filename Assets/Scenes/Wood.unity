@@ -2819,6 +2819,7 @@ MonoBehaviour:
   mainMenu: {fileID: 1851147327}
   PauseButton: {fileID: 2051391470}
   Music: {fileID: 963194230}
+  MenuMusic: {fileID: 8300000, guid: 35454a1d651ddba4eb7e6eca8896f7cb, type: 3}
   MusicButton: {fileID: 1729820992}
   Record: {fileID: 1088347447}
 --- !u!1 &2014744668
@@ -3370,7 +3371,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7f196c1c4ba42ee42bd060d7bf2e20b6, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

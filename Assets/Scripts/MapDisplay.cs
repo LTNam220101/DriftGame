@@ -9,7 +9,6 @@ public class MapDisplay : MonoBehaviour
     [SerializeField] private Image mapImage;
     [SerializeField] private Button playButton;
     [SerializeField] private GameObject lockedIcon;
-    private int currentLevelIndex;
 
     public void DisplayMap(Map _map){
         mapName.text = _map.mapName;
@@ -31,12 +30,5 @@ public class MapDisplay : MonoBehaviour
 
         playButton.interactable = mapUnlocked;
         lockedIcon.SetActive(!mapUnlocked);
-        currentLevelIndex = _newMap.levelIndex + 2;
-    }
-
-    public void LoadLevel()
-    {
-		PlayerPrefs.SetInt("currentMapIndex", currentLevelIndex);
-        SceneManager.LoadScene(currentLevelIndex);
     }
 }

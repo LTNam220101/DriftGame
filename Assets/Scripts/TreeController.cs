@@ -20,8 +20,6 @@ public class TreeController : MonoBehaviour
         if(other.gameObject.tag == "Player" || other.gameObject.tag == "Cop")
         {
             Explode();
-            //yield return new WaitForSeconds(2);
-            //SceneManager.LoadScene("Night");
         } else if (other.gameObject.tag == "BigPlayer") {
             Explode(true, 1);
         }
@@ -31,8 +29,6 @@ public class TreeController : MonoBehaviour
         if(other.gameObject.tag == "Player" || other.gameObject.tag == "Cop")
         {
             Explode();
-            //yield return new WaitForSeconds(2);
-            //SceneManager.LoadScene("Night");
         } else if (other.gameObject.tag == "BigPlayer") {
             Explode(true, 1);
         }

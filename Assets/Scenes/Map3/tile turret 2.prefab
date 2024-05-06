@@ -63,22 +63,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2707821355036389992, guid: aa12c81075621784f89a5ddd0c02db1e, type: 3}
   m_PrefabInstance: {fileID: 5561884860482226795}
   m_PrefabAsset: {fileID: 0}
---- !u!111 &6034169808064396421
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7546860771532322819}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: d547cc77d03f60e469b71f71df8dfa40, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: d547cc77d03f60e469b71f71df8dfa40, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &5458397278589139413
 MonoBehaviour:
   m_ObjectHideFlags: 0

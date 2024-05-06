@@ -54,10 +54,10 @@ public class MapSelection : MonoBehaviour
         Music.mute = isMute;
         Music.Play();
 		PlayerPrefs.SetInt("currentMapIndex", currentMapIndex + 3);
-		SceneManager.LoadScene(currentMapIndex + 3, LoadSceneMode.Single);
+		SceneManager.LoadScene(currentMapIndex + 3);
 	}
     public void Back()
 	{
-		SceneManager.LoadScene(1, LoadSceneMode.Single);
+		SceneManager.LoadScene(1);
 	}
 }

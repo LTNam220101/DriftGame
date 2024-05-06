@@ -23,7 +23,6 @@ public class LoadCar : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Start()
     {
-        Debug.Log("Start");
         TerrainController TerrainController = GetComponent<TerrainController>();
         spawnBuffController = GetComponent<SpawnBuff>();
         int selectedCar = PlayerPrefs.GetInt("selectedCharacter");
@@ -32,12 +31,11 @@ public class LoadCar : MonoBehaviour
             spawnPoint.transform.position.y,
             spawnPoint.transform.position.z
         );
+        Time.timeScale = 1f;
         while (true)
         {
-        Debug.Log("while");
             RaycastHit hit;
             if (Physics.Raycast(startPoint, Vector3.down, out hit) && hit.collider.CompareTag("Terrain")) {
-                Debug.Log("if");
                 currentCar = carPrefabs[selectedCar];
                 Vector3 newPosition = currentCar.transform.position;
                 newPosition.y = hit.point.y + 2;

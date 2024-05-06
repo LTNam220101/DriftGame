@@ -9,7 +9,7 @@ public class LoadCar : MonoBehaviour
     public GameObject[] carPrefabs;
 	public CinemachineVirtualCamera cam1;
 	public CinemachineVirtualCamera cam2;
-    public Transform spanwPoint;
+    public Transform spawnPoint;
     public SpawnBuff spawnBuffController;
     private GameObject currentCar;
     private GameObject[] copColliders;
@@ -23,18 +23,21 @@ public class LoadCar : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Start()
     {
+        Debug.Log("Start");
         TerrainController TerrainController = GetComponent<TerrainController>();
         spawnBuffController = GetComponent<SpawnBuff>();
         int selectedCar = PlayerPrefs.GetInt("selectedCharacter");
         Vector3 startPoint = new Vector3(
-            spanwPoint.transform.position.x,
-            spanwPoint.transform.position.y,
-            spanwPoint.transform.position.z
+            spawnPoint.transform.position.x,
+            spawnPoint.transform.position.y,
+            spawnPoint.transform.position.z
         );
         while (true)
         {
+        Debug.Log("while");
             RaycastHit hit;
             if (Physics.Raycast(startPoint, Vector3.down, out hit) && hit.collider.CompareTag("Terrain")) {
+                Debug.Log("if");
                 currentCar = carPrefabs[selectedCar];
                 Vector3 newPosition = currentCar.transform.position;
                 newPosition.y = hit.point.y + 2;

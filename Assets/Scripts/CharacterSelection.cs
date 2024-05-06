@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class CharacterSelection : MonoBehaviour
@@ -6,6 +7,8 @@ public class CharacterSelection : MonoBehaviour
 	public GameObject[] characters;
 	int carUnlocked;
 	public int selectedCharacter = 0;
+    [SerializeField] private Button playButton;
+    [SerializeField] private GameObject lockedIcon;
 
 	public void Start()
 	{
@@ -18,8 +21,9 @@ public class CharacterSelection : MonoBehaviour
 	public void NextCharacter()
 	{
 		characters[selectedCharacter].SetActive(false);
-		selectedCharacter = (selectedCharacter + 1) % carUnlocked;
+		selectedCharacter = (selectedCharacter + 1) % 4;
 		characters[selectedCharacter].SetActive(true);
+		checkIsUnlocked();
 	}
 
 	public void PreviousCharacter()
@@ -28,9 +32,16 @@ public class CharacterSelection : MonoBehaviour
 		selectedCharacter--;
 		if (selectedCharacter < 0)
 		{
-			selectedCharacter += carUnlocked;
+			selectedCharacter += 4;
 		}
 		characters[selectedCharacter].SetActive(true);
+		checkIsUnlocked();
+	}
+
+	void checkIsUnlocked(){
+		bool carUnlock = carUnlocked > selectedCharacter;
+        playButton.interactable = carUnlock;
+        lockedIcon.SetActive(!carUnlock);
 	}
 
 	public void StartGame()

@@ -6,13 +6,14 @@ public class CharacterSelection : MonoBehaviour
 {
 	public GameObject[] characters;
 	int carUnlocked;
-	public int selectedCharacter = 0;
+	public int selectedCharacter;
     [SerializeField] private Button playButton;
     [SerializeField] private GameObject lockedIcon;
 
 	public void Start()
 	{
 		carUnlocked = (int)PlayerPrefs.GetFloat("record", 0);
+		selectedCharacter = PlayerPrefs.GetInt("selectedCharacter", 0);
 		carUnlocked = carUnlocked/60 + 1;
 		if(carUnlocked == 0) carUnlocked = 1;
 		if(carUnlocked > 4) carUnlocked = 4;

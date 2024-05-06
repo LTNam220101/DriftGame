@@ -2887,7 +2887,6 @@ MonoBehaviour:
   mainMenu: {fileID: 1851147327}
   PauseButton: {fileID: 2051391470}
   Music: {fileID: 963194230}
-  PlaygroundMusic: {fileID: 8300000, guid: ab30393e5e608ef4ebbfe1f3b81989d6, type: 3}
   MenuMusic: {fileID: 8300000, guid: 35454a1d651ddba4eb7e6eca8896f7cb, type: 3}
   MusicButton: {fileID: 1729820992}
   Record: {fileID: 1088347447}
@@ -3191,12 +3190,11 @@ MonoBehaviour:
   - {fileID: 390073685}
   cam1: {fileID: 1489271560}
   cam2: {fileID: 1336662749}
-  spanwPoint: {fileID: 115153612}
+  spawnPoint: {fileID: 115153612}
   spawnBuffController: {fileID: 2083409742}
   waitSlider: {fileID: 1615718912}
   fillSlider: {fileID: 55133630}
   BuffMusic: {fileID: 2083409745}
-  MainMenuController: {fileID: 1851147329}
 --- !u!114 &2083409742
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,7 +23,8 @@ public class MapSelection : MonoBehaviour
 
     private void Awake()
     {
-        ChangeMap(currentMapIndex);
+		currentMapIndex = PlayerPrefs.GetInt("currentMapIndex", 3) - 3;
+        ChangeMap(0);
     }
 
     public void ChangeMap(int _index)

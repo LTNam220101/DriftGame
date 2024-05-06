@@ -3240,7 +3240,7 @@ MonoBehaviour:
   - {fileID: 390073685}
   cam1: {fileID: 1489271560}
   cam2: {fileID: 1336662749}
-  spanwPoint: {fileID: 115153612}
+  spawnPoint: {fileID: 115153612}
   spawnBuffController: {fileID: 2083409742}
   waitSlider: {fileID: 527845572}
   fillSlider: {fileID: 391129011}

@@ -9,6 +9,7 @@ public class MapDisplay : MonoBehaviour
     [SerializeField] private Image mapImage;
     [SerializeField] private Button playButton;
     [SerializeField] private GameObject lockedIcon;
+    [SerializeField] private Text lockedText;
 
     public void DisplayMap(Map _map){
         mapName.text = _map.mapName;
@@ -21,7 +22,8 @@ public class MapDisplay : MonoBehaviour
         mapName.color = _newMap.nameColor;
         mapImage.sprite = _newMap.mapImage;
 
-        bool mapUnlocked = PlayerPrefs.GetInt("mapUnlocked", 3) >= _newMap.levelIndex;
+        int totalStar = PlayerPrefs.GetInt("totalStar", 0);
+        bool mapUnlocked = totalStar >= _newMap.requiredStar;
 
         if (mapUnlocked)
             mapImage.color = Color.white;
@@ -30,5 +32,7 @@ public class MapDisplay : MonoBehaviour
 
         playButton.interactable = mapUnlocked;
         lockedIcon.SetActive(!mapUnlocked);
+        lockedText.gameObject.SetActive(!mapUnlocked);
+        lockedText.text = _newMap.requiredStar + " stars required";
     }
 }

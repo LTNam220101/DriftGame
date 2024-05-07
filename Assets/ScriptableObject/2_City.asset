@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelIndex: 2
   mapName: City
+  requiredStar: 1
   nameColor: {r: 0.8396226, g: 0.4616835, b: 0, a: 1}
   mapImage: {fileID: -314240543383624507, guid: a3fd00b1a710f7d4fa64af86439bb411, type: 3}
   sceneToLoad: {fileID: 102900000, guid: 3380c89e331258b4287c82c1fc92cb55, type: 3}

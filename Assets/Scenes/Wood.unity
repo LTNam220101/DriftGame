@@ -3264,6 +3264,10 @@ MonoBehaviour:
     - {fileID: 406482, guid: b354ea2d6b513d645a88782b72bc7785, type: 3}
     spawnRate: 7
     spawnObjectDistance: {x: 40, y: 80}
+  - spawnObjects:
+    - {fileID: 424338, guid: 7ad324a9f0845a248a5ee8baff2855a7, type: 3}
+    spawnRate: 5
+    spawnObjectDistance: {x: 80, y: 160}
 --- !u!82 &2083409743
 AudioSource:
   m_ObjectHideFlags: 0

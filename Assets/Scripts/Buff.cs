@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class Buff : MonoBehaviour
 {
-    [Tooltip("The function that runs when this object is touched by the target")]
-    public string touchFunction = "MakeFirstPersonView";
-
-    [Tooltip("The parameter that will be passed with the function")]
-    public float functionParameter = 100;
-
-    [Tooltip("The tag of the target object that the function will play from")]
-    public string functionTarget = "LoadCar";
-
     [Tooltip("The effect that is created at the location of this item when it is picked up")]
     public Transform pickupEffect;
 
@@ -51,23 +42,18 @@ public class Buff : MonoBehaviour
         // Check if the object that was touched has the correct tag
         if (other.gameObject.tag == "Player")
         {
-            // Check that we have a target tag and function name before running
-            if (touchFunction != string.Empty)
-            {
-                if (loadCarComponent != null){
-                    // Gọi phương thức touchFunction trên thành phần LoadCar
-                    int randomInt = Random.Range(0, 5);
-                    if(randomInt == 1){
-                        loadCarComponent.GoSmall();
-                    }else if (randomInt == 2) {
-                        loadCarComponent.MakeFirstPersonView();
-                    }else if (randomInt == 3){
-                        loadCarComponent.Nuclear();
-                    }else if (randomInt == 4){
-                        loadCarComponent.Slomo();
-                    } else {
-                        loadCarComponent.GoBig();
-                    }
+            if (loadCarComponent != null){
+                int randomInt = Random.Range(0, 5);
+                if(randomInt == 1){
+                    loadCarComponent.GoSmall();
+                }else if (randomInt == 2) {
+                    loadCarComponent.MakeFirstPersonView();
+                }else if (randomInt == 3){
+                    loadCarComponent.Nuclear();
+                }else if (randomInt == 4){
+                    loadCarComponent.Slomo();
+                } else {
+                    loadCarComponent.GoBig();
                 }
             }
 

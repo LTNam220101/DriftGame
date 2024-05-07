@@ -170,6 +170,8 @@ public class CopController : MonoBehaviour
         SteerAngle = 0;
         GameObject explodeEffect = Instantiate(ExplodeEffect, transform.position, transform.rotation);
         Destructable dest = gameObject.GetComponent<Destructable>();
+        int mostCrashed = PlayerPrefs.GetInt("mostCrashed", 0);
+        PlayerPrefs.SetInt("mostCrashed", mostCrashed + 1);
         if (dest != null)
         {
             dest.DestroyObject(makeTrigger, type);

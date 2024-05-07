@@ -1,22 +1,45 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class CharacterSelection : MonoBehaviour
 {
 	public GameObject[] characters;
-	int carUnlocked;
+	public string[] listName = {
+		"Formula One",
+		"Sedan", 
+		"Bus", 
+		"Prometheus"
+	};
 	public int selectedCharacter;
+	private string[] listCondition = {
+		"",
+		"Survived 90 seconds", 
+		"150 Car crashes in one game", 
+		"Pick 20 powerups in one game"
+	};
+    [SerializeField] private Text carName;
     [SerializeField] private Button playButton;
     [SerializeField] private GameObject lockedIcon;
-
+    [SerializeField] private Text record;
+    [SerializeField] private Text unlockCondition;
+	private float recordTime;
+	private int mostCrashed, mostPowerUpPicked;
 	public void Start()
 	{
-		carUnlocked = (int)PlayerPrefs.GetFloat("record", 0);
+		recordTime = PlayerPrefs.GetFloat("record", 0);
+        TimeSpan timePlaying = TimeSpan.FromSeconds(recordTime);
+		mostCrashed = PlayerPrefs.GetInt("mostCrashed", 0);
+		mostPowerUpPicked = PlayerPrefs.GetInt("mostPowerUpPicked", 0);
+		record.text = "Current Status\n" + 
+					"Best time: " + timePlaying.ToString("mm':'ss'.'ff") + "\n" +
+					"Most crashes: " + mostCrashed + "\n" +
+					"Most powerups picked: " + mostPowerUpPicked + "\n";
 		selectedCharacter = PlayerPrefs.GetInt("selectedCharacter", 0);
-		carUnlocked = carUnlocked/60 + 1;
-		if(carUnlocked == 0) carUnlocked = 1;
-		if(carUnlocked > 4) carUnlocked = 4;
+		checkIsUnlocked();
 	}
 
 	public void NextCharacter()
@@ -40,9 +63,29 @@ public class CharacterSelection : MonoBehaviour
 	}
 
 	void checkIsUnlocked(){
-		bool carUnlock = carUnlocked > selectedCharacter;
+		bool carUnlock;
+		switch(selectedCharacter){
+			case 0:
+				carUnlock = true;
+				break;
+			case 1:
+				carUnlock = recordTime >= 90f;
+				break;
+			case 2:
+				carUnlock = mostCrashed >= 150;
+				break;
+			case 3:
+				carUnlock = mostPowerUpPicked >= 20;
+				break;
+			default:
+				carUnlock = false;
+				break;
+		}
+		carName.text = listName[selectedCharacter];
         playButton.interactable = carUnlock;
         lockedIcon.SetActive(!carUnlock);
+		unlockCondition.text = listCondition[selectedCharacter];
+		unlockCondition.gameObject.SetActive(!carUnlock);
 	}
 
 	public void StartGame()

@@ -10,6 +10,12 @@ public class MapDisplay : MonoBehaviour
     [SerializeField] private Button playButton;
     [SerializeField] private GameObject lockedIcon;
     [SerializeField] private Text lockedText;
+    [SerializeField] private Text totalStar;
+
+    public void Start(){
+        int totalStarRecord = PlayerPrefs.GetInt("totalStar", 0);
+        totalStar.text = "totalStar: " + totalStarRecord;
+    }
 
     public void DisplayMap(Map _map){
         mapName.text = _map.mapName;

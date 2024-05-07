@@ -17,6 +17,10 @@ public class MainMenuController : MonoBehaviour
     private void Awake(){
         Music = GameObject.FindWithTag("MainCamera").GetComponent<AudioSource>();
         if(MusicButton) MusicButton.text = Music.mute ? "SOUND: OFF" : "SOUND: ON";
+        float record = PlayerPrefs.GetFloat("record", 0);
+        TimeSpan timePlaying = TimeSpan.FromSeconds(record);
+        string timePlayingStr = "Record: " + timePlaying.ToString("mm':'ss'.'ff");
+        if(Record) Record.text = timePlayingStr;
     }
 
     public void InitScene(AudioClip clip) {

@@ -112,15 +112,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed8c6501b320204083347ee19f52159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchFunction: ChangeScore
-  functionParameter: 100
-  functionTarget: GameController
-  pickupEffect: {fileID: 0}
+  pickupEffect: {fileID: 5036404986984320874, guid: b2236e26df3b60948826213a25701ee5, type: 3}
   randomRotation: 360
   rotationSpeed: 30
   controllerObj: {fileID: 0}
   loadCarComponent: {fileID: 0}
-  pickupSound: {fileID: 0}
 --- !u!95 &-2330745353094560509
 Animator:
   serializedVersion: 5

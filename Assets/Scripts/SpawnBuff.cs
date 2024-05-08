@@ -106,8 +106,10 @@ public class SpawnBuff : MonoBehaviour
         RaycastHit hit;
 
         if (Physics.Raycast(newSpawn.position + Vector3.up * 5, -10 * Vector3.up, out hit, 100)){
-            Debug.Log(hit.point);
-             newSpawn.position = hit.point;}
+            if(newSpawn.name == "Star_Up(Clone)"){
+                hit.point += Vector3.up * 3;
+            }
+            newSpawn.position = hit.point;}
 
 
     }

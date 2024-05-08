@@ -16,6 +16,9 @@ public class TimerController : MonoBehaviour
     private bool timerGoing;
 
     public float elapsedTime;
+    public int carCrashes;
+    public int buffPickup;
+    public int stars;
 
     private void Awake()
     {
@@ -31,7 +34,11 @@ public class TimerController : MonoBehaviour
     public void BeginTimer()
     {
         timerGoing = true;
+
         elapsedTime = 0f;
+        carCrashes = 0;
+        buffPickup = 0;
+        stars = 0;
 
         StartCoroutine(UpdateTimer());
     }
@@ -43,11 +50,19 @@ public class TimerController : MonoBehaviour
         if(elapsedTime > record){
             PlayerPrefs.SetFloat("record", elapsedTime);
         }
+		int mostCrashed = PlayerPrefs.GetInt("mostCrashed", 0);
+        if(carCrashes > mostCrashed){
+            PlayerPrefs.SetInt("mostCrashed", carCrashes);
+        }
+		int mostPowerUpPicked = PlayerPrefs.GetInt("mostPowerUpPicked", 0);
+        if(buffPickup > mostPowerUpPicked){
+            PlayerPrefs.SetInt("mostPowerUpPicked", buffPickup);
+        }
         Invoke(nameof(RestartGame), 4);
     }
     void RestartGame(){
 		int level = PlayerPrefs.GetInt("currentMapIndex", 1);
-        SceneManager.LoadScene(level);  
+        SceneManager.LoadScene(level);
     }
 
     private IEnumerator UpdateTimer()
@@ -55,14 +70,27 @@ public class TimerController : MonoBehaviour
         while (timerGoing)
         {
             elapsedTime += Time.deltaTime;
-            if(elapsedTime > PlayerPrefs.GetFloat("record", 0) && (elapsedTime > 20f || elapsedTime > 30f || elapsedTime > 40f || elapsedTime > 50f)){
-                unlock.text = "New Car Unlocked!!!";
-            }
+            // if(elapsedTime > PlayerPrefs.GetFloat("record", 0) && (elapsedTime > 20f || elapsedTime > 30f || elapsedTime > 40f || elapsedTime > 50f)){
+            //     unlock.text = "New Car Unlocked!!!";
+            // }
             timePlaying = TimeSpan.FromSeconds(elapsedTime);
-            string timePlayingStr = "Time: " + timePlaying.ToString("mm':'ss'.'ff");
-            timeCounter.text = timePlayingStr;
-
+            timeCounter.text = "Time: " + timePlaying.ToString("mm':'ss'.'ff") + "\n" +
+                        "Cars: " + carCrashes + "\n" +
+                        "Picked: " + buffPickup + "\n" +
+                        "Stars: " + stars + "\n";
             yield return null;
         }
+    }
+
+    public void AddCarCrashed(){
+        carCrashes++;
+    }
+
+    public void AddBuffPicked(){
+        buffPickup++;
+    }
+
+    public void AddStars(){
+        stars++;
     }
 }

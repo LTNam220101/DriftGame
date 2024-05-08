@@ -160,7 +160,7 @@ public class LoadCar : MonoBehaviour
 
     IEnumerator NuclearExplode() {
         // Chờ 2 giây
-        yield return calculateTime(2f);
+        yield return calculateTime(1f);
         treeColliders = Physics.OverlapSphere(currentCar.transform.position, 200f);
         // Duyệt qua tất cả các Collider
         foreach (Collider collider in treeColliders)
@@ -183,14 +183,14 @@ public class LoadCar : MonoBehaviour
     /// </summary>
     /// <param name="Slomo">Slomo</param>
     public void Slomo(){
-        Time.timeScale = 0.25f;
+        Time.timeScale = 0.5f;
         StartCoroutine(SwitchBackToNormalTimeScale());
     }
 
     IEnumerator SwitchBackToNormalTimeScale()
     {
         // Chờ 3 giây
-        yield return calculateTime(3f);
+        yield return calculateTime(1.5f);
         RestoreTimeScale();
     }
 
@@ -203,7 +203,7 @@ public class LoadCar : MonoBehaviour
             elapsedTime += Time.deltaTime;
             // Cập nhật giá trị của Slider từ 0 đến 1 dựa trên thời gian đã trôi qua và thời gian chờ mong muốn
             waitSlider.value = elapsedTime / waitTime;
-            if(elapsedTime / waitTime >= 0.8f) {
+            if(elapsedTime / waitTime >= 0.9f) {
                 fillSlider.color = Color.red;
             }else {
                 fillSlider.color = Color.white;

@@ -15,13 +15,14 @@ public class Buff : MonoBehaviour
 
     public GameObject controllerObj;
     public LoadCar loadCarComponent;
-
+    public TimerController timerController;
     void Start()
     {
         // Set a random rotation angle for the object
         transform.eulerAngles += Vector3.up * Random.Range(-randomRotation, randomRotation);
         controllerObj = GameObject.Find("Controller");
         loadCarComponent = controllerObj.GetComponent<LoadCar>();
+        timerController = controllerObj.GetComponent<TimerController>();
     }
 
     // Function to play the pickup sound
@@ -56,7 +57,7 @@ public class Buff : MonoBehaviour
                     loadCarComponent.GoBig();
                 }
             }
-
+            timerController.AddBuffPicked();
             PlayPickupSound();
             // If there is a pick up effect, create it
             if (pickupEffect) Instantiate(pickupEffect, transform.position, transform.rotation);

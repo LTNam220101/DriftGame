@@ -15,6 +15,7 @@ public class Star : MonoBehaviour
 
     public GameObject controllerObj;
     public LoadCar loadCarComponent;
+    public TimerController timerController;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class Star : MonoBehaviour
         transform.eulerAngles += Vector3.up * Random.Range(-randomRotation, randomRotation);
         controllerObj = GameObject.Find("Controller");
         loadCarComponent = controllerObj.GetComponent<LoadCar>();
+        timerController = controllerObj.GetComponent<TimerController>();
     }
 
     // Function to play the pickup sound
@@ -46,6 +48,7 @@ public class Star : MonoBehaviour
                 int totalStar = PlayerPrefs.GetInt("totalStar", 0);
                 PlayerPrefs.SetInt("totalStar", totalStar + 1);
             }
+            timerController.AddStars();
 
             PlayPickupSound();
             // If there is a pick up effect, create it

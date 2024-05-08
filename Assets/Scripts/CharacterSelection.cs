@@ -9,8 +9,8 @@ public class CharacterSelection : MonoBehaviour
 {
 	public GameObject[] characters;
 	public string[] listName = {
-		"Formula One",
-		"Sedan", 
+		"Sedan",
+		"F1",
 		"Bus", 
 		"Prometheus"
 	};

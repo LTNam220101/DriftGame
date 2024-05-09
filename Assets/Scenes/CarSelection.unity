@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028498, g: 0.22571546, b: 0.3069237, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028517, g: 0.22571571, b: 0.3069232, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1506,8 +1506,8 @@ MonoBehaviour:
   - {fileID: 1260018714}
   - {fileID: 592087109}
   listName:
-  - Formula One
   - Sedan
+  - F1
   - Bus
   - Prometheus
   selectedCharacter: 0

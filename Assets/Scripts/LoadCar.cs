@@ -38,7 +38,7 @@ public class LoadCar : MonoBehaviour
             if (Physics.Raycast(startPoint, Vector3.down, out hit) && hit.collider.CompareTag("Terrain")) {
                 currentCar = carPrefabs[selectedCar];
                 Vector3 newPosition = currentCar.transform.position;
-                newPosition.y = hit.point.y + 2;
+                newPosition.y = hit.point.y + 1;
                 currentCar.transform.position = newPosition;
                 currentCar.SetActive(true);
                 gameObject.GetComponent<TerrainController>().playerTransform = currentCar.transform;

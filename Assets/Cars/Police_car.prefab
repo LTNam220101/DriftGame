@@ -566,7 +566,6 @@ GameObject:
   - component: {fileID: 7382408615726444072}
   - component: {fileID: 4378325830752927036}
   - component: {fileID: -1293066343127667176}
-  - component: {fileID: 3348515359664509105}
   m_Layer: 0
   m_Name: Police_car
   m_TagString: Cop
@@ -674,20 +673,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyedVersion: {fileID: 2922196080687437655, guid: 6fd699453ed83dd42b92741b637a3ea5, type: 3}
   ExplodeEffect: {fileID: 5037663053501516404, guid: b2236e26df3b60948826213a25701ee5, type: 3}
---- !u!136 &3348515359664509105
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2922196080687437655}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.12
-  m_Height: 2.49
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.13, z: 0.03}
 --- !u!1 &2922319791782909889
 GameObject:
   m_ObjectHideFlags: 0

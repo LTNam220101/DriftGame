@@ -7,9 +7,14 @@ public class Destructable : MonoBehaviour
     public GameObject destroyedVersion;
     public GameObject ExplodeEffect;
     // Start is called before the first frame update
-    public void DestroyObject(bool makeTrigger = false, int type = -1)
+    public void DestroyObject(bool makeTrigger = false, int type = -1, Vector3 position = default(Vector3))
     {
         GameObject destroyedVer = Instantiate(destroyedVersion, transform.position, transform.rotation);
+        var rbs = destroyedVer.GetComponentsInChildren<Rigidbody>();
+        foreach (var rb in rbs)
+        {
+            rb.AddExplosionForce(500000, position, 10, 3.0f);
+        }
         Collider collider = destroyedVer.GetComponent<Collider>();
         if(makeTrigger){
             collider.isTrigger = true;

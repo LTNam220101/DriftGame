@@ -140,27 +140,19 @@ public class CarController : MonoBehaviour
         if(gameObject.tag == "Player"){
             if(other.gameObject.tag == "Tree" || other.gameObject.tag == "Cop")
             {
+                speed = 0;
                 timer.EndTimer();
-                Explode();
+                ContactPoint contact = other.contacts[0];
+                Quaternion rotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
+                Vector3 position = contact.point;
+                GameObject explodeEffect = Instantiate(ExplodeEffect, position, rotation);
+                Destructable dest = gameObject.GetComponent<Destructable>();
+                if(dest != null)
+                {
+                    dest.DestroyObject(false, -1, position);
+                    Destroy(explodeEffect, 2);
+                }
             }
-        }
-    }
-
-    void Explode()
-    {
-        speed = 0;
-        GameObject explodeEffect = Instantiate(ExplodeEffect, transform.position, transform.rotation);
-        Destructable dest = gameObject.GetComponent<Destructable>();
-        if(dest != null)
-        {
-            dest.DestroyObject();
-            Destroy(explodeEffect, 2);
-        }
-
-        var rbs = GetComponentsInChildren<Rigidbody>();
-        foreach (var rb in rbs)
-        {
-            rb.AddExplosionForce(100000, transform.position + transform.forward * 10, 10);
         }
     }
 }

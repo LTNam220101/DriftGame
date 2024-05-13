@@ -160,7 +160,7 @@ public class LoadCar : MonoBehaviour
 
     IEnumerator NuclearExplode() {
         // Chờ 2 giây
-        yield return calculateTime(1f);
+        yield return calculateTime(1.75f);
         treeColliders = Physics.OverlapSphere(currentCar.transform.position, 200f);
         // Duyệt qua tất cả các Collider
         foreach (Collider collider in treeColliders)

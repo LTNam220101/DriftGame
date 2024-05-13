@@ -233,7 +233,7 @@ MonoBehaviour:
   timer: {fileID: 0}
   MaxSpeed: 30
   MinSpeed: 20
-  SteerAngle: 8
+  SteerAngle: 7
   steeringInput: 0
   detectAngle: 5
   detectDistance: 30

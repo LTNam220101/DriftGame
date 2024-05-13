@@ -346,7 +346,6 @@ GameObject:
   - component: {fileID: 2123961128139573401}
   - component: {fileID: 1009438275444767459}
   - component: {fileID: 2208327720108174554}
-  - component: {fileID: 4809973312473778894}
   m_Layer: 0
   m_Name: Prometheus
   m_TagString: Player
@@ -446,9 +445,9 @@ MonoBehaviour:
     RRWheel: {fileID: 4969533497970722370}
     RLWheel: {fileID: 4969533495991530628}
   motorPower: 200
-  steeringAngle: 6
+  steeringAngle: 7
   MaxSpeed: 32
-  MinSpeed: 22
+  MinSpeed: 24
   speed: 40
   Traction: 1
   steeringInput: 0
@@ -488,20 +487,6 @@ MonoBehaviour:
       m_Action: Player Controls
       m_Flags: 8
     m_Flags: 0
---- !u!136 &4809973312473778894
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3303392061976488254}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.24
-  m_Height: 5.49
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.27, z: 0}
 --- !u!1 &3950125264435230907
 GameObject:
   m_ObjectHideFlags: 0

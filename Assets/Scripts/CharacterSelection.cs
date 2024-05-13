@@ -39,6 +39,7 @@ public class CharacterSelection : MonoBehaviour
 					"Most crashes: " + mostCrashed + "\n" +
 					"Most powerups picked: " + mostPowerUpPicked + "\n";
 		selectedCharacter = PlayerPrefs.GetInt("selectedCharacter", 0);
+		characters[selectedCharacter].SetActive(true);
 		checkIsUnlocked();
 	}
 

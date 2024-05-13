@@ -13,7 +13,7 @@ public class Destructable : MonoBehaviour
         var rbs = destroyedVer.GetComponentsInChildren<Rigidbody>();
         foreach (var rb in rbs)
         {
-            rb.AddExplosionForce(500000, position, 10, 3.0f);
+            rb.AddExplosionForce(10000, position, 10, 3.0f);
         }
         Collider collider = destroyedVer.GetComponent<Collider>();
         if(makeTrigger){

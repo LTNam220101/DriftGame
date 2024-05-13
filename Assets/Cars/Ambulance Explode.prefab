@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 3986606388797950112}
   m_Layer: 0
   m_Name: Ambulance Explode
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 6167955417833853603}
   - component: {fileID: 8470830533617436605}
   m_Layer: 0
-  m_Name: Body
+  m_Name: police_car
   m_TagString: Cop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

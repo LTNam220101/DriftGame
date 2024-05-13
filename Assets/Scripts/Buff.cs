@@ -14,6 +14,7 @@ public class Buff : MonoBehaviour
     public float rotationSpeed = 30f;
 
     public GameObject controllerObj;
+    public GameObject explodeEffect;
     public LoadCar loadCarComponent;
     public TimerController timerController;
     void Start()
@@ -44,12 +45,14 @@ public class Buff : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             if (loadCarComponent != null){
-                int randomInt = Random.Range(0, 5);
+                int randomInt = 1;
                 if(randomInt == 1){
                     loadCarComponent.GoSmall();
                 }else if (randomInt == 2) {
                     loadCarComponent.MakeFirstPersonView();
                 }else if (randomInt == 3){
+                    GameObject explodeEffectObj = Instantiate(explodeEffect, transform.position, transform.rotation);
+                    explodeEffectObj.SetActive(true);
                     loadCarComponent.Nuclear();
                 }else if (randomInt == 4){
                     loadCarComponent.Slomo();

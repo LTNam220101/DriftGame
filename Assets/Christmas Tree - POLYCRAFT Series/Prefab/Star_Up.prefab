@@ -98,11 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7ec3bce3abf4bc1bad66f2b5a97ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupEffect: {fileID: 5036404986984320874, guid: b2236e26df3b60948826213a25701ee5, type: 3}
+  pickupEffect: {fileID: 419440, guid: cc4edba986607ba48b17927b27d25e4e, type: 3}
   randomRotation: 360
   rotationSpeed: 30
   controllerObj: {fileID: 0}
   loadCarComponent: {fileID: 0}
+  timerController: {fileID: 0}
 --- !u!95 &8576315612664423038
 Animator:
   serializedVersion: 5

@@ -71,7 +71,7 @@ public class CopController : MonoBehaviour
                 CheckInput(1);
             }
             else {
-                float angle = Vector3.SignedAngle(transform.forward * 3, Player.transform.position - transform.position, Vector3.up);
+                float angle = Vector3.SignedAngle(transform.forward * 3, Player.transform.position + Player.transform.forward * 10f - transform.position, Vector3.up);
                 if(angle > 15.0f) {
                     CheckInput(1);
                 }

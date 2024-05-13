@@ -495,7 +495,7 @@ MonoBehaviour:
     RRWheel: {fileID: 3914266653632017560}
     RLWheel: {fileID: 6484009469975808853}
   motorPower: 200
-  steeringAngle: 8
+  steeringAngle: 7
   MaxSpeed: 32
   MinSpeed: 21
   speed: 40

@@ -774,7 +774,7 @@ MonoBehaviour:
     RLWheel: {fileID: 8207463212426362338}
   motorPower: 200
   steeringAngle: 6
-  MaxSpeed: 30
+  MaxSpeed: 32
   MinSpeed: 20
   speed: 40
   Traction: 1

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelIndex: 1
   mapName: Green Hills
+  requiredStar: 0
   nameColor: {r: 0.014417935, g: 0.33962262, b: 0.25086972, a: 1}
-  mapImage: {fileID: 8938458764185565248, guid: a3fd00b1a710f7d4fa64af86439bb411, type: 3}
+  mapImage: {fileID: 21300000, guid: 5b43b18aad218644e85405496e1aa719, type: 3}
   sceneToLoad: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}

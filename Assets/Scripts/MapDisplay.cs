@@ -11,6 +11,7 @@ public class MapDisplay : MonoBehaviour
     [SerializeField] private GameObject lockedIcon;
     [SerializeField] private Text lockedText;
     [SerializeField] private Text totalStar;
+    [SerializeField] private Text playText;
 
     public void Start(){
         int totalStarRecord = PlayerPrefs.GetInt("totalStar", 0);
@@ -37,6 +38,7 @@ public class MapDisplay : MonoBehaviour
             mapImage.color = Color.gray;
 
         playButton.interactable = mapUnlocked;
+		playText.color = mapUnlocked ? Color.white : new Color( 0.7843137f , 0.7843137f , 0.7843137f , 0.5019608f  );
         lockedIcon.SetActive(!mapUnlocked);
         lockedText.gameObject.SetActive(!mapUnlocked);
         lockedText.text = _newMap.requiredStar + " stars required";

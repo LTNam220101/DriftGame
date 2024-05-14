@@ -16,5 +16,5 @@ MonoBehaviour:
   mapName: Winter
   requiredStar: 10
   nameColor: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
-  mapImage: {fileID: 4200964814576733590, guid: a3fd00b1a710f7d4fa64af86439bb411, type: 3}
+  mapImage: {fileID: 21300000, guid: 02f388994c5ccf848ad678d078182cfd, type: 3}
   sceneToLoad: {fileID: 102900000, guid: fcf59436514826c44990fa88bb38e806, type: 3}

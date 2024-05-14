@@ -45,7 +45,7 @@ public class Buff : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             if (loadCarComponent != null){
-                int randomInt = 1;
+                int randomInt = Random.Range(0, 5);
                 if(randomInt == 1){
                     loadCarComponent.GoSmall();
                 }else if (randomInt == 2) {

@@ -26,6 +26,7 @@ public class CharacterSelection : MonoBehaviour
     [SerializeField] private GameObject lockedIcon;
     [SerializeField] private Text record;
     [SerializeField] private Text unlockCondition;
+    [SerializeField] private Text playText;
 	private float recordTime;
 	private int mostCrashed, mostPowerUpPicked;
 	public void Start()
@@ -84,6 +85,7 @@ public class CharacterSelection : MonoBehaviour
 		}
 		carName.text = listName[selectedCharacter];
         playButton.interactable = carUnlock;
+		playText.color = carUnlock ? Color.white : new Color( 0.7843137f , 0.7843137f , 0.7843137f , 0.5019608f  );
         lockedIcon.SetActive(!carUnlock);
 		unlockCondition.text = listCondition[selectedCharacter];
 		unlockCondition.gameObject.SetActive(!carUnlock);

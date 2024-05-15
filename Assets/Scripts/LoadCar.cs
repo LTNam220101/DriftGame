@@ -16,7 +16,8 @@ public class LoadCar : MonoBehaviour
     private Collider[] treeColliders;
 
     public Slider waitSlider; // Slider để hiển thị thời gian đợi
-    public Image fillSlider; 
+    public Image fillSlider;
+    public Text buffName;
     
     public AudioSource BuffMusic;
 
@@ -62,6 +63,7 @@ public class LoadCar : MonoBehaviour
         cam1.enabled = false;
         Time.timeScale = 0.5f;
         spawnBuffController.isSpawning = false;
+        buffName.text = "Warp Drive";
         // Bắt đầu coroutine để chuyển lại sau 5 giây
         StartCoroutine(SwitchBackToThirdPersonView());
     }
@@ -69,11 +71,13 @@ public class LoadCar : MonoBehaviour
     {
         cam1.enabled = true;
         cam2.enabled = false;
+        buffName.text = "";
         spawnBuffController.isSpawning = true;
     }
     public void RestoreTimeScale()
     {
         Time.timeScale = 1f;
+        buffName.text = "";
     }
     IEnumerator SwitchBackToThirdPersonView()
     {
@@ -107,6 +111,7 @@ public class LoadCar : MonoBehaviour
                 collider.isTrigger = true;
             }
         }
+        buffName.text = "Giant";
         // Bắt đầu coroutine để chuyển lại sau 5 giây
         StartCoroutine(SwitchBackToNormalSize());
     }
@@ -116,6 +121,7 @@ public class LoadCar : MonoBehaviour
         currentCar.GetComponent<Rigidbody>().mass = 1000f;
         currentCar.tag = "Player";
         spawnBuffController.isSpawning = true;
+        buffName.text = "";
         // Duyệt qua tất cả các Collider
         foreach (Collider collider in treeColliders)
         {
@@ -140,7 +146,8 @@ public class LoadCar : MonoBehaviour
     //Go small
     /// </summary>
     /// <param name="GoSmall">GoSmall</param>
-    public void GoSmall() {
+    public IEnumerator GoSmall() {
+        buffName.text = "Shrink 'em";
         copColliders = GameObject.FindGameObjectsWithTag("Cop");
         // Duyệt qua tất cả các Collider
         foreach (GameObject cop in copColliders)
@@ -148,6 +155,9 @@ public class LoadCar : MonoBehaviour
             cop.transform.localScale /= 3;
             cop.tag = "SmallCop";
         }
+        // Chờ 2 giây
+        yield return calculateTime(1.75f);
+        buffName.text = "";
     }
 
     /// <summary>
@@ -155,12 +165,14 @@ public class LoadCar : MonoBehaviour
     /// </summary>
     /// <param name="Nuclear">Nuclear</param>
     public void Nuclear(){
+        buffName.text = "Nuclear";
         StartCoroutine(NuclearExplode());
     }
 
     IEnumerator NuclearExplode() {
         // Chờ 2 giây
         yield return calculateTime(1.75f);
+        buffName.text = "";
         treeColliders = Physics.OverlapSphere(currentCar.transform.position, 200f);
         // Duyệt qua tất cả các Collider
         foreach (Collider collider in treeColliders)
@@ -184,6 +196,7 @@ public class LoadCar : MonoBehaviour
     /// <param name="Slomo">Slomo</param>
     public void Slomo(){
         Time.timeScale = 0.5f;
+        buffName.text = "Slomo";
         StartCoroutine(SwitchBackToNormalTimeScale());
     }
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2428827111461655159}
   - component: {fileID: 3046469310577332408}
   - component: {fileID: 7727524030577932584}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: dumpster_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}

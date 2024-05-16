@@ -48,11 +48,11 @@ public class CopController : MonoBehaviour
             transform.position += MoveForce * Time.deltaTime;
 
             // Cast two raycasts to either side of the AI car so that we can detect obstacles
-            Ray rayRight = new Ray(transform.position + Vector3.up * 0.2f + transform.right * detectAngle * 0.5f, transform.forward * detectDistance);
-            Ray rayLeft = new Ray(transform.position + Vector3.up * 0.2f + transform.right * -detectAngle * 0.5f, transform.forward * detectDistance);
+            Ray rayRight = new Ray(transform.position + Vector3.up * 0.2f + transform.right * detectAngle * 0.5f, transform.forward * (detectDistance + 5));
+            Ray rayLeft = new Ray(transform.position + Vector3.up * 0.2f + transform.right * -detectAngle * 0.5f, transform.forward * (detectDistance + 5));
             Ray rayCenter = new Ray(transform.position + Vector3.up * 0.2f, transform.forward * detectDistance);
-            Debug.DrawRay(transform.position + Vector3.up * 0.2f + transform.right * detectAngle * 0.5f, transform.forward * detectDistance, Color.red);
-            Debug.DrawRay(transform.position + Vector3.up * 0.2f + transform.right * -detectAngle * 0.5f, transform.forward * detectDistance, Color.blue);
+            Debug.DrawRay(transform.position + Vector3.up * 0.2f + transform.right * detectAngle * 0.5f - transform.forward * 5, transform.forward * (detectDistance + 5), Color.red);
+            Debug.DrawRay(transform.position + Vector3.up * 0.2f + transform.right * -detectAngle * 0.5f - transform.forward * 5, transform.forward * (detectDistance + 5), Color.blue);
             Debug.DrawRay(transform.position + Vector3.up * 0.2f, transform.forward * detectDistance, Color.yellow);
             RaycastHit rightHit;
             RaycastHit leftHit;

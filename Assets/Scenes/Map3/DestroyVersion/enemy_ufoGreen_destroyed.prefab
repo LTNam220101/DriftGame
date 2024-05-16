@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4509476915522212797}
   - component: {fileID: 6158667400433119060}
   - component: {fileID: 470796011279348223}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: enemy_ufoGreen_destroyed
   m_TagString: Tree
   m_Icon: {fileID: 0}

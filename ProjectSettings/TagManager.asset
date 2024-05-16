@@ -18,11 +18,11 @@ TagManager:
   - Terrain
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - CarAlive
+  - Wheel
+  - MiniCar
+  - BigCar
+  - CarDead
   - 
   - 
   - 

@@ -21,7 +21,7 @@ public class Spawner : MonoBehaviour
                 while(enemiesCost > 0){
                     int randId = Random.Range(0, cops.Length);
                     if(enemiesCost - copCosts[randId] >= 0) {
-                        GenerateEnemy(randId);
+                        GenerateEnemy(randId, 0);
                         enemiesCost-= copCosts[randId];
                     }else if(enemiesCost <= 0){
                         break;
@@ -32,7 +32,8 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    private void GenerateEnemy(int id){
+    private void GenerateEnemy(int id, int tryNum){
+        if(tryNum == 5) return;
         float x = Random.value;
         if(x > 0.5f){
             x = Player.transform.position.x + Random.Range(70, 80);
@@ -50,11 +51,22 @@ public class Spawner : MonoBehaviour
         RaycastHit hit;
         Vector3 startPoint = new Vector3(x, Player.transform.position.y + TerrainController.TerrainSize.y * 2, z);
         if (Physics.Raycast(startPoint, Vector3.down, out hit) && hit.collider.CompareTag("Terrain")) {
-            Quaternion orientation = Quaternion.Euler(Vector3.up * Random.Range(0f, 360f));
+            Collider[] colliders = Physics.OverlapSphere(hit.transform.position, 10f);
+            // Duyệt qua tất cả các Collider
+            foreach (Collider collider in colliders)
+            {
+                // Kiểm tra xem Collider có tag là "Tree" không
+                if (collider.CompareTag("Cop") || collider.CompareTag("Tree"))
+                {   
+                    GenerateEnemy(id, tryNum + 1);
+                    return;
+                }
+            }
             Vector3 rotationVec =  Vector3.up * Random.Range(-180, 180);
             GameObject cop = Instantiate(cops[id], new Vector3(startPoint.x, hit.point.y + 1, startPoint.z), Quaternion.Euler(rotationVec.x, rotationVec.y, rotationVec.z));
             cop.GetComponent<CopController>().Player = Player;
             cop.GetComponent<CopController>().timer = Timer;
+            return;
         }
     }
 }

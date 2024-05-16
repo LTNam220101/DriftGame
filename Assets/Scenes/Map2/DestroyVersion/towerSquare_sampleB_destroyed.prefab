@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3078950974698915854}
   - component: {fileID: -4675961033844118017}
   - component: {fileID: 2881943405572697526}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: towerSquare_sampleB_destroyed
   m_TagString: Tree
   m_Icon: {fileID: 0}

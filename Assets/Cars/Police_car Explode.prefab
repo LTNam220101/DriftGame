@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2944420985366144079}
   - component: {fileID: 466916771402843755}
   - component: {fileID: 8563823476048004229}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 2944003799760561623}
   - component: {fileID: 3989213996767050912}
   - component: {fileID: 8402245313165358052}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 2943627686892258179}
   - component: {fileID: 9135503551299027607}
   - component: {fileID: 1454397073384552796}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 2944106775331752793}
   - component: {fileID: 2584426135035289247}
   - component: {fileID: 6981935153058356023}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: police_car
   m_TagString: Cop
   m_Icon: {fileID: 0}
@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 2943855698748285331}
   - component: {fileID: 6514588579804459572}
   - component: {fileID: 6233359419266804516}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object016
   m_TagString: Untagged
   m_Icon: {fileID: 0}

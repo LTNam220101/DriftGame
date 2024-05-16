@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5597071394389149411}
   - component: {fileID: 6419019163502796311}
   - component: {fileID: 5703273326277719795}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: towerRound_sampleF_destroyed
   m_TagString: Tree
   m_Icon: {fileID: 0}

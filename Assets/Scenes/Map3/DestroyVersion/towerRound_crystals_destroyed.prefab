@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 364228432159482612}
   - component: {fileID: 8839339828059971265}
   - component: {fileID: 716063098341639859}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: crystal 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 6055077570835515190}
   - component: {fileID: 8688819991682676816}
   - component: {fileID: 1596287226137432685}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: crystal 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 8271638747536450744}
   - component: {fileID: 3233128572048209754}
   - component: {fileID: 12550228107261059}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: crystal 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 3947239840250201438}
   - component: {fileID: 7915893150181619571}
   - component: {fileID: 1500604140269785998}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: crystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 3454778689333647881}
   - component: {fileID: 5210236056625951235}
   - component: {fileID: 4417083637734688942}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: crystal 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -586,7 +586,7 @@ GameObject:
   - component: {fileID: 5773632704581572132}
   - component: {fileID: 7462407199946873217}
   - component: {fileID: 4641870389175545163}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: towerRound_crystals_destroyed
   m_TagString: Tree
   m_Icon: {fileID: 0}
@@ -675,7 +675,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5662161694672835092}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}

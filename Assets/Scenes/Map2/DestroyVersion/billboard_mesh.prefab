@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3462179698293775407}
   - component: {fileID: 1111820770925654991}
   - component: {fileID: 6332526463594556742}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: billboard_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}

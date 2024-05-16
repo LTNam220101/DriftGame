@@ -142,6 +142,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.07450981
       objectReference: {fileID: 0}
+    - target: {fileID: 7775036765710937281, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775036765710937281, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775036765710937281, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7775036765977138253, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
       propertyPath: Music
       value: 
@@ -183,6 +195,10 @@ PrefabInstance:
       value: 0.07450981
       objectReference: {fileID: 0}
     - target: {fileID: 7775036766250307188, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775036766250307188, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
       propertyPath: m_Color.b
       value: 0.33333334
       objectReference: {fileID: 0}
@@ -194,6 +210,34 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.07450981
       objectReference: {fileID: 0}
+    - target: {fileID: 7775036766250307188, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775036766250307194, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_Name
+      value: BuffName
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775036766250307194, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775036766250307195, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775036766250307195, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775036766250307195, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 62
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775036766677092220, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7775036766677092222, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
       propertyPath: m_Color.b
       value: 0.33333334
@@ -205,6 +249,18 @@ PrefabInstance:
     - target: {fileID: 7775036766677092222, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
       propertyPath: m_Color.r
       value: 0.07450981
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775036766763571406, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775036766900008894, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775036766900008894, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7775036766900008895, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
       propertyPath: m_Color.b
@@ -473,7 +529,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7775036766250307188, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
   m_PrefabInstance: {fileID: 24889229}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1590871303}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -521,6 +577,10 @@ PrefabInstance:
       propertyPath: timer
       value: 
       objectReference: {fileID: 2083409740}
+    - target: {fileID: 645396917377545555, guid: 272c9e641e42ed6498af04c4b09c5290, type: 3}
+      propertyPath: Traction
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 645396917377545555, guid: 272c9e641e42ed6498af04c4b09c5290, type: 3}
       propertyPath: leftButton
       value: 
@@ -1484,6 +1544,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2083409740}
     - target: {fileID: 564942557717108172, guid: e8d6415d4062b804da66426bbc412242, type: 3}
+      propertyPath: Traction
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 564942557717108172, guid: e8d6415d4062b804da66426bbc412242, type: 3}
       propertyPath: leftButton
       value: 
       objectReference: {fileID: 602622652}
@@ -1955,6 +2019,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1590871303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7775036766250307194, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+  m_PrefabInstance: {fileID: 24889229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1590871306
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590871303}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b05b894e4aa1f349a6c2943be7ae728, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1828778801 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5664340631319491819, guid: e8d6415d4062b804da66426bbc412242, type: 3}
@@ -2057,6 +2147,7 @@ MonoBehaviour:
   spawnBuffController: {fileID: 2083409742}
   waitSlider: {fileID: 1561906773}
   fillSlider: {fileID: 1577074024}
+  buffName: {fileID: 36451229}
   BuffMusic: {fileID: 2083409745}
 --- !u!114 &2083409742
 MonoBehaviour:
@@ -2382,6 +2473,10 @@ PrefabInstance:
       propertyPath: timer
       value: 
       objectReference: {fileID: 2083409740}
+    - target: {fileID: 2208327720108174554, guid: 7359682fcf53f294f88509c202ec07c3, type: 3}
+      propertyPath: Traction
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 2208327720108174554, guid: 7359682fcf53f294f88509c202ec07c3, type: 3}
       propertyPath: leftButton
       value: 
@@ -2817,6 +2912,10 @@ PrefabInstance:
       propertyPath: timer
       value: 
       objectReference: {fileID: 2083409740}
+    - target: {fileID: 8961773722646932120, guid: 86eac9c63a8d22e4fad981bc85557f9c, type: 3}
+      propertyPath: Traction
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8961773722646932120, guid: 86eac9c63a8d22e4fad981bc85557f9c, type: 3}
       propertyPath: leftButton
       value: 

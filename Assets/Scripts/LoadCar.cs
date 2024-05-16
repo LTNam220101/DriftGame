@@ -13,7 +13,7 @@ public class LoadCar : MonoBehaviour
     public SpawnBuff spawnBuffController;
     private GameObject currentCar;
     private GameObject[] copColliders;
-    private Collider[] treeColliders;
+    private Collider[] colliders;
 
     public Slider waitSlider; // Slider để hiển thị thời gian đợi
     public Image fillSlider;
@@ -100,10 +100,11 @@ public class LoadCar : MonoBehaviour
         currentCar.transform.localScale *= 2;
         currentCar.GetComponent<Rigidbody>().mass = 10000f;
         currentCar.tag = "BigPlayer";
+        currentCar.layer = 9;
         spawnBuffController.isSpawning = false;
-        treeColliders = Physics.OverlapSphere(currentCar.transform.position, 500f);
+        colliders = Physics.OverlapSphere(currentCar.transform.position, 500f);
         // Duyệt qua tất cả các Collider
-        foreach (Collider collider in treeColliders)
+        foreach (Collider collider in colliders)
         {
             // Kiểm tra xem Collider có tag là "Tree" không
             if (collider.CompareTag("Tree"))
@@ -120,10 +121,11 @@ public class LoadCar : MonoBehaviour
         currentCar.transform.localScale /= 2;
         currentCar.GetComponent<Rigidbody>().mass = 1000f;
         currentCar.tag = "Player";
+        currentCar.layer = 0;
         spawnBuffController.isSpawning = true;
         buffName.text = "";
         // Duyệt qua tất cả các Collider
-        foreach (Collider collider in treeColliders)
+        foreach (Collider collider in colliders)
         {
             // Kiểm tra xem Collider có tag là "Tree" không
             if (collider!=null && collider.CompareTag("Tree"))
@@ -154,6 +156,7 @@ public class LoadCar : MonoBehaviour
         {
             cop.transform.localScale /= 3;
             cop.tag = "SmallCop";
+            cop.layer = 8;
         }
         // Chờ 2 giây
         yield return calculateTime(1.75f);
@@ -173,9 +176,9 @@ public class LoadCar : MonoBehaviour
         // Chờ 2 giây
         yield return calculateTime(1.75f);
         buffName.text = "";
-        treeColliders = Physics.OverlapSphere(currentCar.transform.position, 200f);
+        colliders = Physics.OverlapSphere(currentCar.transform.position, 200f);
         // Duyệt qua tất cả các Collider
-        foreach (Collider collider in treeColliders)
+        foreach (Collider collider in colliders)
         {
             // Kiểm tra xem Collider có tag là "Tree" không
             if (collider.CompareTag("Cop") || collider.CompareTag("SmallCop"))

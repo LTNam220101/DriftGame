@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 309490707993856181}
   - component: {fileID: 3191052931048989038}
   - component: {fileID: -3151913041227282215}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hydrant_mesh
   m_TagString: Tree
   m_Icon: {fileID: 0}

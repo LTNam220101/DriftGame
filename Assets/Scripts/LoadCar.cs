@@ -47,7 +47,6 @@ public class LoadCar : MonoBehaviour
                 cam1.Follow = currentCar.transform;
                 cam2.Follow = currentCar.transform;
                 cam2.LookAt = currentCar.transform;
-                // cams[selectedCar].gameObject.SetActive(true); 
                 yield break;
             }
             yield return new WaitForSecondsRealtime(0.001f);
@@ -148,7 +147,7 @@ public class LoadCar : MonoBehaviour
     //Go small
     /// </summary>
     /// <param name="GoSmall">GoSmall</param>
-    public IEnumerator GoSmall() {
+    public void GoSmall() {
         buffName.text = "Shrink 'em";
         copColliders = GameObject.FindGameObjectsWithTag("Cop");
         // Duyệt qua tất cả các Collider
@@ -158,8 +157,12 @@ public class LoadCar : MonoBehaviour
             cop.tag = "SmallCop";
             cop.layer = 8;
         }
+        StartCoroutine(CheckTime());
+    }
+
+    IEnumerator CheckTime() {
         // Chờ 2 giây
-        yield return calculateTime(1.75f);
+        yield return new WaitForSeconds(1.75f);
         buffName.text = "";
     }
 

@@ -317,7 +317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 459334, guid: 0234b96f048070749b226cdb99fbf6e0, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 459334, guid: 0234b96f048070749b226cdb99fbf6e0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -965,8 +965,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 77.8, z: -25}
+  m_LocalRotation: {x: 0.24263918, y: -0.33616528, z: 0.09007523, w: 0.9055416}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1579,6 +1579,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 19815030, guid: 0234b96f048070749b226cdb99fbf6e0, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19815030, guid: 0234b96f048070749b226cdb99fbf6e0, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0234b96f048070749b226cdb99fbf6e0, type: 3}
 --- !u!114 &1822574336 stripped
@@ -1672,7 +1680,7 @@ MonoBehaviour:
   cellSize: 5
   radiusToRender: 10
   gameTransforms: []
-  playerTransform: {fileID: 50569088}
+  playerTransform: {fileID: 115153612}
   water: {fileID: 652689140}
   seed: 12
   placeableObjects:

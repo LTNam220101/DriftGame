@@ -673,7 +673,6 @@ GameObject:
   - component: {fileID: 8676530888961772102}
   - component: {fileID: 7359577094822832689}
   - component: {fileID: 564942557717108172}
-  - component: {fileID: 926519198114607753}
   m_Layer: 6
   m_Name: Car
   m_TagString: Player
@@ -815,20 +814,6 @@ MonoBehaviour:
       m_Action: Player Controls
       m_Flags: 8
     m_Flags: 0
---- !u!136 &926519198114607753
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5664340631319491819}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.13
-  m_Height: 2.68
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!1 &5664902157047561827
 GameObject:
   m_ObjectHideFlags: 0

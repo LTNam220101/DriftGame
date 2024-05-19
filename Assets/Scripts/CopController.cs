@@ -62,7 +62,7 @@ public class CopController : MonoBehaviour
             bool isHitCenter = Physics.Raycast(rayCenter, out centerHit, detectDistance);
             
             if ( avoidObstacles == true && isHitCenter && (centerHit.transform.tag == "Tree" || centerHit.transform.tag == "Cop")) {
-                CheckInput(-1);
+                CheckInput(isHitLeft ? 1 : -1);
             }
             else if ( avoidObstacles == true && isHitRight && (rightHit.transform.tag == "Tree" || rightHit.transform.tag == "Cop")) {
                 CheckInput(-1);

@@ -27,6 +27,8 @@ public class Destructable : MonoBehaviour
         }
         else if (type == 1) {
             GameObject explodeEffect = Instantiate(ExplodeEffect, transform.position, transform.rotation);
+            bool disableSound = PlayerPrefs.GetInt("disableSound") == 1 ? true : false;
+            explodeEffect.GetComponent<AudioSource>().mute = disableSound;
             Rigidbody rb = destroyedVer.GetComponent<Rigidbody>();
             if (rb != null)
             {

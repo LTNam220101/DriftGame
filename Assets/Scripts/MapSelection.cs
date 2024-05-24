@@ -13,6 +13,7 @@ public class MapSelection : MonoBehaviour
     private int currentMapIndex = 0;
     
     public AudioClip PlaygroundMusic;
+    public AudioSource Sound;
 
     // // Start is called before the first frame update
     // void Start()
@@ -23,6 +24,8 @@ public class MapSelection : MonoBehaviour
 
     private void Awake()
     {
+        bool disableSound = PlayerPrefs.GetInt("disableSound") == 1 ? true : false;
+        Sound.mute = disableSound;
 		currentMapIndex = PlayerPrefs.GetInt("currentMapIndex", 3) - 3;
         ChangeMap(0);
     }
@@ -48,10 +51,10 @@ public class MapSelection : MonoBehaviour
 
 	public void StartGame()
 	{   
-        bool isMute = PlayerPrefs.GetInt("isMute") == 1 ? true : false;
+        bool disableMusic = PlayerPrefs.GetInt("disableMusic") == 1 ? true : false;
         AudioSource Music = GameObject.FindWithTag("MainCamera").GetComponent<AudioSource>();
         Music.clip = PlaygroundMusic;
-        Music.mute = isMute;
+        Music.mute = disableMusic;
         Music.Play();
 		PlayerPrefs.SetInt("currentMapIndex", currentMapIndex + 3);
 		SceneManager.LoadScene(currentMapIndex + 3);

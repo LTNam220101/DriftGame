@@ -596,6 +596,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 190df998270cccd4eafe5fc4bcf3485d, type: 2}
   mapDisplay: {fileID: 870812029}
   PlaygroundMusic: {fileID: 8300000, guid: ab30393e5e608ef4ebbfe1f3b81989d6, type: 3}
+  Sound: {fileID: 1846247285}
 --- !u!114 &870812029
 MonoBehaviour:
   m_ObjectHideFlags: 0

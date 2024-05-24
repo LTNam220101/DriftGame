@@ -852,7 +852,7 @@ GameObject:
   - component: {fileID: 781679741}
   - component: {fileID: 781679740}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1705,6 +1705,7 @@ MonoBehaviour:
   record: {fileID: 783268529}
   unlockCondition: {fileID: 365336640}
   playText: {fileID: 1748577292}
+  Sound: {fileID: 781679740}
 --- !u!1001 &1480472316
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -146,6 +146,8 @@ public class CarController : MonoBehaviour
                 Quaternion rotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
                 Vector3 position = contact.point;
                 GameObject explodeEffect = Instantiate(ExplodeEffect, position, rotation);
+                bool disableSound = PlayerPrefs.GetInt("disableSound") == 1 ? true : false;
+                explodeEffect.GetComponent<AudioSource>().mute = disableSound;
                 Destructable dest = gameObject.GetComponent<Destructable>();
                 if(dest != null)
                 {

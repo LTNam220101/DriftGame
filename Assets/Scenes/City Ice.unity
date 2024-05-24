@@ -130,6 +130,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 482593486446883668, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_Color.b
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 482593486446883668, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_Color.g
+      value: 0.16470589
+      objectReference: {fileID: 0}
+    - target: {fileID: 482593486446883668, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_Color.r
+      value: 0.08627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218860321046131423, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2345339183146109209, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899657899204580209, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_Color.b
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899657899204580209, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_Color.g
+      value: 0.16470589
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899657899204580209, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_Color.r
+      value: 0.08627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442130706965827746, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 320790011}
+    - target: {fileID: 4442130706965827746, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 7319682883158225387, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 320790011}
+    - target: {fileID: 7319682883158225387, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
     - target: {fileID: 7775036765464939835, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
       propertyPath: m_Color.b
       value: 0.33333334
@@ -154,10 +202,22 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7775036765977138227, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7775036765977138253, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
       propertyPath: Music
       value: 
       objectReference: {fileID: 963194230}
+    - target: {fileID: 7775036765977138253, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: ClickSound
+      value: 
+      objectReference: {fileID: 320790011}
+    - target: {fileID: 7775036765977138253, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+      propertyPath: SirenSound
+      value: 
+      objectReference: {fileID: 2083409743}
     - target: {fileID: 7775036766098549068, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
       propertyPath: m_Color.b
       value: 0.33333334
@@ -815,7 +875,7 @@ GameObject:
   - component: {fileID: 320790012}
   - component: {fileID: 320790011}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ClickSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1099,6 +1159,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50, y: 60, z: 0}
+--- !u!114 &744284444 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7775036765977138253, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
+  m_PrefabInstance: {fileID: 24889229}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63dbead2a33c19440b8ba89fc4290944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &911384746
 GameObject:
   m_ObjectHideFlags: 3
@@ -2149,6 +2220,7 @@ MonoBehaviour:
   fillSlider: {fileID: 1577074024}
   buffName: {fileID: 36451229}
   BuffMusic: {fileID: 2083409745}
+  MainController: {fileID: 744284444}
 --- !u!114 &2083409742
 MonoBehaviour:
   m_ObjectHideFlags: 0

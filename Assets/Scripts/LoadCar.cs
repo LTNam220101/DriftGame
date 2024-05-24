@@ -20,10 +20,12 @@ public class LoadCar : MonoBehaviour
     public Text buffName;
     
     public AudioSource BuffMusic;
+    public MainMenuController MainController;
 
     // Start is called before the first frame update
     IEnumerator Start()
     {
+        MainController.LoadScene();
         TerrainController TerrainController = GetComponent<TerrainController>();
         spawnBuffController = GetComponent<SpawnBuff>();
         int selectedCar = PlayerPrefs.GetInt("selectedCharacter");

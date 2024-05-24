@@ -31,7 +31,9 @@ public class Star : MonoBehaviour
     {
         if (loadCarComponent.BuffMusic != null && loadCarComponent.BuffMusic.clip != null)
         {
-            loadCarComponent.BuffMusic.Play();
+            
+            bool disableSound = PlayerPrefs.GetInt("disableSound") == 1 ? true : false;
+            if(!disableSound) loadCarComponent.BuffMusic.Play();
         }
     }
 

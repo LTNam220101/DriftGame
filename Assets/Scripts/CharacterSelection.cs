@@ -27,10 +27,13 @@ public class CharacterSelection : MonoBehaviour
     [SerializeField] private Text record;
     [SerializeField] private Text unlockCondition;
     [SerializeField] private Text playText;
+    public AudioSource Sound;
 	private float recordTime;
 	private int mostCrashed, mostPowerUpPicked;
 	public void Start()
 	{
+        bool disableSound = PlayerPrefs.GetInt("disableSound") == 1 ? true : false;
+        Sound.mute = disableSound;
 		recordTime = PlayerPrefs.GetFloat("record", 0);
         TimeSpan timePlaying = TimeSpan.FromSeconds(recordTime);
 		mostCrashed = PlayerPrefs.GetInt("mostCrashed", 0);

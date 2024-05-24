@@ -10,13 +10,25 @@ public class MainMenuController : MonoBehaviour
     public GameObject mainMenu;
     public GameObject PauseButton;
     public AudioSource Music;
+    public AudioSource SirenSound;
+    public AudioSource ClickSound;
     public AudioClip MenuMusic;
-    public Text MusicButton;
     public Text Record;
+    public Image soundButton;
+    public Image musicButton;
+
+    public Sprite musicOn;
+    public Sprite musicOff;
+    public Sprite soundOn;
+    public Sprite soundOff;
 
     private void Awake(){
+        bool disableSound = PlayerPrefs.GetInt("disableSound") == 1 ? true : false;
+        SirenSound.mute = disableSound;
+        ClickSound.mute = disableSound;
         Music = GameObject.FindWithTag("MainCamera").GetComponent<AudioSource>();
-        if(MusicButton) MusicButton.text = Music.mute ? "SOUND: OFF" : "SOUND: ON";
+        if(musicButton) musicButton.sprite = Music.mute ? musicOff : musicOn;
+        if(soundButton) soundButton.sprite = disableSound ? soundOff : soundOn;
         float record = PlayerPrefs.GetFloat("record", 0);
         TimeSpan timePlaying = TimeSpan.FromSeconds(record);
         string timePlayingStr = "Record: " + timePlaying.ToString("mm':'ss'.'ff");
@@ -24,14 +36,23 @@ public class MainMenuController : MonoBehaviour
     }
 
     public void InitScene(AudioClip clip) {
+        LoadScene();
+        Music = GameObject.FindWithTag("MainCamera").GetComponent<AudioSource>();
+        Music.clip = clip;
+    }
+
+    public void LoadScene() {
+        bool disableSound = PlayerPrefs.GetInt("disableSound") == 1 ? true : false;
+        SirenSound.mute = disableSound;
+        ClickSound.mute = disableSound;
         Music = GameObject.FindWithTag("MainCamera").GetComponent<AudioSource>();
         float record = PlayerPrefs.GetFloat("record", 0);
-        bool isMute = PlayerPrefs.GetInt("isMute") == 1 ? true : false;
-        Music.clip = clip;
-        Music.mute = isMute;
+        bool disableMusic = PlayerPrefs.GetInt("disableMusic") == 1 ? true : false;
+        Music.mute = disableMusic;
         Music.Play();
         SaveMusicOption();
-        if(MusicButton) MusicButton.text = Music.mute ? "SOUND: OFF" : "SOUND: ON";
+        if(musicButton) musicButton.sprite = Music.mute ? musicOff : musicOn;
+        if(soundButton) soundButton.sprite = disableSound ? soundOff : soundOn;
         TimeSpan timePlaying = TimeSpan.FromSeconds(record);
         string timePlayingStr = "Record: " + timePlaying.ToString("mm':'ss'.'ff");
         if(Record) Record.text = timePlayingStr;
@@ -73,10 +94,17 @@ public class MainMenuController : MonoBehaviour
         Music = GameObject.FindWithTag("MainCamera").GetComponent<AudioSource>();
         Music.mute = !Music.mute;
         SaveMusicOption();
-        MusicButton.text = Music.mute ? "SOUND: OFF" : "SOUND: ON";
+        musicButton.sprite = Music.mute ? musicOff : musicOn;
+    }
+    public void toggleSound(){
+        SirenSound.mute = !SirenSound.mute;
+        ClickSound.mute = !ClickSound.mute;
+        bool disableSound = PlayerPrefs.GetInt("disableSound") == 1 ? true : false;
+        PlayerPrefs.SetInt("disableSound", disableSound ? 0 : 1);
+        soundButton.sprite = disableSound ? soundOn : soundOff;
     }
 
     public void SaveMusicOption() {
-        PlayerPrefs.SetInt("isMute", Music.mute ? 1 : 0);
+        PlayerPrefs.SetInt("disableMusic", Music.mute ? 1 : 0);
     }
 }

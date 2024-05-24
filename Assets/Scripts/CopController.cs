@@ -170,6 +170,8 @@ public class CopController : MonoBehaviour
         SteerAngle = 0;
         timer.AddCarCrashed();
         GameObject explodeEffect = Instantiate(ExplodeEffect, transform.position, transform.rotation);
+        bool disableSound = PlayerPrefs.GetInt("disableSound") == 1 ? true : false;
+        explodeEffect.GetComponent<AudioSource>().mute = disableSound;
         Destructable dest = gameObject.GetComponent<Destructable>();
         if (dest != null)
         {

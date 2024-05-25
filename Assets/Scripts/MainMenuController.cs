@@ -39,6 +39,7 @@ public class MainMenuController : MonoBehaviour
         LoadScene();
         Music = GameObject.FindWithTag("MainCamera").GetComponent<AudioSource>();
         Music.clip = clip;
+        Music.Play();
     }
 
     public void LoadScene() {
@@ -49,7 +50,6 @@ public class MainMenuController : MonoBehaviour
         float record = PlayerPrefs.GetFloat("record", 0);
         bool disableMusic = PlayerPrefs.GetInt("disableMusic") == 1 ? true : false;
         Music.mute = disableMusic;
-        Music.Play();
         SaveMusicOption();
         if(musicButton) musicButton.sprite = Music.mute ? musicOff : musicOn;
         if(soundButton) soundButton.sprite = disableSound ? soundOff : soundOn;

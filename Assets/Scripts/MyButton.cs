@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,6 +10,8 @@ public class MyButton : MonoBehaviour
 
     public float dampenPress = 0;   //this returns 1 if the button is pressed after a short delay.
     public float sensitivity = 1f;  //How fast the above float turns to 1
+    public Text leftText;
+    public Text rightText;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +56,8 @@ public class MyButton : MonoBehaviour
     public void onClickDown()
     {
         isPressed = true;
+        leftText.gameObject.SetActive(false);
+        rightText.gameObject.SetActive(false);
     }
 
     public void onClickUp()

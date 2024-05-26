@@ -920,6 +920,20 @@ namespace Tessera
                         var go = GameObject.Instantiate(child.gameObject, world.Position, world.Rotation, parent);
                         go.transform.localScale = local.Scale;
                         go.name = child.gameObject.name + $" ({cell.x}, {cell.y}, {cell.z})";
+
+                        if ((cell.x == 24 || cell.x == 25) && (cell.z >= 24 && cell.z <= 29))
+                        {
+                            Transform parentTransform = go.transform;
+                            // Loop through all children of the parent GameObject
+                            for (int i = parentTransform.childCount - 1; i >= 0; i--)
+                            {
+                                // Get the child at index i
+                                Transform childGO = parentTransform.GetChild(i);
+
+                                // Destroy the child GameObject
+                                Destroy(childGO.gameObject);
+                            }
+                        }
                         return (childToInstance, go);
                     }).ToArray();
                 }
@@ -945,6 +959,19 @@ namespace Tessera
                 var go = GameObject.Instantiate(gameObject, instance.Position, instance.Rotation, parent);
                 go.transform.localScale = instance.LocalScale;
                 go.name = gameObject.name + $" ({cell.x}, {cell.y}, {cell.z})";
+                if ((cell.x == 24 || cell.x == 25) && (cell.z >= 24 && cell.z <= 29))
+                {
+                    Transform parentTransform = go.transform;
+                    // Loop through all children of the parent GameObject
+                    for (int i = parentTransform.childCount - 1; i >= 0; i--)
+                    {
+                        // Get the child at index i
+                        Transform childGO = parentTransform.GetChild(i);
+
+                        // Destroy the child GameObject
+                        Destroy(childGO.gameObject);
+                    }
+                }
                 return new[] { (Matrix4x4.identity, go) };
             }
         }

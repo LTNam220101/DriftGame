@@ -6,7 +6,7 @@ using System.Linq;
 public class removeObjectOnStart : MonoBehaviour
 {
     bool canRun = true;
-    void Update()
+    public void removeOnStart()
     {
         if(canRun){
             // Find all game objects with names containing "(14, 0, 15)"
@@ -18,6 +18,7 @@ public class removeObjectOnStart : MonoBehaviour
                         || go.name.Contains("(14, 0, 17)") || go.name.Contains("(15, 0, 17)")
                         || go.name.Contains("(14, 0, 18)") || go.name.Contains("(15, 0, 18)"))
                 .ToArray();
+                Debug.Log(gameObjects.Length);
             if(gameObjects.Length > 0){
                 // Print the names of the found game objects
                 foreach (GameObject go in gameObjects)

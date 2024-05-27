@@ -226,6 +226,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4563040255626033779}
     m_Modifications:
+    - target: {fileID: 1546614154518419611, guid: 4bbcffdcc0c74374dbd3d7b4b3201a19, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148792142926161848, guid: 4bbcffdcc0c74374dbd3d7b4b3201a19, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028782737473338067, guid: 4bbcffdcc0c74374dbd3d7b4b3201a19, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028627897414929471, guid: 4bbcffdcc0c74374dbd3d7b4b3201a19, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5662451090865306409, guid: 4bbcffdcc0c74374dbd3d7b4b3201a19, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -274,13 +290,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5953371816994220261, guid: 4bbcffdcc0c74374dbd3d7b4b3201a19, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6587571044072672414, guid: 4bbcffdcc0c74374dbd3d7b4b3201a19, type: 3}
       propertyPath: m_Name
       value: towerRound_crystals
       objectReference: {fileID: 0}
     - target: {fileID: 6587571044072672414, guid: 4bbcffdcc0c74374dbd3d7b4b3201a19, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587571044072672414, guid: 4bbcffdcc0c74374dbd3d7b4b3201a19, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519622531656545004, guid: 4bbcffdcc0c74374dbd3d7b4b3201a19, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7658415840418253587, guid: 4bbcffdcc0c74374dbd3d7b4b3201a19, type: 3}
       propertyPath: m_Enabled

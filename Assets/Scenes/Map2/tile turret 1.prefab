@@ -230,6 +230,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: towerRound_sampleF
       objectReference: {fileID: 0}
+    - target: {fileID: 6245426944536438582, guid: e48c0a4bdde842b448c981bcdf863952, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6766629972964490636, guid: e48c0a4bdde842b448c981bcdf863952, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 431716075474917392}
   - component: {fileID: 3944855163167108910}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: wheel_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 830584982288874720}
   - component: {fileID: 830584982290292776}
   - component: {fileID: 830584982290882114}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 830584982288923738}
   - component: {fileID: 830584982290179080}
   - component: {fileID: 830584982290875818}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: wheel_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 830584982288984984}
   - component: {fileID: 830584982290251216}
   - component: {fileID: 830584982290858542}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 830584982288926290}
   - component: {fileID: 830584982290172200}
   - component: {fileID: 830584982291336510}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: car_main_part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -576,7 +576,7 @@ GameObject:
   - component: {fileID: 830584982288864014}
   - component: {fileID: 830584982290252388}
   - component: {fileID: 830584982291293164}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: wheel_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -660,7 +660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4531696240662172370}
   - component: {fileID: 3914266653632017560}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -790,7 +790,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6443983331064713440}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Meshes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -826,7 +826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4356479419270439352}
   - component: {fileID: 7662363099806515120}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: wheel_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -888,7 +888,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8185904945908738807}
   - component: {fileID: 3602327124090948064}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -949,7 +949,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5612702029020688274}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -985,7 +985,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9191217700384144440}
   - component: {fileID: 2195169482374323977}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1047,7 +1047,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1041818225860361193}
   - component: {fileID: 5286153875563254463}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1139,7 +1139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8196415179839640672, guid: 830f30ac89cb7b44e887c1ccbf8dcdd8, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 830f30ac89cb7b44e887c1ccbf8dcdd8, type: 3}
@@ -1166,7 +1166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4367598269692235089, guid: d3e718b34741ea244b24429fce29b479, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4478323119664017976, guid: d3e718b34741ea244b24429fce29b479, type: 3}
       propertyPath: m_RootOrder
@@ -1241,7 +1241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4121091811543088291, guid: ddf4ea2625767fd4bb4153e7e4009ad5, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4121091811543137509, guid: ddf4ea2625767fd4bb4153e7e4009ad5, type: 3}
       propertyPath: m_RootOrder

@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_ufoGreen
       objectReference: {fileID: 0}
+    - target: {fileID: 2707821355036389992, guid: aa12c81075621784f89a5ddd0c02db1e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3377644196878444754, guid: aa12c81075621784f89a5ddd0c02db1e, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -123,37 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &50569087
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 50569088}
-  m_Layer: 0
-  m_Name: GameObject (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &50569088
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50569087}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 58, y: 133.4, z: -45.27}
-  m_LocalScale: {x: 3.57, y: 3.57, z: 3.57}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &105513878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1237,7 +1206,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1451144240
 MonoBehaviour:
@@ -1482,7 +1451,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1850320187
 GameObject:
@@ -1610,7 +1579,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1976767716
 PrefabInstance:
@@ -1777,7 +1746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7775036767052063145, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7775036767052063145, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2074,7 +2043,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083409736}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2020d3f3d665644f9b3f4710d0ebc4c, type: 3}
   m_Name: 
@@ -2110,7 +2079,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083409736}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 952ecc3ce085b864a973b87ab23e0dfe, type: 3}
   m_Name: 
@@ -2136,7 +2105,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083409736}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc66daa7abcc55b4bb2f5cf876e258b4, type: 3}
   m_Name: 
@@ -2357,42 +2326,34 @@ MonoBehaviour:
   m_center: {x: 0, y: 0, z: 0}
   modelType: 0
   tiles:
-  - tile: {fileID: 969233518129104952, guid: 5a5efc05002fc9940b7201e43ddebda0, type: 3}
-    weight: 60
-  - tile: {fileID: 517716632989869215, guid: c0aa4bac10a2c1c4a87bc9657a17f03f, type: 3}
-    weight: 5
-  - tile: {fileID: 4681901885606474248, guid: 8132879821464be48975f4a91474ecc6, type: 3}
-    weight: 5
-  - tile: {fileID: 141474339267466132, guid: 582265934c13dfc48a508a8d22da14f4, type: 3}
-    weight: 5
-  - tile: {fileID: 1346561757745824569, guid: 60236557d936cb8439787020f41ea96b, type: 3}
-    weight: 5
-  - tile: {fileID: 7805494859018243598, guid: cd09a88852e673842844ff5c44fe2c2a, type: 3}
-    weight: 0
-  - tile: {fileID: 969233518129104952, guid: db59f35ef15dee246b7e311724ec8a80, type: 3}
-    weight: 2
-  - tile: {fileID: 969233516565876966, guid: 9df65e6adf5c1e648b72805832f863f2, type: 3}
-    weight: 2
-  - tile: {fileID: 969233518577482285, guid: b354313cb49f4c7429af6684a38932d4, type: 3}
-    weight: 2
-  - tile: {fileID: 3290968344004679102, guid: 33f6c5aeb15e1c9428e83e79feb621b4, type: 3}
-    weight: 2
-  - tile: {fileID: 8592657925027449582, guid: e4ed7266800b0a6468ce6a70799c1dd0, type: 3}
-    weight: 2
-  - tile: {fileID: -3366631105800901239, guid: 00480e684b8558f4a8fec286bed0cdbc, type: 3}
-    weight: 2
+  - tile: {fileID: 8456547182989991362, guid: 9f2a852f58268814ba5d1ebc355b10ba, type: 3}
+    weight: 1
+  - tile: {fileID: 7866520133493664304, guid: 8e9d3391ab9a0e840b2037f1e6b36137, type: 3}
+    weight: 1
+  - tile: {fileID: 7498639589322595487, guid: bf17ec51d88a0814e94d00bc899aed89, type: 3}
+    weight: 1
+  - tile: {fileID: 8521448861380914641, guid: b2c9af2e1674b1a42bd744f3ec394803, type: 3}
+    weight: 1
+  - tile: {fileID: 1416495629742875977, guid: e50cd00cc2e81f94abacaeab367745b8, type: 3}
+    weight: 1
+  - tile: {fileID: 383425663902705437, guid: ccff2a2630c0055418b9d44e408ff691, type: 3}
+    weight: 1
+  - tile: {fileID: 4568529265301459954, guid: 3cc5f31e3c982b44887cbcb7ac6838bf, type: 3}
+    weight: 1
+  - tile: {fileID: 4128907763676497727, guid: 72772dec107c10d48adaffa585109a9e, type: 3}
+    weight: 1
   samples: []
   overlapSize: {x: 3, y: 3, z: 3}
-  tileSize: {x: 10, y: 1, z: 10}
+  tileSize: {x: 5, y: 1, z: 5}
   backtrack: 0
   seed: 0
   retries: 5
   stepLimit: -1
   algorithm: 0
   recordUndo: 0
-  failureMode: 0
-  uncertaintyTile: {fileID: 2736158700531673495, guid: 7adad730c14a5284ea5cfbc5834250f3, type: 3}
-  contradictionTile: {fileID: 2736158700531673495, guid: 7adad730c14a5284ea5cfbc5834250f3, type: 3}
+  failureMode: 2
+  uncertaintyTile: {fileID: 6032423955270300976, guid: b2c9af2e1674b1a42bd744f3ec394803, type: 3}
+  contradictionTile: {fileID: 6032423955270300976, guid: b2c9af2e1674b1a42bd744f3ec394803, type: 3}
   scaleUncertainyTile: 1
   skyBox: {fileID: 0}
   searchInitialConstraints: 1

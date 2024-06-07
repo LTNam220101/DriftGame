@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6122431666103772268}
   - component: {fileID: 13844514698415375}
   - component: {fileID: 2923845607039998068}
+  - component: {fileID: 1656353343795490000}
   m_Layer: 0
   m_Name: rocks
   m_TagString: Tree
@@ -93,11 +94,25 @@ MeshCollider:
   m_GameObject: {fileID: 3004133087767354643}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6679825976550175534, guid: 6e18acfa2033afc4cba06725b7df83cc, type: 3}
+--- !u!136 &1656353343795490000
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3004133087767354643}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 4.33
+  m_Height: 3.97
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.42, z: 0}
 --- !u!1 &5638856033364114793
 GameObject:
   m_ObjectHideFlags: 0

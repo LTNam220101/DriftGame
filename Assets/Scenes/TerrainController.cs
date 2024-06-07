@@ -95,7 +95,7 @@ public class TerrainController : MonoBehaviour {
     private void Update() {
         //save the tile the player is on
 	if(playerTransform){
-        Vector2 playerTile = TileFromPosition(playerTransform.localPosition);
+        Vector2 playerTile = TileFromPosition(playerTransform.localPosition + new Vector3(-90f, 0f, 90f));
         //save the tiles of all tracked objects in gameTransforms (including the player)
         List<Vector2> centerTiles = new List<Vector2>();
         centerTiles.Add(playerTile);
@@ -124,7 +124,7 @@ public class TerrainController : MonoBehaviour {
             List<Vector2> keysToRemove = new List<Vector2>();//can't remove item when inside a foreach loop
 		if(playerTransform){
             foreach (KeyValuePair<Vector2, GameObject> kv in terrainTiles) {
-                if (Vector3.Distance(playerTransform.position, kv.Value.transform.position) > destroyDistance && !kv.Value.activeSelf) {
+                if (Vector3.Distance(playerTransform.position + new Vector3(-90f, 0f, 90f), kv.Value.transform.position) > destroyDistance && !kv.Value.activeSelf) {
                     keysToRemove.Add(kv.Key);
                     Destroy(kv.Value);
                 }

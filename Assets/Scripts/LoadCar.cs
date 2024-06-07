@@ -22,6 +22,8 @@ public class LoadCar : MonoBehaviour
     public AudioSource BuffMusic;
     public MainMenuController MainController;
 
+    public int maxBuff = 6;
+
     // Start is called before the first frame update
     IEnumerator Start()
     {
@@ -215,6 +217,41 @@ public class LoadCar : MonoBehaviour
         RestoreTimeScale();
     }
 
+    /// <summary>
+    //Amok
+    /// </summary>
+    /// <param name="Amok">Amok</param>
+    public void Amok(){
+        CarController carController = currentCar.GetComponent<CarController>();
+        carController.MaxSpeed *= 1.5f;
+        carController.MinSpeed *= 1.5f;
+        carController.AmokEffect.SetActive(true);
+        buffName.text = "Amok";
+        currentCar.tag = "BigPlayer";
+        currentCar.layer = 9;
+        spawnBuffController.isSpawning = false;
+        StartCoroutine(SwitchBackToNormalSpeed());
+    }
+
+    public void MakeNormalSpeed()
+    {
+        CarController carController = currentCar.GetComponent<CarController>();
+        carController.MaxSpeed /= 1.5f;
+        carController.MinSpeed /= 1.5f;
+        carController.AmokEffect.SetActive(false);
+        buffName.text = "";
+        currentCar.tag = "Player";
+        currentCar.layer = 0;
+        spawnBuffController.isSpawning = true;
+    }
+
+    IEnumerator SwitchBackToNormalSpeed()
+    {
+        // Chờ 5 giây
+        yield return calculateTime(5f);
+        MakeNormalSpeed();
+    }
+
     IEnumerator calculateTime(float waitTime) {
         waitSlider.gameObject.SetActive(true);
         float elapsedTime = 0f; // Thời gian đã trôi qua
@@ -232,5 +269,36 @@ public class LoadCar : MonoBehaviour
             yield return null; // Chờ một frame
         }
         waitSlider.gameObject.SetActive(false);
+    }
+
+    public void activeBuff(GameObject explodeEffect, Transform transform) {
+        int randomInt = Random.Range(0, maxBuff);
+        switch(randomInt){
+            case 0: 
+                GoBig();
+                break;
+            case 1: 
+                GoSmall();
+                break;
+            case 2: 
+                MakeFirstPersonView();
+                break;
+            case 3: 
+                GameObject explodeEffectObj = Instantiate(explodeEffect, transform.position, transform.rotation);
+                bool disableSound = PlayerPrefs.GetInt("disableSound") == 1 ? true : false;
+                explodeEffect.GetComponent<AudioSource>().mute = disableSound;
+                explodeEffectObj.SetActive(true);
+                Nuclear();
+                break;
+            case 4: 
+                Slomo();
+                break;
+            case 5: 
+                Amok();
+                break;
+            default: 
+                GoSmall();
+                break;
+        }
     }
 }

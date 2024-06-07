@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class CarController : MonoBehaviour
 {
     public GameObject ExplodeEffect;
+    public GameObject AmokEffect;
     private Rigidbody playerRB;
     public WheelColliders colliders;
     public WheelMeshes wheelMeshes;

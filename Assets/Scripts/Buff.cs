@@ -46,22 +46,7 @@ public class Buff : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             if (loadCarComponent != null){
-                int randomInt = Random.Range(0, 5);
-                if(randomInt == 1){
-                    loadCarComponent.GoSmall();
-                }else if (randomInt == 2) {
-                    loadCarComponent.MakeFirstPersonView();
-                }else if (randomInt == 3){
-                    GameObject explodeEffectObj = Instantiate(explodeEffect, transform.position, transform.rotation);
-                    bool disableSound = PlayerPrefs.GetInt("disableSound") == 1 ? true : false;
-                    explodeEffect.GetComponent<AudioSource>().mute = disableSound;
-                    explodeEffectObj.SetActive(true);
-                    loadCarComponent.Nuclear();
-                }else if (randomInt == 4){
-                    loadCarComponent.Slomo();
-                } else {
-                    loadCarComponent.GoBig();
-                }
+                loadCarComponent.activeBuff(explodeEffect, transform);
             }
             timerController.AddBuffPicked();
             PlayPickupSound();

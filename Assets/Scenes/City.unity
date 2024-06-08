@@ -955,7 +955,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 200
+  m_Radius: 250
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1148485338
 PrefabInstance:
@@ -2382,7 +2382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ad2bf01b7a6b7409eb683402aa8669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_size: {x: 50, y: 1, z: 50}
+  m_size: {x: 20, y: 1, z: 20}
   m_center: {x: 0, y: 0, z: 0}
   modelType: 0
   tiles:

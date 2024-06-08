@@ -14,6 +14,7 @@ public class LoadCar : MonoBehaviour
     private GameObject currentCar;
     private GameObject[] copColliders;
     private Collider[] colliders;
+    private int selectedCar;
 
     public Slider waitSlider; // Slider để hiển thị thời gian đợi
     public Image fillSlider;
@@ -30,7 +31,7 @@ public class LoadCar : MonoBehaviour
         MainController.LoadScene();
         TerrainController TerrainController = GetComponent<TerrainController>();
         spawnBuffController = GetComponent<SpawnBuff>();
-        int selectedCar = PlayerPrefs.GetInt("selectedCharacter");
+        selectedCar = PlayerPrefs.GetInt("selectedCharacter");
         Vector3 startPoint = new Vector3(
             spawnPoint.transform.position.x,
             spawnPoint.transform.position.y,
@@ -48,6 +49,7 @@ public class LoadCar : MonoBehaviour
                 currentCar.SetActive(true);
                 gameObject.GetComponent<TerrainController>().playerTransform = currentCar.transform;
                 gameObject.GetComponent<Spawner>().Player = currentCar;
+                gameObject.GetComponent<Spawner>().Target = currentCar;
                 cam1.Follow = currentCar.transform;
                 cam2.Follow = currentCar.transform;
                 cam2.LookAt = currentCar.transform;
@@ -174,7 +176,11 @@ public class LoadCar : MonoBehaviour
     //Nuclear
     /// </summary>
     /// <param name="Nuclear">Nuclear</param>
-    public void Nuclear(){
+    public void Nuclear(GameObject explodeEffect, Transform transform){
+        GameObject explodeEffectObj = Instantiate(explodeEffect, transform.position, transform.rotation);
+        bool disableSound = PlayerPrefs.GetInt("disableSound") == 1 ? true : false;
+        explodeEffect.GetComponent<AudioSource>().mute = disableSound;
+        explodeEffectObj.SetActive(true);
         buffName.text = "Nuclear";
         StartCoroutine(NuclearExplode());
     }
@@ -252,6 +258,50 @@ public class LoadCar : MonoBehaviour
         MakeNormalSpeed();
     }
 
+    /// <summary>
+    //Decoy
+    /// </summary>
+    /// <param name="Decoy">Decoy</param>
+    public void Decoy(){
+        buffName.text = "Decoy";
+        GameObject decoy = Instantiate(currentCar, currentCar.transform.position, currentCar.transform.rotation * Quaternion.Euler(0, 30f, 0));
+        decoy.layer = 11;
+        decoy.GetComponent<CarController>().canControl = false;
+        gameObject.GetComponent<Spawner>().Target = decoy;
+        GameObject[] copColliders = GameObject.FindGameObjectsWithTag("Cop");
+        // Duyệt qua tất cả các Collider
+        foreach (GameObject cop in copColliders)
+        {
+            if(cop.layer != 10){
+                cop.GetComponent<CopController>().Player = decoy;
+            }
+        }
+        spawnBuffController.isSpawning = false;
+        StartCoroutine(SwitchBackToCurrentCar(decoy, copColliders));
+    }
+
+    public void RemoveDecoy(GameObject decoy, GameObject[] copColliders)
+    {
+        Destroy(decoy);
+        buffName.text = "";
+        spawnBuffController.isSpawning = true;
+        gameObject.GetComponent<Spawner>().Target = currentCar;
+        // Duyệt qua tất cả các Collider
+        foreach (GameObject cop in copColliders)
+        {
+            if(cop.layer != 10){
+                cop.GetComponent<CopController>().Player = currentCar;
+            }
+        }
+    }
+
+    IEnumerator SwitchBackToCurrentCar(GameObject decoy, GameObject[] copColliders)
+    {
+        // Chờ 7 giây
+        yield return calculateTime(7f);
+        RemoveDecoy(decoy, copColliders);
+    }
+
     IEnumerator calculateTime(float waitTime) {
         waitSlider.gameObject.SetActive(true);
         float elapsedTime = 0f; // Thời gian đã trôi qua
@@ -272,7 +322,8 @@ public class LoadCar : MonoBehaviour
     }
 
     public void activeBuff(GameObject explodeEffect, Transform transform) {
-        int randomInt = Random.Range(0, maxBuff);
+        // int randomInt = Random.Range(0, maxBuff);
+        int randomInt = 6;
         switch(randomInt){
             case 0: 
                 GoBig();
@@ -284,17 +335,16 @@ public class LoadCar : MonoBehaviour
                 MakeFirstPersonView();
                 break;
             case 3: 
-                GameObject explodeEffectObj = Instantiate(explodeEffect, transform.position, transform.rotation);
-                bool disableSound = PlayerPrefs.GetInt("disableSound") == 1 ? true : false;
-                explodeEffect.GetComponent<AudioSource>().mute = disableSound;
-                explodeEffectObj.SetActive(true);
-                Nuclear();
+                Nuclear(explodeEffect, transform);
                 break;
             case 4: 
                 Slomo();
                 break;
             case 5: 
                 Amok();
+                break;
+            case 6: 
+                Decoy();
                 break;
             default: 
                 GoSmall();

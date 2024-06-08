@@ -154,7 +154,7 @@ public class CopController : MonoBehaviour
         if (gameObject.tag == "Cop") {
             if (other.gameObject.tag == "Cop" || other.gameObject.tag == "Tree" || other.gameObject.tag == "Player")
             {
-                Explode(); 
+                Explode(false); 
             }if(other.gameObject.tag == "BigPlayer"){
                 Explode(false, 2);
             }

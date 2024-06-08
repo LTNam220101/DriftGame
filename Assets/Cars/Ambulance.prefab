@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6347289456911844142}
   - component: {fileID: 6316135376602173776}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wheel_BL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2989347253312388983}
   - component: {fileID: 4607670101813137885}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wheel_BR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 3801752565011702913}
   - component: {fileID: -4621261714685277076}
   - component: {fileID: 1014166350026016553}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Ambulance
   m_TagString: Cop
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8608781849178433717}
   - component: {fileID: 866046492168519123}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4882941764419377353}
   - component: {fileID: 4666370072530079377}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject Player;
+    public GameObject Target;
     public GameObject[] cops;
     public int[] copCosts;
     public TimerController Timer;
@@ -64,7 +65,7 @@ public class Spawner : MonoBehaviour
             }
             Vector3 rotationVec =  Vector3.up * Random.Range(-180, 180);
             GameObject cop = Instantiate(cops[id], new Vector3(startPoint.x, hit.point.y + 1, startPoint.z), Quaternion.Euler(rotationVec.x, rotationVec.y, rotationVec.z));
-            cop.GetComponent<CopController>().Player = Player;
+            cop.GetComponent<CopController>().Player = Target;
             cop.GetComponent<CopController>().timer = Timer;
             return;
         }

@@ -20,6 +20,8 @@ public class CarController : MonoBehaviour
     public float speed = 40;
     public float Traction = 1;
 
+    public bool canControl = true;
+
     public float steeringInput;
     private float currentAxisValue;
 
@@ -62,13 +64,15 @@ public class CarController : MonoBehaviour
     {
         currentAxisValue = playerControls.ReadValue<float>();
         if(steeringInput >= -0.1f && steeringInput <= 0.1f) steeringInput = 0.0f;
-        if (rightButton.isPressed)
-        {
-            currentAxisValue = 1;
-        }
-        if (leftButton.isPressed)
-        {
-            currentAxisValue =-1;
+        if(canControl){
+            if (rightButton.isPressed)
+            {
+                currentAxisValue = 1;
+            }
+            if (leftButton.isPressed)
+            {
+                currentAxisValue =-1;
+            }
         }
         if(steeringInput < currentAxisValue){
             steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.25f);

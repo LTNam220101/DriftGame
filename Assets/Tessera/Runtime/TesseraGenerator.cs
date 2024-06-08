@@ -921,7 +921,7 @@ namespace Tessera
                         go.transform.localScale = local.Scale;
                         go.name = child.gameObject.name + $" ({cell.x}, {cell.y}, {cell.z})";
 
-                        if ((cell.x == 24 || cell.x == 25) && (cell.z >= 24 && cell.z <= 29))
+                        if ((cell.x == 9 || cell.x == 10) && (cell.z >= 9 && cell.z <= 15))
                         {
                             Transform parentTransform = go.transform;
                             // Loop through all children of the parent GameObject
@@ -959,7 +959,7 @@ namespace Tessera
                 var go = GameObject.Instantiate(gameObject, instance.Position, instance.Rotation, parent);
                 go.transform.localScale = instance.LocalScale;
                 go.name = gameObject.name + $" ({cell.x}, {cell.y}, {cell.z})";
-                if ((cell.x == 24 || cell.x == 25) && (cell.z >= 24 && cell.z <= 29))
+                if ((cell.x == 9 || cell.x == 10) && (cell.z >= 9 && cell.z <= 15))
                 {
                     Transform parentTransform = go.transform;
                     // Loop through all children of the parent GameObject

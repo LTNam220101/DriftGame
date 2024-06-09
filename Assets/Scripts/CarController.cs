@@ -93,8 +93,8 @@ public class CarController : MonoBehaviour
     }
     void ApplySteering()
     {
-        colliders.FRWheel.steerAngle = steeringInput * 25;
-        colliders.FLWheel.steerAngle = steeringInput * 25;
+        colliders.FRWheel.steerAngle = steeringInput * 60;
+        colliders.FLWheel.steerAngle = steeringInput * 60;
         if (speed > 0)
         {
         float a = steeringInput > 0 ? 1 : -1;

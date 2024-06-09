@@ -18,8 +18,8 @@ public class CharacterSelection : MonoBehaviour
 	private string[] listCondition = {
 		"",
 		"Survived 90 seconds", 
-		"150 Car crashes in one game", 
-		"Pick 20 powerups in one game"
+		"100 Car crashes in one game", 
+		"Pick 10 powerups in one game"
 	};
     [SerializeField] private Text carName;
     [SerializeField] private Button playButton;
@@ -77,10 +77,10 @@ public class CharacterSelection : MonoBehaviour
 				carUnlock = recordTime >= 90f;
 				break;
 			case 2:
-				carUnlock = mostCrashed >= 150;
+				carUnlock = mostCrashed >= 100;
 				break;
 			case 3:
-				carUnlock = mostPowerUpPicked >= 20;
+				carUnlock = mostPowerUpPicked >= 10;
 				break;
 			default:
 				carUnlock = false;

@@ -651,8 +651,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.24263918, y: -0.33616528, z: 0.09007523, w: 0.9055416}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 77.8, z: -25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2049,6 +2049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  Target: {fileID: 0}
   cops:
   - {fileID: 2922196080687437655, guid: 4cfb08c070a06fa45bb2b6126866bc86, type: 3}
   - {fileID: 4419733373091148671, guid: fe31b5dd27431554da6af28f94e16e5c, type: 3}
@@ -2098,6 +2099,7 @@ MonoBehaviour:
   buffName: {fileID: 701606892}
   BuffMusic: {fileID: 1836330064}
   MainController: {fileID: 1363736376}
+  maxBuff: 6
 --- !u!114 &2083409742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2326,21 +2328,49 @@ MonoBehaviour:
   m_center: {x: 0, y: 0, z: 0}
   modelType: 0
   tiles:
-  - tile: {fileID: 8456547182989991362, guid: 9f2a852f58268814ba5d1ebc355b10ba, type: 3}
+  - tile: {fileID: 5640650040895667714, guid: 6fe5483fd81c0e34dab301a04037f416, type: 3}
     weight: 1
-  - tile: {fileID: 7866520133493664304, guid: 8e9d3391ab9a0e840b2037f1e6b36137, type: 3}
+  - tile: {fileID: 2078291566725450371, guid: 80fd6c95ea3eaae479d49498077107d9, type: 3}
     weight: 1
-  - tile: {fileID: 7498639589322595487, guid: bf17ec51d88a0814e94d00bc899aed89, type: 3}
+  - tile: {fileID: 7993493123454021395, guid: c6704a1305251f846aa844abb5da3e8e, type: 3}
     weight: 1
-  - tile: {fileID: 8521448861380914641, guid: b2c9af2e1674b1a42bd744f3ec394803, type: 3}
+  - tile: {fileID: 4624090247159207973, guid: 07ba9d582090d944da1d0c930c0b282a, type: 3}
     weight: 1
-  - tile: {fileID: 1416495629742875977, guid: e50cd00cc2e81f94abacaeab367745b8, type: 3}
+  - tile: {fileID: 5359175725640937401, guid: 935b99e8ecbcea3468a246b90017e9e9, type: 3}
     weight: 1
-  - tile: {fileID: 383425663902705437, guid: ccff2a2630c0055418b9d44e408ff691, type: 3}
+  - tile: {fileID: 22021572251448182, guid: 5e532932e0efd2e46817fd8384e2da74, type: 3}
     weight: 1
-  - tile: {fileID: 4568529265301459954, guid: 3cc5f31e3c982b44887cbcb7ac6838bf, type: 3}
+  - tile: {fileID: 8785252318110402807, guid: 8f2988ca3dfc36443ac2a0ca229b744f, type: 3}
     weight: 1
-  - tile: {fileID: 4128907763676497727, guid: 72772dec107c10d48adaffa585109a9e, type: 3}
+  - tile: {fileID: 6376792929876362596, guid: 1c9ae9e679076074a920f8845602ab61, type: 3}
+    weight: 1
+  - tile: {fileID: 7534654495041974454, guid: 8508620d575182443b2bf511f369935b, type: 3}
+    weight: 1
+  - tile: {fileID: 2462719147294025501, guid: e6a0636c07e35a24e9d87a1aef4b05cd, type: 3}
+    weight: 1
+  - tile: {fileID: 2974063538714203417, guid: 1214c1ed50f681a4f89c8525339ab46b, type: 3}
+    weight: 1
+  - tile: {fileID: 8716551763097505483, guid: 6f6a88b2bbac260479339aea7fb42fa4, type: 3}
+    weight: 1
+  - tile: {fileID: 696347408840304337, guid: e362fc5cfb6fc2549a839f4ff971ee52, type: 3}
+    weight: 1
+  - tile: {fileID: 1792523905101829014, guid: 2a6a5b15c951e2e4987de3e6524a6fb9, type: 3}
+    weight: 1
+  - tile: {fileID: 2864440559655921477, guid: 3b859b8cdf73745468496455e930a5a6, type: 3}
+    weight: 1
+  - tile: {fileID: 623181858069726214, guid: 8d7206c1f0d64114290aa50523780fc5, type: 3}
+    weight: 1
+  - tile: {fileID: 631702632603465583, guid: 4aba349df161e944884a27edddebf00a, type: 3}
+    weight: 1
+  - tile: {fileID: 1219833689892887969, guid: c3bdd6135bfc783418c5d0861399b67a, type: 3}
+    weight: 1
+  - tile: {fileID: 340139501303933082, guid: ea6aba31c7136da49b31545e1566ec24, type: 3}
+    weight: 1
+  - tile: {fileID: 1137131525151056228, guid: dd81873229efed14c909b51bd4ee46a0, type: 3}
+    weight: 1
+  - tile: {fileID: 4488088685355315656, guid: 24a79d60797addd4ba99f5b9039347f8, type: 3}
+    weight: 1
+  - tile: {fileID: 3798380651068307480, guid: 9e655f33221eb4d47b3f74ea321076be, type: 3}
     weight: 1
   samples: []
   overlapSize: {x: 3, y: 3, z: 3}
@@ -2351,7 +2381,7 @@ MonoBehaviour:
   stepLimit: -1
   algorithm: 0
   recordUndo: 0
-  failureMode: 2
+  failureMode: 0
   uncertaintyTile: {fileID: 6032423955270300976, guid: b2c9af2e1674b1a42bd744f3ec394803, type: 3}
   contradictionTile: {fileID: 6032423955270300976, guid: b2c9af2e1674b1a42bd744f3ec394803, type: 3}
   scaleUncertainyTile: 1

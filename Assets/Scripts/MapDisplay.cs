@@ -15,7 +15,7 @@ public class MapDisplay : MonoBehaviour
 
     public void Start(){
         int totalStarRecord = PlayerPrefs.GetInt("totalStar", 0);
-        totalStar.text = "totalStar: " + totalStarRecord;
+        totalStar.text = "" + totalStarRecord;
     }
 
     public void DisplayMap(Map _map){

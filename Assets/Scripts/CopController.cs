@@ -57,28 +57,36 @@ public class CopController : MonoBehaviour
             RaycastHit rightHit;
             RaycastHit leftHit;
             RaycastHit centerHit;
-            bool isHitRight = Physics.Raycast(rayRight, out rightHit, detectDistance);
-            bool isHitLeft = Physics.Raycast(rayLeft, out leftHit, detectDistance);
-            bool isHitCenter = Physics.Raycast(rayCenter, out centerHit, detectDistance);
-            
-            if ( avoidObstacles == true && isHitCenter && (centerHit.transform.tag == "Tree" || centerHit.transform.tag == "Cop")) {
-                CheckInput(isHitLeft ? 1 : -1);
-            }
-            else if ( avoidObstacles == true && isHitRight && (rightHit.transform.tag == "Tree" || rightHit.transform.tag == "Cop")) {
-                CheckInput(-1);
-            }
-            else if ( avoidObstacles == true && isHitLeft && (leftHit.transform.tag == "Tree" || leftHit.transform.tag == "Cop")) {
-                CheckInput(1);
-            }
-            else {
-                float angle = Vector3.SignedAngle(transform.forward * 3, Player.transform.position + Player.transform.forward * 10f - transform.position, Vector3.up);
-                if(angle > 15.0f) {
-                    CheckInput(1);
+            bool isHitRight = Physics.Raycast(rayRight, out rightHit, detectDistance) && (rightHit.transform.tag == "Tree" || rightHit.transform.tag == "Cop" || rightHit.transform.tag == "Finish");
+            bool isHitLeft = Physics.Raycast(rayLeft, out leftHit, detectDistance) && (leftHit.transform.tag == "Tree" || leftHit.transform.tag == "Cop" || leftHit.transform.tag == "Finish");
+            bool isHitCenter = Physics.Raycast(rayCenter, out centerHit, detectDistance) && (centerHit.transform.tag == "Tree" || centerHit.transform.tag == "Cop" || centerHit.transform.tag == "Finish");
+            if(avoidObstacles){
+                if (isHitCenter)
+                {
+                    CheckInput(isHitLeft ? 1 : -1); // Nếu có va chạm ở trung tâm, ưu tiên tránh về bên không bị va chạm (phải nếu trái có va chạm)
                 }
-                else if (angle < -15.0f) {
-                    CheckInput(-1);
-                }else {
-                    CheckInput(0);
+                else if (isHitRight && isHitLeft)
+                {
+                    CheckInput(-1); // Nếu cả bên phải và bên trái đều có va chạm, tránh về bên trái
+                }
+                else if (isHitRight)
+                {
+                    CheckInput(-1); // Nếu chỉ có va chạm ở bên phải, tránh về bên trái
+                }
+                else if (isHitLeft)
+                {
+                    CheckInput(1); // Nếu chỉ có va chạm ở bên trái, tránh về bên phải
+                }
+                else {
+                    float angle = Vector3.SignedAngle(transform.forward * 3, Player.transform.position + Player.transform.forward * 10f - transform.position, Vector3.up);
+                    if(angle > 15.0f) {
+                        CheckInput(1);
+                    }
+                    else if (angle < -15.0f) {
+                        CheckInput(-1);
+                    }else {
+                        CheckInput(0);
+                    }
                 }
             }
 
@@ -98,8 +106,8 @@ public class CopController : MonoBehaviour
                                 );
             }
 
-            colliders.FRWheel.steerAngle = steeringInput * 25;
-            colliders.FLWheel.steerAngle = steeringInput * 25;
+            colliders.FRWheel.steerAngle = steeringInput * 60;
+            colliders.FLWheel.steerAngle = steeringInput * 60;
             MoveForce = Vector3.ClampMagnitude(MoveForce, speed);
 
             MoveForce = Vector3.Lerp(MoveForce.normalized, transform.forward, Traction * Time.deltaTime) * MoveForce.magnitude;

@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 3160569884701769052}
   - component: {fileID: -3366631105800901239}
   - component: {fileID: -4159609190174209888}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tile_treeDouble
   m_TagString: Terrain
   m_Icon: {fileID: 0}

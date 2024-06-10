@@ -37,17 +37,17 @@ public class Spawner : MonoBehaviour
         if(tryNum == 5) return;
         float x = Random.value;
         if(x > 0.5f){
-            x = Player.transform.position.x + Random.Range(55, 75);
+            x = Player.transform.position.x + Random.Range(45, 65);
         }else
         {
-            x = Player.transform.position.x - Random.Range(55, 75);
+            x = Player.transform.position.x - Random.Range(45, 65);
         }
         float z = Random.value;
         if (z > 0.5f){
-            z = Player.transform.position.z + Random.Range(55, 75);
+            z = Player.transform.position.z + Random.Range(45, 65);
         }else
         {
-            z = Player.transform.position.z - Random.Range(55, 75);
+            z = Player.transform.position.z - Random.Range(45, 65);
         }
         RaycastHit hit;
         Vector3 startPoint = new Vector3(x, Player.transform.position.y + TerrainController.TerrainSize.y * 2, z);

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 141474338163226281}
   - component: {fileID: 141474339267466132}
   - component: {fileID: 141474338163226283}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tile_split
   m_TagString: Terrain
   m_Icon: {fileID: 0}

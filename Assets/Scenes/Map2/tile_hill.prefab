@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 6143404532623989948}
   - component: {fileID: 3290968344004679102}
   - component: {fileID: -5262265447654010201}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tile_hill
   m_TagString: Terrain
   m_Icon: {fileID: 0}

@@ -323,7 +323,7 @@ public class LoadCar : MonoBehaviour
 
     public void activeBuff(GameObject explodeEffect, Transform transform) {
         int randomInt = Random.Range(0, maxBuff);
-        // int randomInt = 6;
+        // int randomInt = 5;
         switch(randomInt){
             case 0: 
                 GoBig();

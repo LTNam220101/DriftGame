@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2840282626975476492}
   - component: {fileID: 5764682398295155478}
   - component: {fileID: 7805494859018243598}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tile_crossing
   m_TagString: Untagged
   m_Icon: {fileID: 0}

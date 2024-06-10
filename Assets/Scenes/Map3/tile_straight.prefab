@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1346561757745824563}
   - component: {fileID: 1346561757745824569}
   - component: {fileID: 1346561757745824565}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tile_straight
   m_TagString: Terrain
   m_Icon: {fileID: 0}

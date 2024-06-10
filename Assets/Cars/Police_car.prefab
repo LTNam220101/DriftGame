@@ -655,6 +655,7 @@ MonoBehaviour:
   MaxSpeed: 32
   MinSpeed: 20
   SteerAngle: 6
+  canRun: 1
   steeringInput: 0
   detectAngle: 5
   detectDistance: 30

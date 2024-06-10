@@ -21,6 +21,7 @@ public class CopController : MonoBehaviour
     private float speed = 30;
     public float SteerAngle = 8;
     private float Traction = 1;
+    public bool canRun = true;
     
     public float steeringInput;
     private float currentAxisValue;
@@ -42,7 +43,7 @@ public class CopController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Player != null)
+        if(Player != null && canRun)
         {
             MoveForce += transform.forward * speed * Time.deltaTime;
             transform.position += MoveForce * Time.deltaTime;
@@ -169,6 +170,31 @@ public class CopController : MonoBehaviour
         }
         if (gameObject.tag == "SmallCop" && (other.gameObject.tag == "BigPlayer" || other.gameObject.tag == "Player" || other.gameObject.tag == "Cop" || other.gameObject.tag == "Tree" || other.gameObject.tag == "SmallCop")) {
             Explode(false, 0);
+        }
+        if (other.gameObject.CompareTag("Terrain"))
+        {
+            Debug.Log("OnCollisionEnter");
+            canRun = true;
+        }
+    }
+
+    void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Terrain"))
+        {
+            Debug.Log("OnCollisionStay");
+
+            canRun = true;
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Terrain"))
+        {
+            Debug.Log("OnCollisionExit");
+
+            canRun = false;
         }
     }
 

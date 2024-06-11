@@ -43,6 +43,7 @@ public class MainMenuController : MonoBehaviour
     }
 
     public void LoadScene() {
+        Time.timeScale = 1f;
         bool disableSound = PlayerPrefs.GetInt("disableSound") == 1 ? true : false;
         SirenSound.mute = disableSound;
         ClickSound.mute = disableSound;

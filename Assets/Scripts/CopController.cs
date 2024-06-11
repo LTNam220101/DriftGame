@@ -115,6 +115,7 @@ public class CopController : MonoBehaviour
         
             CheckParticles();
             ApplyWheelPositions();
+            CheckDistanceToTerrain();
         }
         else
         {
@@ -195,6 +196,17 @@ public class CopController : MonoBehaviour
             Debug.Log("OnCollisionExit");
 
             canRun = false;
+        }
+    }
+
+    private void CheckDistanceToTerrain()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit) && hit.collider.CompareTag("Terrain"))
+        {
+            if(hit.distance > 20f){
+                Explode();
+            }
         }
     }
 

@@ -1785,7 +1785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrainTilePrefab: {fileID: 4484422814696370073, guid: 322af46aa6687f24387c759ea2269f72, type: 3}
-  terrainSize: {x: 26, y: 20, z: 26}
+  terrainSize: {x: 23, y: 20, z: 23}
   gradient:
     serializedVersion: 2
     key0: {r: 0.28627452, g: 0.18039216, b: 0.15686275, a: 1}

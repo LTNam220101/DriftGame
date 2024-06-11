@@ -81,6 +81,7 @@ public class CarController : MonoBehaviour
             steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.25f);
         }
         speed = MaxSpeed - (MaxSpeed - MinSpeed) * Mathf.Abs(steeringInput);
+        CheckDistanceToTerrain();
     }
     void ApplyMotor() {
 
@@ -145,20 +146,36 @@ public class CarController : MonoBehaviour
         if(gameObject.tag == "Player"){
             if(other.gameObject.tag == "Tree" || other.gameObject.tag == "Cop")
             {
-                speed = 0;
-                timer.EndTimer();
                 ContactPoint contact = other.contacts[0];
                 Quaternion rotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
                 Vector3 position = contact.point;
-                GameObject explodeEffect = Instantiate(ExplodeEffect, position, rotation);
-                bool disableSound = PlayerPrefs.GetInt("disableSound") == 1 ? true : false;
-                explodeEffect.GetComponent<AudioSource>().mute = disableSound;
-                Destructable dest = gameObject.GetComponent<Destructable>();
-                if(dest != null)
-                {
-                    dest.DestroyObject(false, -1, position);
-                    Destroy(explodeEffect, 2);
-                }
+                Explode(position, rotation);
+            }
+        }
+    }
+
+    private void Explode(Vector3 position, Quaternion rotation)
+    {
+        speed = 0;
+        timer.EndTimer();
+        GameObject explodeEffect = Instantiate(ExplodeEffect, position, rotation);
+        bool disableSound = PlayerPrefs.GetInt("disableSound") == 1 ? true : false;
+        explodeEffect.GetComponent<AudioSource>().mute = disableSound;
+        Destructable dest = gameObject.GetComponent<Destructable>();
+        if(dest != null)
+        {
+            dest.DestroyObject(false, -1, position);
+            Destroy(explodeEffect, 2);
+        }
+    }
+
+    private void CheckDistanceToTerrain()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit) && hit.collider.CompareTag("Terrain"))
+        {
+            if(hit.distance > 10f){
+                Explode(transform.position, transform.rotation);
             }
         }
     }

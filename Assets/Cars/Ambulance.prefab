@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 3801752565011702913}
   - component: {fileID: -4621261714685277076}
   - component: {fileID: 1014166350026016553}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ambulance
   m_TagString: Cop
   m_Icon: {fileID: 0}
@@ -234,6 +234,7 @@ MonoBehaviour:
   MaxSpeed: 30
   MinSpeed: 20
   SteerAngle: 7
+  canRun: 1
   steeringInput: 0
   detectAngle: 5
   detectDistance: 30

@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 7382408615726444072}
   - component: {fileID: 4378325830752927036}
   - component: {fileID: -1293066343127667176}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Police_car
   m_TagString: Cop
   m_Icon: {fileID: 0}
@@ -835,7 +835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &118749364786707479
 Transform:
   m_ObjectHideFlags: 0

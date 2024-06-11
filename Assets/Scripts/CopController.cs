@@ -204,7 +204,7 @@ public class CopController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit) && hit.collider.CompareTag("Terrain"))
         {
-            if(hit.distance > 20f){
+            if(hit.distance > 10f){
                 Explode();
             }
         }

@@ -73,3 +73,9 @@ MonoBehaviour:
   - color1: 1
     color2: 18
     isMatch: 1
+  - color1: 1
+    color2: 3
+    isMatch: 1
+  - color1: 3
+    color2: 1
+    isMatch: 1

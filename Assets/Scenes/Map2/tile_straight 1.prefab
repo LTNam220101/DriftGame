@@ -167,22 +167,6 @@ MonoBehaviour:
       hexTopLeftAndLeft: 0
       hexLeftAndBottomLeft: 0
       hexBottomRightAndRight: 0
-  - offset: {x: 0, y: 0, z: 0}
-    faceDir: 5
-    faceDetails:
-      topLeft: 6
-      top: 6
-      topRight: 6
-      left: 6
-      center: 6
-      right: 6
-      bottomLeft: 6
-      bottom: 6
-      bottomRight: 6
-      hexRightAndTopRight: 0
-      hexTopLeftAndLeft: 0
-      hexLeftAndBottomLeft: 0
-      hexBottomRightAndRight: 0
   - offset: {x: -1, y: 0, z: 0}
     faceDir: 0
     faceDetails:
@@ -233,6 +217,22 @@ MonoBehaviour:
       hexBottomRightAndRight: 0
   - offset: {x: -1, y: 0, z: 0}
     faceDir: 4
+    faceDetails:
+      topLeft: 6
+      top: 6
+      topRight: 6
+      left: 6
+      center: 6
+      right: 6
+      bottomLeft: 6
+      bottom: 6
+      bottomRight: 6
+      hexRightAndTopRight: 0
+      hexTopLeftAndLeft: 0
+      hexLeftAndBottomLeft: 0
+      hexBottomRightAndRight: 0
+  - offset: {x: 0, y: 0, z: 0}
+    faceDir: 5
     faceDetails:
       topLeft: 6
       top: 6
@@ -440,9 +440,44 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_LightPole_Base_02(Clone)
       objectReference: {fileID: 0}
+    - target: {fileID: 7365701257379206030, guid: af0bac407ba95234b9cf265b412bb64f, type: 3}
+      propertyPath: m_TagString
+      value: Tree
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1586567678971107007, guid: af0bac407ba95234b9cf265b412bb64f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: af0bac407ba95234b9cf265b412bb64f, type: 3}
+--- !u!1 &3897322632275672751 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7365701257379206030, guid: af0bac407ba95234b9cf265b412bb64f, type: 3}
+  m_PrefabInstance: {fileID: 5777599405181758753}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2009656324922727932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3897322632275672751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81bdf75ce834e1e4fa62a260ab5feefd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyedVersion: {fileID: 7365701257379206030, guid: c3caa57705a0bb0409bc5cac4232546a, type: 3}
+  ExplodeEffect: {fileID: 5037663053501516404, guid: 61b25096bf945684db66dfe620593669, type: 3}
+--- !u!114 &8968500699894455309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3897322632275672751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d9dddd839a56a4685f73668296f44d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8915645132139624396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3140297632275143405, guid: af0bac407ba95234b9cf265b412bb64f, type: 3}

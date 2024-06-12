@@ -167,22 +167,6 @@ MonoBehaviour:
       hexLeftAndBottomLeft: 0
       hexBottomRightAndRight: 0
   - offset: {x: 0, y: 0, z: 0}
-    faceDir: 4
-    faceDetails:
-      topLeft: 13
-      top: 13
-      topRight: 13
-      left: 13
-      center: 13
-      right: 13
-      bottomLeft: 13
-      bottom: 13
-      bottomRight: 13
-      hexRightAndTopRight: 0
-      hexTopLeftAndLeft: 0
-      hexLeftAndBottomLeft: 0
-      hexBottomRightAndRight: 0
-  - offset: {x: 0, y: 0, z: 0}
     faceDir: 5
     faceDetails:
       topLeft: 13
@@ -247,7 +231,7 @@ MonoBehaviour:
       hexLeftAndBottomLeft: 0
       hexBottomRightAndRight: 0
   - offset: {x: 1, y: 0, z: 0}
-    faceDir: 4
+    faceDir: 5
     faceDetails:
       topLeft: 6
       top: 6
@@ -262,8 +246,24 @@ MonoBehaviour:
       hexTopLeftAndLeft: 0
       hexLeftAndBottomLeft: 0
       hexBottomRightAndRight: 0
+  - offset: {x: 0, y: 0, z: 0}
+    faceDir: 4
+    faceDetails:
+      topLeft: 13
+      top: 13
+      topRight: 13
+      left: 13
+      center: 13
+      right: 13
+      bottomLeft: 13
+      bottom: 13
+      bottomRight: 13
+      hexRightAndTopRight: 0
+      hexTopLeftAndLeft: 0
+      hexLeftAndBottomLeft: 0
+      hexBottomRightAndRight: 0
   - offset: {x: 1, y: 0, z: 0}
-    faceDir: 5
+    faceDir: 4
     faceDetails:
       topLeft: 6
       top: 6
@@ -299,21 +299,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Skip_02(Clone)
       objectReference: {fileID: 0}
+    - target: {fileID: 6294492002823580775, guid: ed4b2bd5eed3a22409f2898818a9ae94, type: 3}
+      propertyPath: m_TagString
+      value: Tree
+      objectReference: {fileID: 0}
     - target: {fileID: 7217094427561977916, guid: ed4b2bd5eed3a22409f2898818a9ae94, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7217094427561977916, guid: ed4b2bd5eed3a22409f2898818a9ae94, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7217094427561977916, guid: ed4b2bd5eed3a22409f2898818a9ae94, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7217094427561977916, guid: ed4b2bd5eed3a22409f2898818a9ae94, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7217094427561977916, guid: ed4b2bd5eed3a22409f2898818a9ae94, type: 3}
       propertyPath: m_LocalPosition.x
@@ -358,6 +362,37 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 200540151963574034, guid: ed4b2bd5eed3a22409f2898818a9ae94, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ed4b2bd5eed3a22409f2898818a9ae94, type: 3}
+--- !u!1 &8886917498294382312 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6294492002823580775, guid: ed4b2bd5eed3a22409f2898818a9ae94, type: 3}
+  m_PrefabInstance: {fileID: 3174522346721247887}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &162292886339314710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8886917498294382312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81bdf75ce834e1e4fa62a260ab5feefd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyedVersion: {fileID: 6294492002823580775, guid: 3f37fbb2972ecee4ab49753278d9d4fb, type: 3}
+  ExplodeEffect: {fileID: 5037663053501516404, guid: 61b25096bf945684db66dfe620593669, type: 3}
+--- !u!114 &2788460910123752840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8886917498294382312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d9dddd839a56a4685f73668296f44d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8250091483838169705
 PrefabInstance:
   m_ObjectHideFlags: 0

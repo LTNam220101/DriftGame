@@ -153,7 +153,7 @@ public class CopController : MonoBehaviour
             steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.125f);
         }
         else {
-            steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.25f);
+            steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.125f);
         }
         if(steeringInput >= -0.1f && steeringInput <= 0.1f) steeringInput = 0.0f;
         speed = MaxSpeed - (MaxSpeed - MinSpeed) * Mathf.Abs(steeringInput);
@@ -205,7 +205,7 @@ public class CopController : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.down, out hit) && hit.collider.CompareTag("Terrain"))
         {
             if(hit.distance > 10f){
-                Explode();
+                Explode(false, -1);
             }
         }
     }

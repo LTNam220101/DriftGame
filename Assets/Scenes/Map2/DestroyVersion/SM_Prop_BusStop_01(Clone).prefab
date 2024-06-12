@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4415853368155583785}
   - component: {fileID: 8041812358679109001}
   - component: {fileID: 7081053559981153454}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Prop_BusStop_01_Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,9 +96,9 @@ GameObject:
   - component: {fileID: 3950210768819190116}
   - component: {fileID: 4235480530814547066}
   - component: {fileID: 8971028940793977124}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Prop_BusStop_01(Clone)
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

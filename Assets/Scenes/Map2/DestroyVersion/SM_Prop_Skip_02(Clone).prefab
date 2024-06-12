@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 645787224593259685}
   - component: {fileID: 4076685866392822458}
   - component: {fileID: 200540151963574034}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Prop_Skip_02(Clone)
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

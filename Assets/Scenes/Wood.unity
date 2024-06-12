@@ -1922,10 +1922,12 @@ MonoBehaviour:
   - {fileID: 124231845}
   - {fileID: 2144028926}
   - {fileID: 390073685}
+  cop: {fileID: 2922196080687437655, guid: 4cfb08c070a06fa45bb2b6126866bc86, type: 3}
   cam1: {fileID: 1489271560}
   cam2: {fileID: 1336662749}
   spawnPoint: {fileID: 115153612}
   spawnBuffController: {fileID: 2083409742}
+  Timer: {fileID: 2083409740}
   waitSlider: {fileID: 527845572}
   fillSlider: {fileID: 391129011}
   buffName: {fileID: 2114887288}

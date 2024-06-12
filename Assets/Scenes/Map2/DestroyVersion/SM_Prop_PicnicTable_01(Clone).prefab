@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6894478489958454402}
   - component: {fileID: 8895186781578914174}
   - component: {fileID: 8391311077458842445}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Prop_PicnicTable_01(Clone)
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

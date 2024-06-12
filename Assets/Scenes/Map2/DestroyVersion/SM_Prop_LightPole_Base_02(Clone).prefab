@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 90543418521705461}
   - component: {fileID: 8460473952092319067}
   - component: {fileID: 1586567678971107007}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Prop_LightPole_Base_02(Clone)
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

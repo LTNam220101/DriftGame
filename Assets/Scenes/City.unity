@@ -2081,10 +2081,12 @@ MonoBehaviour:
   - {fileID: 124231845}
   - {fileID: 2144028926}
   - {fileID: 390073685}
+  cop: {fileID: 2922196080687437655, guid: 4cfb08c070a06fa45bb2b6126866bc86, type: 3}
   cam1: {fileID: 1489271560}
   cam2: {fileID: 1336662749}
   spawnPoint: {fileID: 115153612}
   spawnBuffController: {fileID: 2083409742}
+  Timer: {fileID: 2083409740}
   waitSlider: {fileID: 1985651755}
   fillSlider: {fileID: 717143391}
   buffName: {fileID: 701606892}
@@ -2322,29 +2324,43 @@ MonoBehaviour:
   - tile: {fileID: 969233518129104952, guid: 5a5efc05002fc9940b7201e43ddebda0, type: 3}
     weight: 60
   - tile: {fileID: 517716632989869215, guid: c0aa4bac10a2c1c4a87bc9657a17f03f, type: 3}
-    weight: 5
+    weight: 7
   - tile: {fileID: 4681901885606474248, guid: 8132879821464be48975f4a91474ecc6, type: 3}
-    weight: 5
+    weight: 3
   - tile: {fileID: 141474339267466132, guid: 582265934c13dfc48a508a8d22da14f4, type: 3}
-    weight: 5
+    weight: 3
   - tile: {fileID: 1346561757745824569, guid: 60236557d936cb8439787020f41ea96b, type: 3}
-    weight: 20
-  - tile: {fileID: 7805494859018243598, guid: cd09a88852e673842844ff5c44fe2c2a, type: 3}
-    weight: 0
+    weight: 50
   - tile: {fileID: 969233518129104952, guid: c5e09d83e739f2d4d9321c99461c8e06, type: 3}
-    weight: 0
-  - tile: {fileID: 969233518129104952, guid: db59f35ef15dee246b7e311724ec8a80, type: 3}
-    weight: 2
-  - tile: {fileID: 969233516565876966, guid: 9df65e6adf5c1e648b72805832f863f2, type: 3}
-    weight: 2
-  - tile: {fileID: 969233518577482285, guid: b354313cb49f4c7429af6684a38932d4, type: 3}
-    weight: 0
+    weight: 3
   - tile: {fileID: 3290968344004679102, guid: 33f6c5aeb15e1c9428e83e79feb621b4, type: 3}
     weight: 0
   - tile: {fileID: 8592657925027449582, guid: e4ed7266800b0a6468ce6a70799c1dd0, type: 3}
     weight: 2
   - tile: {fileID: -3366631105800901239, guid: 00480e684b8558f4a8fec286bed0cdbc, type: 3}
     weight: 2
+  - tile: {fileID: 969233518129104952, guid: c5e09d83e739f2d4d9321c99461c8e06, type: 3}
+    weight: 3
+  - tile: {fileID: 969233518129104952, guid: 5a88563ffff7b8647a4e4f2e55f9ce3a, type: 3}
+    weight: 3
+  - tile: {fileID: 969233518129104952, guid: 620ae5ec75602124bbecb266c80af8f6, type: 3}
+    weight: 2
+  - tile: {fileID: 969233518129104952, guid: a205383ac774f414d82d4698a61e9655, type: 3}
+    weight: 3
+  - tile: {fileID: 517716632989869215, guid: d80de32b3284dd84d9c732b4b950b624, type: 3}
+    weight: 2
+  - tile: {fileID: 1346561757745824569, guid: 5c889a3297a652f4b8a8332d5cbe8e8f, type: 3}
+    weight: 10
+  - tile: {fileID: 1661799675080805496, guid: 25a2e58852eaf9742b0f3ab5812fc10e, type: 3}
+    weight: 2
+  - tile: {fileID: 8557609175852098850, guid: f2ecd0c9f59092c4283123228557d1f7, type: 3}
+    weight: 2
+  - tile: {fileID: 2185357378942202261, guid: 4b156bc155cb19a43ac2c9973948ebac, type: 3}
+    weight: 3
+  - tile: {fileID: 969233518129104952, guid: 401433d0071f21a4c875bcfb9b01a145, type: 3}
+    weight: 1
+  - tile: {fileID: 969233518129104952, guid: 4ca6f485a6ec24848b45f155ca71a7c6, type: 3}
+    weight: 3
   samples: []
   overlapSize: {x: 3, y: 3, z: 3}
   tileSize: {x: 10, y: 1, z: 10}
@@ -2354,9 +2370,9 @@ MonoBehaviour:
   stepLimit: -1
   algorithm: 0
   recordUndo: 0
-  failureMode: 0
-  uncertaintyTile: {fileID: 2736158700531673495, guid: 7adad730c14a5284ea5cfbc5834250f3, type: 3}
-  contradictionTile: {fileID: 2736158700531673495, guid: 7adad730c14a5284ea5cfbc5834250f3, type: 3}
+  failureMode: 1
+  uncertaintyTile: {fileID: 1812619582095053181, guid: 5a5efc05002fc9940b7201e43ddebda0, type: 3}
+  contradictionTile: {fileID: 1812619582095053181, guid: 5a5efc05002fc9940b7201e43ddebda0, type: 3}
   scaleUncertainyTile: 1
   skyBox: {fileID: 0}
   searchInitialConstraints: 1

@@ -67,6 +67,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b15a753d22f21de4e8e45bd8e6fc8947, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6126091556477775235, guid: 8faa427a8c5041f4abc98a7cd7774312, type: 3}
+    - target: {fileID: -7511558181221131132, guid: b15a753d22f21de4e8e45bd8e6fc8947, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: -7796859627820213912, guid: 6e18acfa2033afc4cba06725b7df83cc, type: 3}
     - target: {fileID: 919132149155446097, guid: b15a753d22f21de4e8e45bd8e6fc8947, type: 3}
       propertyPath: m_Name
       value: tile 1
@@ -167,22 +175,6 @@ MonoBehaviour:
       hexLeftAndBottomLeft: 0
       hexBottomRightAndRight: 0
   - offset: {x: 0, y: 0, z: 0}
-    faceDir: 4
-    faceDetails:
-      topLeft: 13
-      top: 13
-      topRight: 13
-      left: 13
-      center: 13
-      right: 13
-      bottomLeft: 13
-      bottom: 13
-      bottomRight: 13
-      hexRightAndTopRight: 0
-      hexTopLeftAndLeft: 0
-      hexLeftAndBottomLeft: 0
-      hexBottomRightAndRight: 0
-  - offset: {x: 0, y: 0, z: 0}
     faceDir: 5
     faceDetails:
       topLeft: 13
@@ -247,7 +239,7 @@ MonoBehaviour:
       hexLeftAndBottomLeft: 0
       hexBottomRightAndRight: 0
   - offset: {x: -1, y: 0, z: 0}
-    faceDir: 4
+    faceDir: 5
     faceDetails:
       topLeft: 6
       top: 6
@@ -263,7 +255,7 @@ MonoBehaviour:
       hexLeftAndBottomLeft: 0
       hexBottomRightAndRight: 0
   - offset: {x: -1, y: 0, z: 0}
-    faceDir: 5
+    faceDir: 4
     faceDetails:
       topLeft: 6
       top: 6
@@ -274,6 +266,22 @@ MonoBehaviour:
       bottomLeft: 6
       bottom: 6
       bottomRight: 6
+      hexRightAndTopRight: 0
+      hexTopLeftAndLeft: 0
+      hexLeftAndBottomLeft: 0
+      hexBottomRightAndRight: 0
+  - offset: {x: 0, y: 0, z: 0}
+    faceDir: 4
+    faceDetails:
+      topLeft: 13
+      top: 13
+      topRight: 13
+      left: 13
+      center: 13
+      right: 13
+      bottomLeft: 13
+      bottom: 13
+      bottomRight: 13
       hexRightAndTopRight: 0
       hexTopLeftAndLeft: 0
       hexLeftAndBottomLeft: 0
@@ -298,6 +306,10 @@ PrefabInstance:
     - target: {fileID: 2035233201650387760, guid: 0ebbd291d94f2654c8bbdb6b3f4213dd, type: 3}
       propertyPath: m_Name
       value: SM_Prop_LightPole_Base_01(Clone)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2035233201650387760, guid: 0ebbd291d94f2654c8bbdb6b3f4213dd, type: 3}
+      propertyPath: m_TagString
+      value: Tree
       objectReference: {fileID: 0}
     - target: {fileID: 7401671279581734942, guid: 0ebbd291d94f2654c8bbdb6b3f4213dd, type: 3}
       propertyPath: m_RootOrder
@@ -358,6 +370,37 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2593232699162864293, guid: 0ebbd291d94f2654c8bbdb6b3f4213dd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0ebbd291d94f2654c8bbdb6b3f4213dd, type: 3}
+--- !u!1 &6916481765117017202 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2035233201650387760, guid: 0ebbd291d94f2654c8bbdb6b3f4213dd, type: 3}
+  m_PrefabInstance: {fileID: 4882709404324460354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5426915704875170870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6916481765117017202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81bdf75ce834e1e4fa62a260ab5feefd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyedVersion: {fileID: 2035233201650387760, guid: 703dc026807e9e14abb4007bfb62aa01, type: 3}
+  ExplodeEffect: {fileID: 5037663053501516404, guid: 61b25096bf945684db66dfe620593669, type: 3}
+--- !u!114 &7026798197988133298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6916481765117017202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d9dddd839a56a4685f73668296f44d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8464904153755580274
 PrefabInstance:
   m_ObjectHideFlags: 0

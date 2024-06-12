@@ -921,7 +921,7 @@ namespace Tessera
                         go.transform.localScale = local.Scale;
                         go.name = child.gameObject.name + $" ({cell.x}, {cell.y}, {cell.z})";
 
-                        if ((cell.x == 9 || cell.x == 10) && (cell.z >= 9 && cell.z <= 15))
+                        if ((cell.x == 9 || cell.x == 10) && (cell.z >= 4 && cell.z <= 15))
                         {
                             Transform parentTransform = go.transform;
                             // Loop through all children of the parent GameObject
@@ -929,9 +929,10 @@ namespace Tessera
                             {
                                 // Get the child at index i
                                 Transform childGO = parentTransform.GetChild(i);
-
-                                // Destroy the child GameObject
-                                Destroy(childGO.gameObject);
+                                if(!childGO.gameObject.name.Contains("tile")){
+                                    // Destroy the child GameObject
+                                    Destroy(childGO.gameObject);
+                                }
                             }
                         }
                         return (childToInstance, go);
@@ -959,7 +960,7 @@ namespace Tessera
                 var go = GameObject.Instantiate(gameObject, instance.Position, instance.Rotation, parent);
                 go.transform.localScale = instance.LocalScale;
                 go.name = gameObject.name + $" ({cell.x}, {cell.y}, {cell.z})";
-                if ((cell.x == 9 || cell.x == 10) && (cell.z >= 9 && cell.z <= 15))
+                if ((cell.x == 9 || cell.x == 10) && (cell.z >= 4 && cell.z <= 15))
                 {
                     Transform parentTransform = go.transform;
                     // Loop through all children of the parent GameObject
@@ -967,9 +968,10 @@ namespace Tessera
                     {
                         // Get the child at index i
                         Transform childGO = parentTransform.GetChild(i);
-
-                        // Destroy the child GameObject
-                        Destroy(childGO.gameObject);
+                        if(!childGO.gameObject.name.Contains("tile")){
+                            // Destroy the child GameObject
+                            Destroy(childGO.gameObject);
+                        }
                     }
                 }
                 return new[] { (Matrix4x4.identity, go) };

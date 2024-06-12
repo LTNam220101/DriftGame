@@ -7,10 +7,12 @@ using UnityEngine.UI;
 public class LoadCar : MonoBehaviour
 {
     public GameObject[] carPrefabs;
+    public GameObject cop;
 	public CinemachineVirtualCamera cam1;
 	public CinemachineVirtualCamera cam2;
     public Transform spawnPoint;
     public SpawnBuff spawnBuffController;
+    public TimerController Timer;
     private GameObject currentCar;
     private GameObject[] copColliders;
     private Collider[] colliders;
@@ -37,6 +39,11 @@ public class LoadCar : MonoBehaviour
             spawnPoint.transform.position.y,
             spawnPoint.transform.position.z
         );
+        Vector3 copStartPoint = new Vector3(
+            spawnPoint.transform.position.x,
+            spawnPoint.transform.position.y,
+            spawnPoint.transform.position.z - 30f
+        );
         Time.timeScale = 1f;
         while (true)
         {
@@ -53,7 +60,14 @@ public class LoadCar : MonoBehaviour
                 cam1.Follow = currentCar.transform;
                 cam2.Follow = currentCar.transform;
                 cam2.LookAt = currentCar.transform;
-                yield break;
+
+                RaycastHit copHit;
+                if (Physics.Raycast(copStartPoint, Vector3.down, out copHit) && copHit.collider.CompareTag("Terrain")) {
+                    GameObject copInit = Instantiate(cop, new Vector3(copStartPoint.x, copHit.point.y + 1, copStartPoint.z), currentCar.transform.rotation);
+                    copInit.GetComponent<CopController>().Player = currentCar;
+                    copInit.GetComponent<CopController>().timer = Timer;
+                    yield break;
+                }
             }
             yield return new WaitForSecondsRealtime(0.001f);
         }

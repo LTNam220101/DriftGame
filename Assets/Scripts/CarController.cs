@@ -57,14 +57,15 @@ public class CarController : MonoBehaviour
         ApplySteering();
         CheckParticles();
         ApplyWheelPositions();
+        CheckDistanceToTerrain();
         //MaxSpeed += MaxSpeed*0.2f*Time.deltaTime/20;
     }
 
     void CheckInput()
     {
-        currentAxisValue = playerControls.ReadValue<float>();
         if(steeringInput >= -0.1f && steeringInput <= 0.1f) steeringInput = 0.0f;
         if(canControl){
+            currentAxisValue = playerControls.ReadValue<float>();
             if (rightButton.isPressed)
             {
                 currentAxisValue = 1;
@@ -75,13 +76,12 @@ public class CarController : MonoBehaviour
             }
         }
         if(steeringInput < currentAxisValue){
-            steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.25f);
+            steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.125f);
         }
         else {
-            steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.25f);
+            steeringInput = Mathf.Lerp(steeringInput, currentAxisValue, 0.125f);
         }
         speed = MaxSpeed - (MaxSpeed - MinSpeed) * Mathf.Abs(steeringInput);
-        CheckDistanceToTerrain();
     }
     void ApplyMotor() {
 

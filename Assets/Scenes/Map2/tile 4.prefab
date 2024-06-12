@@ -153,15 +153,15 @@ MonoBehaviour:
   - offset: {x: 0, y: 0, z: 0}
     faceDir: 2
     faceDetails:
-      topLeft: 2
-      top: 2
-      topRight: 2
-      left: 2
-      center: 2
-      right: 2
-      bottomLeft: 2
-      bottom: 2
-      bottomRight: 2
+      topLeft: 13
+      top: 13
+      topRight: 13
+      left: 13
+      center: 13
+      right: 13
+      bottomLeft: 13
+      bottom: 13
+      bottomRight: 13
       hexRightAndTopRight: 0
       hexTopLeftAndLeft: 0
       hexLeftAndBottomLeft: 0
@@ -182,71 +182,7 @@ MonoBehaviour:
       hexTopLeftAndLeft: 0
       hexLeftAndBottomLeft: 0
       hexBottomRightAndRight: 0
-  - offset: {x: 0, y: 0, z: 1}
-    faceDir: 0
-    faceDetails:
-      topLeft: 13
-      top: 13
-      topRight: 13
-      left: 13
-      center: 13
-      right: 13
-      bottomLeft: 13
-      bottom: 13
-      bottomRight: 13
-      hexRightAndTopRight: 0
-      hexTopLeftAndLeft: 0
-      hexLeftAndBottomLeft: 0
-      hexBottomRightAndRight: 0
-  - offset: {x: 0, y: 0, z: 1}
-    faceDir: 1
-    faceDetails:
-      topLeft: 13
-      top: 13
-      topRight: 13
-      left: 13
-      center: 13
-      right: 13
-      bottomLeft: 13
-      bottom: 13
-      bottomRight: 13
-      hexRightAndTopRight: 0
-      hexTopLeftAndLeft: 0
-      hexLeftAndBottomLeft: 0
-      hexBottomRightAndRight: 0
-  - offset: {x: 0, y: 0, z: 1}
-    faceDir: 2
-    faceDetails:
-      topLeft: 0
-      top: 0
-      topRight: 0
-      left: 0
-      center: 0
-      right: 0
-      bottomLeft: 0
-      bottom: 0
-      bottomRight: 0
-      hexRightAndTopRight: 0
-      hexTopLeftAndLeft: 0
-      hexLeftAndBottomLeft: 0
-      hexBottomRightAndRight: 0
-  - offset: {x: 0, y: 0, z: 1}
-    faceDir: 3
-    faceDetails:
-      topLeft: 0
-      top: 0
-      topRight: 0
-      left: 0
-      center: 0
-      right: 0
-      bottomLeft: 0
-      bottom: 0
-      bottomRight: 0
-      hexRightAndTopRight: 0
-      hexTopLeftAndLeft: 0
-      hexLeftAndBottomLeft: 0
-      hexBottomRightAndRight: 0
-  - offset: {x: 0, y: 0, z: 1}
+  - offset: {x: 0, y: 0, z: 0}
     faceDir: 4
     faceDetails:
       topLeft: 13
@@ -262,71 +198,7 @@ MonoBehaviour:
       hexTopLeftAndLeft: 0
       hexLeftAndBottomLeft: 0
       hexBottomRightAndRight: 0
-  - offset: {x: 0, y: 0, z: -1}
-    faceDir: 0
-    faceDetails:
-      topLeft: 13
-      top: 13
-      topRight: 13
-      left: 13
-      center: 13
-      right: 13
-      bottomLeft: 13
-      bottom: 13
-      bottomRight: 13
-      hexRightAndTopRight: 0
-      hexTopLeftAndLeft: 0
-      hexLeftAndBottomLeft: 0
-      hexBottomRightAndRight: 0
-  - offset: {x: 0, y: 0, z: -1}
-    faceDir: 1
-    faceDetails:
-      topLeft: 13
-      top: 13
-      topRight: 13
-      left: 13
-      center: 13
-      right: 13
-      bottomLeft: 13
-      bottom: 13
-      bottomRight: 13
-      hexRightAndTopRight: 0
-      hexTopLeftAndLeft: 0
-      hexLeftAndBottomLeft: 0
-      hexBottomRightAndRight: 0
-  - offset: {x: 0, y: 0, z: -1}
-    faceDir: 2
-    faceDetails:
-      topLeft: 0
-      top: 0
-      topRight: 0
-      left: 0
-      center: 0
-      right: 0
-      bottomLeft: 0
-      bottom: 0
-      bottomRight: 0
-      hexRightAndTopRight: 0
-      hexTopLeftAndLeft: 0
-      hexLeftAndBottomLeft: 0
-      hexBottomRightAndRight: 0
-  - offset: {x: 0, y: 0, z: -1}
-    faceDir: 3
-    faceDetails:
-      topLeft: 0
-      top: 0
-      topRight: 0
-      left: 0
-      center: 0
-      right: 0
-      bottomLeft: 0
-      bottom: 0
-      bottomRight: 0
-      hexRightAndTopRight: 0
-      hexTopLeftAndLeft: 0
-      hexLeftAndBottomLeft: 0
-      hexBottomRightAndRight: 0
-  - offset: {x: 0, y: 0, z: -1}
+  - offset: {x: 0, y: 0, z: 0}
     faceDir: 5
     faceDetails:
       topLeft: 13
@@ -344,8 +216,6 @@ MonoBehaviour:
       hexBottomRightAndRight: 0
   offsets:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
-  - {x: 0, y: 0, z: -1}
   center: {x: 0, y: 1, z: 0}
   tileSize: {x: 10, y: 1, z: 10}
   rotatable: 1
@@ -353,121 +223,6 @@ MonoBehaviour:
   rotationGroupType: 3
   symmetric: 1
   instantiateChildrenOnly: 0
---- !u!1001 &4952114506538624018
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1327549563682229191}
-    m_Modifications:
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1812619582095053181, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_Name
-      value: tile 3 (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 969233518129104952, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
---- !u!1001 &7544393526841778097
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1327549563682229191}
-    m_Modifications:
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.024021149
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -9.964227
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327549563682229191, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1812619582095053181, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
-      propertyPath: m_Name
-      value: tile 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9d87a40414951634bae6dd4b0933cc2e, type: 3}
 --- !u!1001 &8055867469425409187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -523,6 +278,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lamp_mesh
       objectReference: {fileID: 0}
+    - target: {fileID: 4123237038395000710, guid: dfa5d4dcc54e3a4438d0f168747ec7d7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -4739811197479121812, guid: dfa5d4dcc54e3a4438d0f168747ec7d7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dfa5d4dcc54e3a4438d0f168747ec7d7, type: 3}
@@ -536,6 +295,10 @@ PrefabInstance:
     - target: {fileID: 2195517292868499403, guid: bd28609f5b5235e4d83661c27cc345aa, type: 3}
       propertyPath: m_Name
       value: SM_Prop_PicnicTable_01(Clone)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2195517292868499403, guid: bd28609f5b5235e4d83661c27cc345aa, type: 3}
+      propertyPath: m_TagString
+      value: Tree
       objectReference: {fileID: 0}
     - target: {fileID: 6123268432042219464, guid: bd28609f5b5235e4d83661c27cc345aa, type: 3}
       propertyPath: m_RootOrder
@@ -584,3 +347,34 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8391311077458842445, guid: bd28609f5b5235e4d83661c27cc345aa, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bd28609f5b5235e4d83661c27cc345aa, type: 3}
+--- !u!1 &6981289661012917778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2195517292868499403, guid: bd28609f5b5235e4d83661c27cc345aa, type: 3}
+  m_PrefabInstance: {fileID: 9122760869903550937}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8436765847634261590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6981289661012917778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d9dddd839a56a4685f73668296f44d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8754659297114491778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6981289661012917778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81bdf75ce834e1e4fa62a260ab5feefd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyedVersion: {fileID: 2195517292868499403, guid: e5a3b78eb4ba0df42b60df294b43135f, type: 3}
+  ExplodeEffect: {fileID: 5037663053501516404, guid: 61b25096bf945684db66dfe620593669, type: 3}

@@ -2370,7 +2370,7 @@ MonoBehaviour:
   stepLimit: -1
   algorithm: 0
   recordUndo: 0
-  failureMode: 1
+  failureMode: 0
   uncertaintyTile: {fileID: 1812619582095053181, guid: 5a5efc05002fc9940b7201e43ddebda0, type: 3}
   contradictionTile: {fileID: 1812619582095053181, guid: 5a5efc05002fc9940b7201e43ddebda0, type: 3}
   scaleUncertainyTile: 1

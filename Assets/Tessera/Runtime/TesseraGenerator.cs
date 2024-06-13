@@ -853,7 +853,7 @@ namespace Tessera
         /// <returns>The game objects created.</returns>
         public static GameObject[] Instantiate(TesseraTileInstance instance, Transform parent)
         {
-            return Instantiate(instance, parent, instance.Tile.gameObject, instance.Tile.instantiateChildrenOnly);
+            return Instantiate(instance, parent, instance.Tile.gameObject, instance.Tile.instantiateChildrenOnly, false);
         }
 
         /// <summary>
@@ -868,9 +868,9 @@ namespace Tessera
         /// <param name="gameObject">The game object to actually instantiate</param>
         /// <param name="instantiateChildrenOnly">Should gameObject be created, or just it's children.</param>
         /// <returns>The game objects created.</returns>
-        public static GameObject[] Instantiate(TesseraTileInstance instance, Transform parent, GameObject gameObject, bool instantiateChildrenOnly)
+        public static GameObject[] Instantiate(TesseraTileInstance instance, Transform parent, GameObject gameObject, bool instantiateChildrenOnly, bool isCenterChunk)
         {
-            var transformsAndGameObjects = InstantiateUntransformed(instance, parent, gameObject, instantiateChildrenOnly);
+            var transformsAndGameObjects = InstantiateUntransformed(instance, parent, gameObject, instantiateChildrenOnly, isCenterChunk);
             var gameObjects = transformsAndGameObjects.Select(x => x.Item2).ToArray();
             if (instance.MeshDeformation != null)
             {
@@ -902,7 +902,7 @@ namespace Tessera
         }
 
 
-        private static (Matrix4x4, GameObject)[] InstantiateUntransformed(TesseraTileInstance instance, Transform parent, GameObject gameObject, bool instantiateChildrenOnly)
+        private static (Matrix4x4, GameObject)[] InstantiateUntransformed(TesseraTileInstance instance, Transform parent, GameObject gameObject, bool instantiateChildrenOnly, bool isCenterChunk)
         {
             var cell = instance.Cell;
             if (instantiateChildrenOnly)
@@ -921,7 +921,7 @@ namespace Tessera
                         go.transform.localScale = local.Scale;
                         go.name = child.gameObject.name + $" ({cell.x}, {cell.y}, {cell.z})";
 
-                        if ((cell.x == 9 || cell.x == 10) && (cell.z >= 4 && cell.z <= 15))
+                        if ((cell.x == 4 || cell.x == 5) && (cell.z >= 1 && cell.z <= 8) && isCenterChunk)
                         {
                             Transform parentTransform = go.transform;
                             // Loop through all children of the parent GameObject
@@ -960,7 +960,7 @@ namespace Tessera
                 var go = GameObject.Instantiate(gameObject, instance.Position, instance.Rotation, parent);
                 go.transform.localScale = instance.LocalScale;
                 go.name = gameObject.name + $" ({cell.x}, {cell.y}, {cell.z})";
-                if ((cell.x == 9 || cell.x == 10) && (cell.z >= 4 && cell.z <= 15))
+                if ((cell.x == 4 || cell.x == 5) && (cell.z >= 1 && cell.z <= 8) && isCenterChunk)
                 {
                     Transform parentTransform = go.transform;
                     // Loop through all children of the parent GameObject

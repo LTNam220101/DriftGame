@@ -292,6 +292,7 @@ namespace Tessera
 
             if (completion.success)
             {
+                bool isCenterChunk = chunk.chunkCell == new Vector3Int(0, 0, 0);
                 var go = chunk.gameObject = new GameObject($"Chunk {chunk.chunkCell}");
                 go.transform.parent = transform;
                 go.transform.localPosition = chunkGrid.GetCellCenter(chunk.chunkCell);
@@ -301,7 +302,7 @@ namespace Tessera
                     createQueue.Enqueue(() =>
                     {
                         i.Align(TRS.World(go.transform));
-                        TesseraGenerator.Instantiate(i, go.transform);
+                        TesseraGenerator.Instantiate(i, go.transform, i.Tile.gameObject, i.Tile.instantiateChildrenOnly, isCenterChunk);
                     });
                 }
 

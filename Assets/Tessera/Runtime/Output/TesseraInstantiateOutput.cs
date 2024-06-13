@@ -87,7 +87,7 @@ namespace Tessera
                 }
                 if (i.Tile != null)
                 {
-                    instantiated[i.Cells.First()] = TesseraGenerator.Instantiate(i, parent, prefab, instantiateChildrenOnly);
+                    instantiated[i.Cells.First()] = TesseraGenerator.Instantiate(i, parent, prefab, instantiateChildrenOnly, false);
                 }
             }
         }

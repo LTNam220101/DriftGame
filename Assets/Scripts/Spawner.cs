@@ -50,7 +50,7 @@ public class Spawner : MonoBehaviour
             z = Player.transform.position.z - Random.Range(45, 65);
         }
         RaycastHit hit;
-        Vector3 startPoint = new Vector3(x, Player.transform.position.y + TerrainController.TerrainSize.y * 2, z);
+        Vector3 startPoint = new Vector3(x, Player.transform.position.y + (TerrainController ? TerrainController.TerrainSize.y * 2 : 0), z);
         if (Physics.Raycast(startPoint, Vector3.down, out hit) && hit.collider.CompareTag("Terrain")) {
             Collider[] colliders = Physics.OverlapSphere(hit.transform.position, 10f);
             // Duyệt qua tất cả các Collider

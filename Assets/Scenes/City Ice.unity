@@ -1451,7 +1451,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.28190732, y: -0.3319163, z: 0.10465279, w: 0.894096}
+  m_LocalRotation: {x: 0.32063892, y: -0.32703555, z: 0.11903117, w: 0.88094836}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1691,7 +1691,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122983627}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1709,7 +1709,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 250
+  m_Radius: 180
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1148485338
 PrefabInstance:
@@ -2016,11 +2016,6 @@ Transform:
   m_Father: {fileID: 122289881}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1407363443 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6846314372124967185, guid: 5ea643ebb01d4f848ad38d00bf244d2d, type: 3}
-  m_PrefabInstance: {fileID: 6846314370699498702}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1440849701 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 491206, guid: efd7d86bbe3a5314c9260efa62c04121, type: 3}
@@ -2177,7 +2172,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489271559}
-  m_LocalRotation: {x: 0.28190732, y: -0.3319163, z: 0.10465279, w: 0.894096}
+  m_LocalRotation: {x: 0.32063892, y: -0.32703555, z: 0.11903117, w: 0.88094836}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2186,7 +2181,7 @@ Transform:
   - {fileID: 1572098621}
   m_Father: {fileID: 122289881}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 35, y: -40.733, z: 0}
+  m_LocalEulerAnglesHint: {x: 40, y: -40.733, z: 0}
 --- !u!114 &1561906773 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7775036766763571400, guid: 8ce19912f291f1f4cb1393c273cac669, type: 3}
@@ -2259,7 +2254,6 @@ GameObject:
   - component: {fileID: 2083409740}
   - component: {fileID: 2083409742}
   - component: {fileID: 2083409743}
-  - component: {fileID: 2083409744}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -2341,13 +2335,14 @@ MonoBehaviour:
   cam2: {fileID: 1336662749}
   spawnPoint: {fileID: 115153612}
   spawnBuffController: {fileID: 2083409742}
+  Spawner: {fileID: 2083409739}
   Timer: {fileID: 2083409740}
   waitSlider: {fileID: 1561906773}
   fillSlider: {fileID: 1577074024}
   buffName: {fileID: 36451229}
   BuffMusic: {fileID: 110459228}
   MainController: {fileID: 744284444}
-  maxBuff: 6
+  maxBuff: 7
 --- !u!114 &2083409742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2467,92 +2462,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2083409744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2083409736}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 437182bb0a7a52749b20c1b5edad8c47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  terrainTilePrefab: {fileID: 0}
-  terrainSize: {x: 20, y: 1, z: 20}
-  gradient:
-    serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
-  noiseScale: 3
-  cellSize: 1
-  radiusToRender: 5
-  gameTransforms: []
-  playerTransform: {fileID: 0}
-  water: {fileID: 0}
-  seed: 0
-  placeableObjects: []
-  placeableObjectSizes: []
-  minObjectsPerTile: 0
-  maxObjectsPerTile: 6
-  placeableObjects1: []
-  placeableObjectSizes1: []
-  minObjectsPerTile1: 5
-  maxObjectsPerTile1: 20
-  destroyDistance: 1000
-  usePerlinNoise: 1
-  noise: {fileID: 0}
 --- !u!114 &2098927072 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6846314372124967214, guid: 5ea643ebb01d4f848ad38d00bf244d2d, type: 3}
   m_PrefabInstance: {fileID: 6846314370699498702}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1407363443}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3ad2bf01b7a6b7409eb683402aa8669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!136 &2098927075
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1407363443}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2135570942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2760,11 +2680,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6846314372124967214, guid: 5ea643ebb01d4f848ad38d00bf244d2d, type: 3}
       propertyPath: m_size.x
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6846314372124967214, guid: 5ea643ebb01d4f848ad38d00bf244d2d, type: 3}
       propertyPath: m_size.z
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6846314372124967214, guid: 5ea643ebb01d4f848ad38d00bf244d2d, type: 3}
       propertyPath: tileSize.x

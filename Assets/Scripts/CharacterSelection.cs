@@ -74,13 +74,13 @@ public class CharacterSelection : MonoBehaviour
 				carUnlock = true;
 				break;
 			case 1:
-				carUnlock = recordTime >= 90f;
+				carUnlock = true;
 				break;
 			case 2:
-				carUnlock = mostCrashed >= 100;
+				carUnlock = true;
 				break;
 			case 3:
-				carUnlock = mostPowerUpPicked >= 10;
+				carUnlock =true;
 				break;
 			default:
 				carUnlock = false;

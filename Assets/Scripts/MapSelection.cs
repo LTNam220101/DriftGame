@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -22,7 +23,7 @@ public class MapSelection : MonoBehaviour
     // }
 
 
-    private void Awake()
+    void Start()
     {
         bool disableSound = PlayerPrefs.GetInt("disableSound") == 1 ? true : false;
         Sound.mute = disableSound;
@@ -57,10 +58,21 @@ public class MapSelection : MonoBehaviour
         Music.mute = disableMusic;
         Music.Play();
 		PlayerPrefs.SetInt("currentMapIndex", currentMapIndex + 3);
-		SceneManager.LoadScene(currentMapIndex + 3);
+        StartCoroutine(LoadYourAsyncScene(currentMapIndex + 3));
+		// SceneManager.LoadScene(currentMapIndex + 3);
 	}
     public void Back()
 	{
 		SceneManager.LoadScene(1);
 	}
+    IEnumerator LoadYourAsyncScene(int index)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(index);
+
+        // While the asynchronous scene loads, continue returning control to the main thread
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
 }

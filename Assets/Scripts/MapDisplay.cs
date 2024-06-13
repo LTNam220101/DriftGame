@@ -29,7 +29,7 @@ public class MapDisplay : MonoBehaviour
         mapName.color = _newMap.nameColor;
         mapImage.sprite = _newMap.mapImage;
 
-        int totalStar = PlayerPrefs.GetInt("totalStar", 0);
+        int totalStar = 10;
         bool mapUnlocked = totalStar >= _newMap.requiredStar;
 
         if (mapUnlocked)

@@ -12,8 +12,10 @@ public class LoadCar : MonoBehaviour
 	public CinemachineVirtualCamera cam2;
     public Transform spawnPoint;
     public SpawnBuff spawnBuffController;
+    public Spawner Spawner;
     public TimerController Timer;
     private GameObject currentCar;
+    private TerrainController TerrainController;
     private GameObject[] copColliders;
     private Collider[] colliders;
     private int selectedCar;
@@ -25,13 +27,13 @@ public class LoadCar : MonoBehaviour
     public AudioSource BuffMusic;
     public MainMenuController MainController;
 
-    public int maxBuff = 6;
+    public int maxBuff = 7;
 
     // Start is called before the first frame update
     IEnumerator Start()
     {
         MainController.LoadScene();
-        TerrainController TerrainController = GetComponent<TerrainController>();
+        TerrainController = GetComponent<TerrainController>();
         spawnBuffController = GetComponent<SpawnBuff>();
         selectedCar = PlayerPrefs.GetInt("selectedCharacter");
         Vector3 startPoint = new Vector3(
@@ -54,9 +56,11 @@ public class LoadCar : MonoBehaviour
                 newPosition.y = hit.point.y + 1;
                 currentCar.transform.position = newPosition;
                 currentCar.SetActive(true);
-                gameObject.GetComponent<TerrainController>().playerTransform = currentCar.transform;
-                gameObject.GetComponent<Spawner>().Player = currentCar;
-                gameObject.GetComponent<Spawner>().Target = currentCar;
+                if(TerrainController){
+                    TerrainController.playerTransform = currentCar.transform;
+                }
+                Spawner.Player = currentCar;
+                Spawner.Target = currentCar;
                 cam1.Follow = currentCar.transform;
                 cam2.Follow = currentCar.transform;
                 cam2.LookAt = currentCar.transform;

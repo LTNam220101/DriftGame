@@ -1927,6 +1927,7 @@ MonoBehaviour:
   cam2: {fileID: 1336662749}
   spawnPoint: {fileID: 115153612}
   spawnBuffController: {fileID: 2083409742}
+  Spawner: {fileID: 2083409739}
   Timer: {fileID: 2083409740}
   waitSlider: {fileID: 527845572}
   fillSlider: {fileID: 391129011}

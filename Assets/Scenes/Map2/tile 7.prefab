@@ -300,6 +300,10 @@ PrefabInstance:
       value: SM_Prop_ParkBench_13
       objectReference: {fileID: 0}
     - target: {fileID: 1704855940150929476, guid: 00c9ef3ca6fd6ba41b08ed287488215f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1704855940150929476, guid: 00c9ef3ca6fd6ba41b08ed287488215f, type: 3}
       propertyPath: m_TagString
       value: Tree
       objectReference: {fileID: 0}

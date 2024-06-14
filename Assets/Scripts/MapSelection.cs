@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.IO;
 
 public class MapSelection : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class MapSelection : MonoBehaviour
 	// int mapUnlocked;
     private int currentMapIndex = 0;
     
-    public AudioClip[] PlaygroundMusic;
+    public string[] PlaygroundMusicPaths; // Paths to audio files in StreamingAssets
     public AudioSource Sound;
 
     // // Start is called before the first frame update
@@ -54,25 +55,39 @@ public class MapSelection : MonoBehaviour
 	{   
         bool disableMusic = PlayerPrefs.GetInt("disableMusic") == 1 ? true : false;
         AudioSource Music = GameObject.FindWithTag("MainCamera").GetComponent<AudioSource>();
-        Music.clip = PlaygroundMusic[Random.Range(0, PlaygroundMusic.Length)];
-        Music.mute = disableMusic;
-        Music.Play();
+
+        StartCoroutine(LoadAndPlayRandomMusic(Music, disableMusic));
+
 		PlayerPrefs.SetInt("currentMapIndex", currentMapIndex + 3);
-        StartCoroutine(LoadYourAsyncScene(currentMapIndex + 3));
-		// SceneManager.LoadScene(currentMapIndex + 3);
+		SceneManager.LoadScene(currentMapIndex + 3);
 	}
+    private IEnumerator LoadAndPlayRandomMusic(AudioSource music, bool disableMusic)
+    {
+        int randomIndex = Random.Range(0, PlaygroundMusicPaths.Length);
+        string path = Path.Combine(Application.streamingAssetsPath, PlaygroundMusicPaths[randomIndex]);
+        // Add "file://" prefix to the path
+        // path = "file://" + path;
+        // Debug.Log(path);
+        // Use UnityWebRequest to load audio clip asynchronously
+        using (UnityEngine.Networking.UnityWebRequest www = UnityEngine.Networking.UnityWebRequestMultimedia.GetAudioClip(path, AudioType.MPEG))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.result == UnityEngine.Networking.UnityWebRequest.Result.ConnectionError || www.result == UnityEngine.Networking.UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.LogError(www.error);
+            }
+            else
+            {
+                AudioClip clip = UnityEngine.Networking.DownloadHandlerAudioClip.GetContent(www);
+                music.clip = clip;
+                music.mute = disableMusic;
+                music.Play();
+            }
+        }
+    }
     public void Back()
 	{
 		SceneManager.LoadScene(1);
 	}
-    IEnumerator LoadYourAsyncScene(int index)
-    {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(index);
-
-        // While the asynchronous scene loads, continue returning control to the main thread
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
-    }
 }

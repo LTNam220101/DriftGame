@@ -454,6 +454,10 @@ PrefabInstance:
       value: billboard_mesh
       objectReference: {fileID: 0}
     - target: {fileID: 3462179698295702255, guid: 9a8daa330af3d944fad8c50a77887fa4, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462179698295702255, guid: 9a8daa330af3d944fad8c50a77887fa4, type: 3}
       propertyPath: m_TagString
       value: Tree
       objectReference: {fileID: 0}
@@ -631,7 +635,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 969233518129104952, guid: 5a5efc05002fc9940b7201e43ddebda0, type: 3}
-    - {fileID: -8596332056037036014, guid: 5a5efc05002fc9940b7201e43ddebda0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5a5efc05002fc9940b7201e43ddebda0, type: 3}
 --- !u!1001 &7360039966084663423
 PrefabInstance:
@@ -702,5 +705,4 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 969233518129104952, guid: 5a5efc05002fc9940b7201e43ddebda0, type: 3}
-    - {fileID: -8596332056037036014, guid: 5a5efc05002fc9940b7201e43ddebda0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5a5efc05002fc9940b7201e43ddebda0, type: 3}

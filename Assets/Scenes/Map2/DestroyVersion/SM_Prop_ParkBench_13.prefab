@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 1678928648430528242}
   - component: {fileID: 1679476377086361772}
   - component: {fileID: 1679557954345461320}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Prop_ParkBench_13
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

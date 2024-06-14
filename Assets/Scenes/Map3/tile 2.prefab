@@ -466,6 +466,10 @@ PrefabInstance:
       value: billboard_mesh
       objectReference: {fileID: 0}
     - target: {fileID: 3462179698295702255, guid: 9a8daa330af3d944fad8c50a77887fa4, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462179698295702255, guid: 9a8daa330af3d944fad8c50a77887fa4, type: 3}
       propertyPath: m_TagString
       value: Tree
       objectReference: {fileID: 0}

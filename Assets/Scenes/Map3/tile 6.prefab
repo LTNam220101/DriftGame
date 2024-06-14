@@ -238,6 +238,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1327549563682229191}
     m_Modifications:
+    - target: {fileID: 3574943836717907564, guid: 2c53352f0d001bc43a164ea0752fb921, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574943837791845132, guid: 2c53352f0d001bc43a164ea0752fb921, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574943837952567136, guid: 2c53352f0d001bc43a164ea0752fb921, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3574943838192018215, guid: 2c53352f0d001bc43a164ea0752fb921, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -303,8 +315,16 @@ PrefabInstance:
       value: SM_Prop_Billboard_Pole_01
       objectReference: {fileID: 0}
     - target: {fileID: 3574943838192287565, guid: 2c53352f0d001bc43a164ea0752fb921, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574943838192287565, guid: 2c53352f0d001bc43a164ea0752fb921, type: 3}
       propertyPath: m_TagString
       value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574943838336091305, guid: 2c53352f0d001bc43a164ea0752fb921, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c53352f0d001bc43a164ea0752fb921, type: 3}

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3574943838190294385}
   - component: {fileID: 3564765609812824573}
   - component: {fileID: 4088352142584112619}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Prop_Billboard_Pole_01
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,6 +124,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3574943838335829409}
     m_Modifications:
+    - target: {fileID: 116062, guid: a2a53a2e1585ac7439ff035b5b626d46, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 448960, guid: a2a53a2e1585ac7439ff035b5b626d46, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -165,6 +169,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3574943838192018215}
     m_Modifications:
+    - target: {fileID: 176082, guid: cba063d2715f7a345b1c64609f0e864e, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 176082, guid: cba063d2715f7a345b1c64609f0e864e, type: 3}
+      propertyPath: m_TagString
+      value: Tree
+      objectReference: {fileID: 0}
     - target: {fileID: 437978, guid: cba063d2715f7a345b1c64609f0e864e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -211,6 +223,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3574943837791582724}
     m_Modifications:
+    - target: {fileID: 153544, guid: 017a6f5ce43f6d74ca746ed804873917, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 153544, guid: 017a6f5ce43f6d74ca746ed804873917, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -259,6 +275,14 @@ PrefabInstance:
     - target: {fileID: 176082, guid: cba063d2715f7a345b1c64609f0e864e, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Billboard_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 176082, guid: cba063d2715f7a345b1c64609f0e864e, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 176082, guid: cba063d2715f7a345b1c64609f0e864e, type: 3}
+      propertyPath: m_TagString
+      value: Tree
       objectReference: {fileID: 0}
     - target: {fileID: 437978, guid: cba063d2715f7a345b1c64609f0e864e, type: 3}
       propertyPath: m_RootOrder

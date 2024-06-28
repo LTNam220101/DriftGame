@@ -36,8 +36,10 @@ public class CopController : MonoBehaviour
     public bool avoidObstacles = true;
 
     // Start is called before the first frame update
-    void Start()
+    IEnumerator Start()
     {
+        yield return new WaitForSeconds(1);
+        gameObject.layer = 6;
     }
 
     // Update is called once per frame

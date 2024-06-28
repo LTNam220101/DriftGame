@@ -2243,7 +2243,7 @@ MonoBehaviour:
   cleanupInterval: 1
   chunkPersistTime: 0
   maxCleanupPerUpdate: -1
-  chunkCleanupType: 2
+  chunkCleanupType: 1
 --- !u!114 &2083409748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2289,7 +2289,7 @@ MonoBehaviour:
   - tile: {fileID: 517716632989869215, guid: d80de32b3284dd84d9c732b4b950b624, type: 3}
     weight: 2
   - tile: {fileID: 1346561757745824569, guid: 5c889a3297a652f4b8a8332d5cbe8e8f, type: 3}
-    weight: 10
+    weight: 2
   - tile: {fileID: 1661799675080805496, guid: 25a2e58852eaf9742b0f3ab5812fc10e, type: 3}
     weight: 2
   - tile: {fileID: 8557609175852098850, guid: f2ecd0c9f59092c4283123228557d1f7, type: 3}

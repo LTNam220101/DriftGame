@@ -2844,7 +2844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6846314372124967214, guid: 5ea643ebb01d4f848ad38d00bf244d2d, type: 3}
       propertyPath: tiles.Array.data[14].weight
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6846314372124967214, guid: 5ea643ebb01d4f848ad38d00bf244d2d, type: 3}
       propertyPath: tiles.Array.data[15].weight

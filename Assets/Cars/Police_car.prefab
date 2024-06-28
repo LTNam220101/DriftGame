@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 7382408615726444072}
   - component: {fileID: 4378325830752927036}
   - component: {fileID: -1293066343127667176}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Police_car
   m_TagString: Cop
   m_Icon: {fileID: 0}

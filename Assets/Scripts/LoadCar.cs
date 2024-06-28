@@ -207,18 +207,20 @@ public class LoadCar : MonoBehaviour
         // Chờ 2 giây
         yield return calculateTime(1.75f);
         buffName.text = "";
-        colliders = Physics.OverlapSphere(currentCar.transform.position, 200f);
-        // Duyệt qua tất cả các Collider
-        foreach (Collider collider in colliders)
-        {
-            // Kiểm tra xem Collider có tag là "Tree" không
-            if (collider.CompareTag("Cop") || collider.CompareTag("SmallCop"))
-            {   
-                CopController controller= collider.GetComponent<CopController>();
-                if (controller != null)
-                {
-                    // Gọi phương thức Explode()
-                    controller.Explode();
+        if(currentCar){
+            colliders = Physics.OverlapSphere(currentCar.transform.position, 200f);
+            // Duyệt qua tất cả các Collider
+            foreach (Collider collider in colliders)
+            {
+                // Kiểm tra xem Collider có tag là "Tree" không
+                if (collider.CompareTag("Cop") || collider.CompareTag("SmallCop"))
+                {   
+                    CopController controller= collider.GetComponent<CopController>();
+                    if (controller != null)
+                    {
+                        // Gọi phương thức Explode()
+                        controller.Explode();
+                    }
                 }
             }
         }

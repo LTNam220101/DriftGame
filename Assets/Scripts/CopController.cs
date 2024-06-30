@@ -38,7 +38,7 @@ public class CopController : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Start()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         gameObject.layer = 6;
     }
 
